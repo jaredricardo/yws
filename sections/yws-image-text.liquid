@@ -1,0 +1,112 @@
+{% style %}
+    [data-section-id="{{ section.id }}"] {
+        background-color: {{ section.settings.bg_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] h2,
+    [data-section-id="{{ section.id }}"] a,
+    [data-section-id="{{ section.id }}"] p {
+        color: {{ section.settings.text_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] .col:nth-of-type(1) {
+        background-color: {{ section.settings.inner_bg_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] .yws-link-button {
+        border: 1.5px solid {{ section.settings.text_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] .yws-link-button:hover {
+        background-color: {{ section.settings.text_color }};
+        color: {{ section.settings.inner_bg_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] .yws-link-button:hover path {
+        fill: {{ section.settings.inner_bg_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] .yws-link-button path {
+        fill: {{ section.settings.text_color }};
+    }
+
+{% endstyle %}
+
+<div data-section-id="{{ section.id }}">
+    <div class="yws-section-content large-spacing yws-image-text">
+        <div class="col">
+            {% if section.settings.header != blank %}
+                <h2>{{ section.settings.header }}</h2>
+            {% endif %}
+            {% if section.settings.subheader != blank %}
+                <p>{{ section.settings.subheader }}</p>
+            {% endif %}
+            {% if section.settings.button_text != blank %}
+                <a href="{{ section.settings.button_link }}" class="yws-link-button">
+                    {{ section.settings.button_text }}
+                    {% render 'yws-icon-right' %}
+                </a>
+            {% endif %}
+        </div>
+        <div class="col">
+            <img src="{{ section.settings.image | img_url: 'master' }}" alt="YWS Image">
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "YWS Image & Text",
+    "settings": [ 
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#F3ECDE"
+        },
+        {
+            "type": "color",
+            "id": "inner_bg_color",
+            "label": "Inner Background Color",
+            "default": "#0B3449"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#f3ecde"
+        },
+        {
+            "type": "html",
+            "id": "header",
+            "label": "Header"
+        },
+        {
+            "type": "html",
+            "id": "subheader",
+            "label": "Subheader"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Section Image"
+        }
+    ],
+    "blocks": [],
+    "presets": [
+        {
+            "name": "YWS Image & Text"
+        }
+    ]
+}
+{% endschema %}

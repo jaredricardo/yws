@@ -1,0 +1,43 @@
+{% liquid 
+
+    assign video_short = section.settings.video_short
+    assign yt_embed_string = section.settings.yt_embed_string
+
+-%}
+
+<div class="yws-video-section yws-section header-scrollable-section">
+    <div class="yws-video-overlay"></div>
+    <div class="initial-video">
+        {{ video_short | media_tag: autoplay: true, controls: false, loop: true, muted: true, playsinline: true }}
+    </div>
+    <button class="yws-modal__open">
+        {% render 'yws-icon-play' %}  
+        Watch Video 
+    </button>
+    {% render 'yws-modal' type:'yt-video', yt_embed_string: yt_embed_string %}
+</div>
+
+
+{% schema %}
+{
+    "name": "YWS Video Section",
+    "settings": [
+        {
+            "type": "video",
+            "id": "video_short",
+            "label": "Section Short Video"
+        },
+        {
+            "type": "textarea",
+            "id": "yt_embed_string",
+            "label": "YouTube Embed src String",
+            "info": "YT embed SRC string for high res video in modal pop up"
+        }
+    ],
+    "presets": [
+        {
+            "name": "YWS Video Section"
+        }
+    ]
+}
+{% endschema %}

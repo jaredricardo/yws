@@ -1,0 +1,40 @@
+{% style %}
+
+[data-section-id="{{ section.id }}"] {
+    background-color: {{ section.settings.bg_color }};
+}
+
+{% endstyle %}
+
+<div class="just-image-container" data-section-id="{{ section.id }}">
+    <img src="{{ section.settings.image | img_url: 'master'  }}" alt="{{ section.settings.alt }}">
+</div>
+
+{% schema %}
+{
+    "name": "Splash Image Section",
+    "settings": [
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Section background color",
+            "default": "#FFFFFF"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "alt",
+            "label": "Alt text"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Splash Image Section"
+        }
+    ]
+}
+{% endschema %}

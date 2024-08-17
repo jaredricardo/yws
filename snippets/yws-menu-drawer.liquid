@@ -1,0 +1,17 @@
+<div class="yws-menu-drawer__header">
+    {% render 'yws-cart' %}
+    {% render 'yws-icon-close' %}
+</div>
+<div class="yws-menu-drawer__navigation">
+    <div class="drawer-york drawer-letter">York</div>
+    <div class="drawer-work drawer-letter">Work</div>
+    <div class="drawer-shop drawer-letter">Shop</div>
+    <ul class="menu-area">
+        {% for link in settings.yws_drawer_menu.links %}
+            <li>{{ link.title }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="yws-menu-drawer__footer">
+    {% render 'yws-footer-form-snippet' %}
+</div>

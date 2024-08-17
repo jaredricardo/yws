@@ -1,0 +1,150 @@
+{% style %}
+    [data-section-id="{{ section.id }}"] {
+        background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.text_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] h2 {
+        color: {{ section.settings.text_color }};
+    }
+{% endstyle %}
+
+<div data-section-id="{{ section.id }}">
+    <div class="yws-section-content yws-tile-section">
+        {% if section.settings.header != blank %}
+            <h2>{{ section.settings.header }}</h2>
+        {% endif %}
+        <div class="yws-tile-container">
+            <div class="col">
+                {% render 'yws-tile-image', img: section.settings.image_1,  title: section.settings.title_1, subtitle: section.settings.subtitle_1, tile_link: section.settings.tile_link_1 %}
+            </div>
+            <div class="col">
+                {% render 'yws-tile-image', img: section.settings.image_2,  title: section.settings.title_2, subtitle: section.settings.subtitle_2, tile_link: section.settings.tile_link_2 %}
+                {% render 'yws-tile-image', img: section.settings.image_3,  title: section.settings.title_3, subtitle: section.settings.subtitle_3, tile_link: section.settings.tile_link_3 %}
+            </div>
+        </div>
+        {% comment %} just adding empty cols and container here for alignment purposes {% endcomment %}
+         <div class="button-container">
+            <div class="col"></div>
+            <div class="col">
+                {% if section.settings.button_link != blank %}
+                    <a href="{{ section.settings.button_link }}" class="yws-link-button">   
+                        {{ section.settings.button_text }}
+                        {% render 'yws-icon-right' %}
+                    </a>
+                {% endif %}
+            </div>
+         </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "YWS Image Tiles",
+    "settings": [ 
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#F3ECDE"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "(Title) Text Color",
+            "default": "#9C2C24"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_mobile_carousel",
+            "label": "Enable Mobile Carousel",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Image Tiles"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Tile Image 1"
+        },
+        {
+            "type": "url",
+            "id": "tile_link_1",
+            "label": "Tile Link 1"
+        },
+        {
+            "type": "text",
+            "id": "title_1",
+            "label": "Tile Title 1"
+        },
+        {
+            "type": "text",
+            "id": "subtitle_1",
+            "label": "Tile Subtitle 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Tile Image 2"
+        },
+        {
+            "type": "url",
+            "id": "tile_link_2",
+            "label": "Tile Link 2"
+        },
+        {
+            "type": "text",
+            "id": "title_2",
+            "label": "Tile Title 2"
+        },
+        {
+            "type": "text",
+            "id": "subtitle_2",
+            "label": "Tile Subtitle 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "Tile Image 3"
+        },
+        {
+            "type": "url",
+            "id": "tile_link_3",
+            "label": "Tile Link 3"
+        },
+        {
+            "type": "text",
+            "id": "title_3",
+            "label": "Tile Title 3"
+        },
+        {
+            "type": "text",
+            "id": "subtitle_3",
+            "label": "Tile Subtitle_3"
+        }
+    ],
+    "blocks": [],
+    "presets": [
+        {
+            "name": "YWS Image Tiles"
+        }
+    ]
+}
+{% endschema %}

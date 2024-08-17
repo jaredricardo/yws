@@ -1,0 +1,103 @@
+{%- style -%}
+
+[data-section-id="{{ section.id }}"] {
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+}
+
+[data-section-id="{{ section.id }}"] .field__label {
+    color: {{ section.settings.text_color }};
+}
+
+{%- endstyle -%}
+
+<footer data-section-id="{{ section.id }}" class="yws-footer">
+    <div class="yws-section-content">
+        <div class="form-area">
+            <div class="yws-form">
+                {% render 'yws-footer-form-snippet' %}
+            </div>
+            <div class="yws-form-buttons">
+                <a href="mailto:{{ section.settings.contact_us_email }}" class="yws-link-button blue" target="_blank">
+                    Contact Us
+                    {% render 'yws-icon-right'%}
+                </a>
+                <a href="{{ settings.social_instagram_link }}" class="yws-link-button blue" target="_blank">
+                    <span>
+                        {% render 'icon-instagram' %}
+                        york.nyc
+                    </span>
+                    {% render 'yws-icon-right'%}
+                </a>
+            </div>
+        </div>
+        <div class="logo-area">
+            <div class="footer-y-area svg-letter">
+                {% render 'yws-y' %}
+                {% comment %} <span class="york">York</span> {% endcomment %}
+            </div>
+            <div class="footer-w-area svg-letter">
+                {% render 'yws-w' %}
+                {% comment %} <span class="work">Work</span> {% endcomment %}
+            </div>
+            <div class="footer-S-area svg-letter">
+                {% render 'yws-s' %}
+                {% comment %} <span class="shop">Shop</span> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const logoLetters = document.querySelectorAll('.logo-area .svg-letter')
+
+        logoLetters.forEach((letter) => {
+            letter.addEventListener('mouseover', () => {
+                logoLetters.forEach((l) => {
+                    l.style.opacity = 0.3
+                })
+                letter.style.opacity = 1
+            })  
+            letter.addEventListener('mouseleave', () => {
+                logoLetters.forEach((l) => {
+                    l.style.opacity = 1
+                })
+            })
+        })
+
+    })
+</script>
+
+{% schema %}
+{
+  "name": "YWS Footer",
+  "settings": [
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#F3ECDE"
+    },
+    {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#0B3449"
+    },
+    {
+        "type": "text",
+        "id": "form_text",
+        "label": "Form Text",
+        "default": "Sign up to keep in touch..."
+    },
+    {
+        "type": "text",
+        "id": "contact_us_email",
+        "label": "Contact Us Email",
+        "default": "phil@york.nyc"
+    }
+  ]
+}
+{% endschema %}

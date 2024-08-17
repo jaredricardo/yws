@@ -1,0 +1,14 @@
+
+
+<div class="yws-modal__main-area">
+    <div class="yws-modal__close yws-modal__bg-close-area"></div>
+    <div class="yws-modal__inner">
+        {% case type %}
+            {% when "video" %}
+                {{ video_source | media_tag: autoplay: false, controls: true, muted: false, playsinline: true, preload: false }}
+            {% when "yt-video" %}
+                <iframe src="{{ yt_embed_string }}" data-og-src="{{ yt_embed_string }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        {% endcase %}
+        <div class="yws-modal__close close-x">{% render 'yws-icon-close' %}</div>
+    </div>
+</div>
