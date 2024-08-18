@@ -1,6 +1,10 @@
 <div class="yws-menu-drawer__header">
-    {% render 'yws-cart' %}
-    {% render 'yws-icon-close' %}
+    <div id="header-cart-button">
+        {% render 'yws-cart' %}
+    </div>
+    <div id="header-close-menu-button">
+        {% render 'yws-icon-close' %}
+    </div>
 </div>
 <div class="yws-menu-drawer__navigation">
     {% for link in settings.yws_main_yws.links %}

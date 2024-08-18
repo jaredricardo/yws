@@ -708,9 +708,9 @@ summary::-webkit-details-marker {
 }
 
 *:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  /* outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3); */
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
@@ -732,9 +732,9 @@ summary::-webkit-details-marker {
 */
 
 .focus-inset:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  /* outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: -0.2rem;
-  box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3);
+  box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3); */
 }
 
 .focused.focus-inset,
@@ -4162,6 +4162,7 @@ yws-menu-drawer.active {
   height: 50px;
   width: 50px;
   margin-right: 15px;
+  top: 1.75rem;
 }
 
 .yws-footer .field__label {
@@ -4172,10 +4173,6 @@ yws-menu-drawer.active {
   letter-spacing: 0.02em;
   text-align: left;
   top: calc(1.5rem + var(--inputs-border-width));
-}
-
-.yws-footer .field__button {
-  top: 1.75rem;
 }
 
 .yws-footer .field__input:focus~.field__label, 
@@ -4244,11 +4241,14 @@ yws-menu-drawer.active {
   height: 480px;
 }
 
-.yws-footer .logo-area:not(.lettered-svg) svg {
+.yws-footer .logo-area svg {
   height: 100%; 
   width: auto; 
   max-width: 100%;
   max-height: 100%;
+} 
+
+.yws-footer .logo-area svg:not(.lettered-svg) {
   display: block; 
 }
 
@@ -4260,26 +4260,6 @@ yws-menu-drawer.active {
   display: none;
 }
 
-/* 
-
-.yws-footer .svg-letter:hover .york,
-.yws-footer .svg-letter:hover .work,
-.yws-footer .svg-letter:hover .shop {
-  display: block;
-} 
-
-.yws-footer .svg-letter .york,
-.yws-footer .svg-letter .work,
-.yws-footer .svg-letter .shop  {
-  position: absolute;
-  display: none;
-  color: var(--yws-off-white);
-  color: blue;
-  font-size: 30px;
-  z-index: 1;
-  text-transform: uppercase;
-} 
-*/
 
 yws-menu-drawer {
   display: flex;
@@ -4391,6 +4371,111 @@ yws-menu-drawer .yws-menu-drawer__footer .copywright {
   color: var(--yws-off-white);
   margin: 0 auto;
 } 
+
+/*  */
+
+yws-menu-drawer .field__input, 
+yws-menu-drawer .customer .field input {
+  height: 60px;
+  background-color: var(--yws-blue);
+  border-bottom: 2px solid var(--yws-off-white);
+  color: var(--yws-blue);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px !important;
+}
+
+yws-menu-drawer .field:after {
+  display: none;
+}
+
+yws-menu-drawer:has(.field input:focus) .field__button {
+  background-color: var(--yws-blue); 
+}
+
+yws-menu-drawer:has(.field input:focus) .field__button path {
+  fill: var(--yws-off-white);
+}
+
+yws-menu-drawer .yws-form {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+yws-menu-drawer .field__input:focus {
+  box-shadow: none;
+}
+
+yws-menu-drawer .field__button {
+  background-color: var(--yws-off-white);
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  top: 1.75rem;
+}
+
+yws-menu-drawer .field__label {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32.6px;
+  letter-spacing: .02em;
+  text-align: left;
+  top: calc(1.5rem + var(--inputs-border-width));
+  color: var(--yws-off-white);
+}
+
+yws-menu-drawer .field__button>svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+yws-menu-drawer .field__input:focus~.field__label, 
+yws-menu-drawer .field__input:not(:placeholder-shown)~.field__label, 
+yws-menu-drawer .field__input:-webkit-autofill~.field__label, 
+yws-menu-drawer .customer .field input:focus~label, 
+yws-menu-drawer .customer .field input:not(:placeholder-shown)~label, 
+yws-menu-drawer .customer .field input:-webkit-autofill~label {
+  visibility: hidden;
+}
+
+yws-menu-drawer .form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+yws-menu-drawer.yws-form-buttons .yws-link-button {
+  margin: 0;
+}
+
+yws-menu-drawer .yws-form-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+yws-menu-drawer button[type="submit"] path {
+  fill: var(--yws-blue);
+}
+
+yws-menu-drawer button[type="submit"]:hover {
+  opacity: 0.7;
+}
+
+yws-menu-drawerinput:active {
+  disaplay: none;
+}
+
+yws-menu-drawer .field input:active,
+yws-menu-drawer .field input:focus {
+  background-color: white; 
+  border-radius: 50px;
+  border-bottom: none;
+  background-color: #ffffff7d;
+}
 
 @media screen and (max-width: 769px) {
   .just-image-container img {

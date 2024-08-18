@@ -131,7 +131,21 @@
     class YWSMenuDrawer extends HTMLElement {
       constructor() {
         super()
-      
+        this.cartButton = this.querySelector('#header-cart-button')
+        this.closeCartButton = this.querySelector('#header-close-menu-button')
+        this.closeCartButton.addEventListener('click', this.closeDrawer)
+        this.cartButton.addEventListener('click', this.openCartFromNav) 
+      }
+
+      closeDrawer() {
+        document.querySelector('#CartDrawer-Overlay').click()
+      }
+
+      openCartFromNav() {
+        document.querySelector('#CartDrawer-Overlay').click()
+        setTimeout(() => {
+          document.querySelector('.yws-header__icons .header__icon--cart').click()
+        }, 250)
       }
 
     }
