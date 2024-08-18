@@ -3,15 +3,31 @@
     {% render 'yws-icon-close' %}
 </div>
 <div class="yws-menu-drawer__navigation">
-    <div class="drawer-york drawer-letter">York</div>
-    <div class="drawer-work drawer-letter">Work</div>
-    <div class="drawer-shop drawer-letter">Shop</div>
+    {% for link in settings.yws_main_yws.links %}
+        <a href={{ link.url }} class="drawer-york drawer-letter">
+            {{ link.title }}
+        </a>
+    {% endfor %}
     <ul class="menu-area">
         {% for link in settings.yws_drawer_menu.links %}
-            <li>{{ link.title }}</li>
+            <li>
+                <a href="link.url">
+                    {{ link.title }}
+                </a>
+            </li>
         {% endfor %}
     </ul>
 </div>
 <div class="yws-menu-drawer__footer">
-    {% render 'yws-footer-form-snippet' %}
+    <div class="yws-menu-drawer__footer--inner">
+        {% render 'yws-footer-form-snippet' %}
+        <a href="{{ settings.social_instagram_link }}" class="yws-link-button cream" target="_blank">
+            <span>
+                {% render 'icon-instagram' %}
+                york.nyc
+            </span>
+            {% render 'yws-icon-right' extra_classes: 'cream'%}
+        </a>
+        <div class="copywright">© 2024 York Work Shop</div>
+    </div>
 </div>

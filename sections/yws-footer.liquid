@@ -32,17 +32,18 @@
             </div>
         </div>
         <div class="logo-area">
-            <div class="footer-y-area svg-letter">
+            <div class="footer-y-area svg-letter-area">
                 {% render 'yws-y' %}
-                {% comment %} <span class="york">York</span> {% endcomment %}
+                {% render 'yws-y-lettered' %}
             </div>
-            <div class="footer-w-area svg-letter">
+            <div class="footer-w-area svg-letter-area">
                 {% render 'yws-w' %}
-                {% comment %} <span class="work">Work</span> {% endcomment %}
+                {% render 'yws-w-lettered' %}
+               
             </div>
-            <div class="footer-S-area svg-letter">
+            <div class="footer-s-area svg-letter-area">
                 {% render 'yws-s' %}
-                {% comment %} <span class="shop">Shop</span> {% endcomment %}
+                {% render 'yws-s-lettered' %}
             </div>
         </div>
     </div>
@@ -51,21 +52,20 @@
 <script>
     window.addEventListener('DOMContentLoaded', () => {
 
-        const logoLetters = document.querySelectorAll('.logo-area .svg-letter')
+        const logoLetters = document.querySelectorAll('.logo-area .svg-letter-area')
 
         logoLetters.forEach((letter) => {
             letter.addEventListener('mouseover', () => {
-                logoLetters.forEach((l) => {
-                    l.style.opacity = 0.3
-                })
-                letter.style.opacity = 1
-            })  
+                letter.querySelector('.unlettered-svg').style.display = "none"
+                letter.querySelector('.lettered-svg').style.display = "block"
+            })
             letter.addEventListener('mouseleave', () => {
-                logoLetters.forEach((l) => {
-                    l.style.opacity = 1
-                })
+                letter.querySelector('.unlettered-svg').style.display = "block"
+                letter.querySelector('.lettered-svg').style.display = "none"
             })
         })
+
+
 
     })
 </script>
