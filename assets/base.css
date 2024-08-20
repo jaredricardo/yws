@@ -3611,6 +3611,10 @@ details-disclosure > details {
   top: -25px;
 }
 
+.yws-modal__close.close-x path {
+  fill: var(--yws-blue);
+}
+
 .yws-video-section .yws-modal__inner {
   z-index: 5;
   width: 90%;
@@ -3672,7 +3676,7 @@ details-disclosure > details {
 .yws-video-section .yws-modal__open {
   position: absolute;
   z-index: 1;
-  bottom: 60px; /* yws spacing x 2 */
+  bottom: 100px; /* yws spacing x 2 */
   left: 60px; /* yws spacing x 2 */
 }
 
@@ -3688,6 +3692,7 @@ yws-sticky-header {
   background-color: transparent;
   justify-content: center;
   padding:calc(var(--yws-spacing) * 2);
+  width: 100vw;
 }
 
 .yws-modal__open:hover {
@@ -4121,6 +4126,7 @@ yws-menu-drawer.active {
   margin: 0;
 }
 
+
 .yws-footer img {
   max-width: 100%;
   object-fit: contain;
@@ -4474,8 +4480,14 @@ yws-menu-drawer .field input:focus {
   background-color: white; 
   border-radius: 50px;
   border-bottom: none;
-  background-color: #ffffff7d;
+  background-color: #fffff7d;
 }
+
+
+.yws-footer {
+  display: none;
+}
+
 
 @media screen and (max-width: 769px) {
   .just-image-container img {
@@ -4483,3 +4495,56 @@ yws-menu-drawer .field input:focus {
   }
 }
 
+// turning off while i style mobile
+
+
+
+/* breakpoint changes */
+
+@media screen and (max-width: 1024px) {
+  .yws-video-section .yws-modal__open {
+    left: 45px;
+  }
+  .yws-video-section button {
+    font-size: 24px;
+  }
+}
+
+
+@media screen and (max-width: 834px) {
+  yws-sticky-header {
+    padding: calc(var(--yws-spacing) * 2) var(--yws-spacing);
+  }
+  .yws-modal__close.close-x {
+    height: 30px;
+    width: 30px;
+    right: -17px;
+    top: -17px;
+  }
+  .yws-modal__close.close-x svg {
+    max-width: 75%;
+  }
+}
+
+
+@media screen and (max-width: 390px) {
+  yws-sticky-header {
+    padding: 40px var(--yws-spacing);
+  }
+  yws-sticky-header.scrolled-in {
+    justify-content: space-between;
+    padding: 20px var(--yws-spacing);
+  }
+  .yws-video-section .yws-modal__open {
+    left: 30px;
+  }
+  .yws-video-section button {
+    font-size: 18px;
+  }
+  yws-sticky-header.scrolled-in .col.yws-header__logo-text {
+    display: none;
+  }
+  yws-sticky-header.scrolled-in .yws-header__logo-text path {
+    fill: transparent;
+  }
+}
