@@ -19,7 +19,6 @@
     },
     "yws_image_tiles_k4tUeq": {
       "type": "yws-image-tiles",
-      "disabled": true,
       "settings": {
         "bg_color": "#f3ecde",
         "header": "Select Work",
@@ -103,7 +102,6 @@
         "section_link_WWwPKR",
         "section_link_ciH7Mz"
       ],
-      "disabled": true,
       "settings": {
         "bg_color": "#f3ecde",
         "inner_bg_color": "#0b3449",
