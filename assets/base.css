@@ -3758,6 +3758,11 @@ yws-sticky-header .yws-header__icons path {
   opacity: 0;
 }
 
+yws-sticky-header .yws-header__letters a {
+  display: flex;
+  max-width: 100%;
+}
+
 yws-sticky-header.scrolled-in .yws-header__logo-text path {
   fill: var(--yws-red);
 }
@@ -4486,21 +4491,11 @@ yws-menu-drawer .field input:focus {
   background-color: #fffff7d;
 }
 
-
-.yws-footer {
-  display: none;
-}
-
-
 @media screen and (max-width: 769px) {
   .just-image-container img {
     max-width: 85%;
   }
 }
-
-// turning off while i style mobile
-
-
 
 /* breakpoint changes */
 
@@ -4514,7 +4509,27 @@ yws-menu-drawer .field input:focus {
   .yws-2-6 {
     max-height: 640px;
   }
-
+  .yws-capabilities .row:nth-of-type(1) {
+    align-items: end;
+  }
+  .yws-capabilities .row:nth-of-type(1) .col:nth-of-type(1),
+  .yws-capabilities .row:nth-of-type(1) .col:nth-of-type(1) h2 {
+    display: none;
+  }
+  .yws-capabilities h2 {
+    padding: 0;
+    margin-bottom: var(--yws-spacing);
+  }
+  .yws-capabilities .row .col {
+    padding: 0 var(--yws-spacing);
+  }
+  .yws-capabilities .row:nth-of-type(2) .col:nth-of-type(1),
+  .yws-capabilities .row:nth-of-type(2) .col:nth-of-type(2) {
+    flex: 1;
+  }
+  .yws-capabilities .yws-link-button {
+    margin: 0;
+  }
 }
 
 
@@ -4583,6 +4598,20 @@ yws-menu-drawer .field input:focus {
   .yws-capabilities .row:nth-of-type(1) .col:nth-of-type(2) h2 {
     display: block;
   }
+  .yws-capabilities {
+    gap: 30px;
+  }
+  .yws-capabilities h2 {
+    font-size: 36px;
+    line-height: 43.2px;
+  }
+  .yws-capabilities p {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  .yws-capabilities.yws-section-content {
+    padding: 80px 0;
+  }
 }
 
 
@@ -4612,7 +4641,7 @@ yws-menu-drawer .field input:focus {
     letter-spacing: 1px;
     max-width: 160px;
     margin: 20px;
-    height: 30px;
+    height: 35px;
     padding: 0 15px;
   }
   .yws-link-button .yws-icon-right  {
@@ -4653,5 +4682,30 @@ yws-menu-drawer .field input:focus {
   }
   .yws-tile-section h2 {
     padding: 15px 20px;
+  }
+  .yws-capabilities h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .yws-capabilities p {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 15px 0px 15px 0;
+  }
+  .yws-capabilities.yws-section-content {
+    padding: 40px 0;
+    border-radius: 0;
+  }
+  .yws-capabilities .row:nth-of-type(1) .col:nth-of-type(2) {
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+  .yws-capabilities .row:nth-of-type(1) .col:nth-of-type(3) {
+    padding-right: 30px;
+    padding-left: 10px;
+  }
+  .yws-capabilities .row:nth-of-type(2) .col:nth-of-type(2) {
+    padding-left: 0px;
   }
 }

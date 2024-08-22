@@ -1,7 +1,7 @@
 {% style %}
     [data-section-id="{{ section.id }}"] {
         background-color: {{ section.settings.bg_color }};
-        padding: var(--yws-spacing);
+        padding: 100px var(--yws-spacing);
     }
 
     [data-section-id="{{ section.id }}"] h2,
@@ -13,13 +13,25 @@
     [data-section-id="{{ section.id }}"] .yws-capabilities {
         background-color: {{ section.settings.inner_bg_color }};
     }
+
+    @media screen and (max-width: 834px) {
+        [data-section-id="{{ section.id }}"] {
+            padding: 80px 15px;
+        }
+    } 
+    @media screen and (max-width: 390px) {
+        [data-section-id="{{ section.id }}"] {
+            padding: 60px 0px;
+        }
+    }
+
 {% endstyle %}
 
 <div data-section-id="{{ section.id }}">
     <div class="yws-section-content yws-capabilities">
         <div class="row">
             <div class="col">
-                <h2 class="desktop">{{ section.settings.header }}</h2>
+                <h2>{{ section.settings.header }}</h2>
             </div>
             <div class="col">
                 <h2>{{ section.settings.header }}</h2>
