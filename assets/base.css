@@ -4514,6 +4514,7 @@ yws-menu-drawer .field input:focus {
   .yws-2-6 {
     max-height: 640px;
   }
+
 }
 
 
@@ -4572,6 +4573,15 @@ yws-menu-drawer .field input:focus {
   }
   .yws-tile-section .yws-link-button {
     margin: 15px 0;
+  }
+  .yws-capabilities .row:nth-of-type(1) .col:nth-of-type(1) {
+    display: none;
+  }
+  .yws-capabilities .row:nth-of-type(1) .col:nth-of-type(1) h2 {
+    display: none;
+  }
+  .yws-capabilities .row:nth-of-type(1) .col:nth-of-type(2) h2 {
+    display: block;
   }
 }
 

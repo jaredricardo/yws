@@ -22,7 +22,7 @@
                 <h2 class="desktop">{{ section.settings.header }}</h2>
             </div>
             <div class="col">
-                <h2 class="tablet mobile"></h2>
+                <h2>{{ section.settings.header }}</h2>
                 {% for block in section.blocks %}
                     {% assign mod = forloop.index | modulo: 2 %}
                     {% if mod == 1 %}
