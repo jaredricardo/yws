@@ -86,34 +86,20 @@
       })
         this.sections = document.querySelectorAll('.header-scrollable-section')
         this.logoArea = document.querySelector('.yws-header__logo-text')
-        this.hasExitedFirst = false
         this.sections.forEach(section => this.observer.observe(section))
       }
 
       handleIntersect(entries) {
         entries.forEach(entry => {
-          if (entry.target === this.sections[1]) { // Check if the entry is the second section
-            if (entry.isIntersecting) {
-              if (entry.intersectionRatio > 0.95) {
-                this.classList.add('scrolled-in')
-                this.setWidth(33.3) // Set width to 33.3%
-              } else {
-                this.updateWidth(entry.intersectionRatio)
-              }
+          // in first section 
+          if(entry.target === this.sections[0]) {
+            this.updateWidth(1 - entry.intersectionRatio)
+            entry.intersectionRatio === 1 ? this.setWidth(100) : null
+            if(entry.intersectionRatio > 0.12) {
+              this.classList.remove('scrolled-in') 
+            } else {
+              this.classList.add('scrolled-in')
             }
-          } else if (entry.target === this.sections[0]) { // Check if the entry is the first section
-            this.hasExitedFirst = false
-            this.classList.remove('scrolled-in')
-            if (entry.intersectionRatio === 1) { // If the first section is fully in view
-              this.setWidth(100) // Set width to 100%
-              this.hasExitedFirst = false
-            } else if (entry.intersectionRatio === 0) {
-              this.hasExitedFirst = true
-            } 
-          }
-          // fallback if we scroll to fast passed the first section to add the scrolled in class
-          if(entry.isIntersecting === false) {
-            this.classList.add('scrolled-in')
           }
         })
       }
@@ -131,7 +117,21 @@
     class YWSMenuDrawer extends HTMLElement {
       constructor() {
         super()
-      
+        this.cartButton = this.querySelector('#header-cart-button')
+        this.closeCartButton = this.querySelector('#header-close-menu-button')
+        this.closeCartButton.addEventListener('click', this.closeDrawer)
+        this.cartButton.addEventListener('click', this.openCartFromNav) 
+      }
+
+      closeDrawer() {
+        document.querySelector('#CartDrawer-Overlay').click()
+      }
+
+      openCartFromNav() {
+        document.querySelector('#CartDrawer-Overlay').click()
+        setTimeout(() => {
+          document.querySelector('.yws-header__icons .header__icon--cart').click()
+        }, 250)
       }
 
     }

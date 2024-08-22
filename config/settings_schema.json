@@ -1467,12 +1467,16 @@
         ]
     },
     {
-        "name": "Slide out drawer",
+        "name": "YWS Menus",
         "settings":[
             {
                 "type": "link_list",
+                "id": "yws_main_yws",
+                "label": "YWS Main menu"
+            },
+            {
+                "type": "link_list",
                 "id": "yws_drawer_menu",
-                "default": "main-menu",
                 "label": "YWS Slide out drawer menu"
               }
         ]
