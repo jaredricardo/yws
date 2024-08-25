@@ -1,0 +1,107 @@
+{% style %}
+    [data-section-id="{{ section.id }}"]{
+        background-image:url({{ section.settings.background_img | img_url:'master'}});
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position-x:center;
+    }
+    [data-section-id="{{ section.id }}"] .yws-about-top{
+        display: flex;
+        padding: 100px 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 60px;
+        flex-shrink: 0;
+    }
+    [data-section-id="{{ section.id }}"] .about-top-content{
+        display: flex;
+        padding: 0px 20px;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] p{
+        color:{{ section.settings.text_color }};
+        leading-trim: both;
+        text-edge: cap;
+        font-family: "Forma DJR Display" sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px; /* 140% */
+        letter-spacing: 0.4px;
+        margin:0;
+    }
+    @media(min-width:834px){
+        [data-section-id="{{ section.id }}"] .yws-about-top{
+            padding:100px 15px;
+        }
+        [data-section-id="{{ section.id }}"] .about-top-content{
+            padding:0 30px;
+        }
+        [data-section-id="{{ section.id }}"] p{
+            font-size:28px;
+            line-height:36px;
+            letter-spacing:0.56px;
+        }
+    }
+    @media(min-width:1440px){
+        [data-section-id="{{ section.id }}"] p{
+            font-size:36px;
+            line-height:44px;
+            letter-spacing:0.72px;
+        }
+        [data-section-id="{{ section.id }}"] .about-text-container{
+            display:flex;
+            flex-direction:row;
+            justify-content:center;
+            gap:30px;
+        }
+        [data-section-id="{{ section.id }}"] .col-2{
+            display:inline-flex;
+            flex:2;
+        }
+        [data-section-id="{{ section.id }}"] .col-4{
+            display:inline-flex;
+            flex:4;
+        }
+    }
+{% endstyle %}
+<div data-section-id="{{ section.id }}">
+    <div class="yws-section-content yws-about-top">
+        <div class="about-top-content">
+            <div class="about-text-container">
+                <div class="col-2"></div>
+                <div class="col-4">
+                    <p>{{ section.settings.top_text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name":"YWS About Top",
+        "settings":[
+            {
+                "type":"text",
+                "id":"top_text",
+                "label":"Top Text"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text Color",
+                "default": "#f3ecde"
+            },
+            {
+                "type":"image_picker",
+                "id":"background_img",
+                "label":"Background Image"
+            }
+        ]
+    }
+{% endschema %}
