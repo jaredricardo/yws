@@ -1,5 +1,9 @@
 {%- style -%}
 
+div:has([data-section-id="{{ section.id }}"]) {
+    background-color: {{ section.settings.bg_color }};
+}
+
 [data-section-id="{{ section.id }}"] {
     background-color: {{ section.settings.bg_color }};
     color: {{ section.settings.text_color }};

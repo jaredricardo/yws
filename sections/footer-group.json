@@ -1,1 +1,17 @@
-{"name":"YWS Footer","type":"footer","sections":{"yws-footer":{"type":"yws-footer","settings":{"bg_color":"#F3ECDE","text_color":"#0b3449","footer_image":"shopify:\/\/shop_images\/YWS_Ender.svg","form_text":"Sign up to keep in touch...","contact_us_email":"phil@york.nyc"}}},"order":["yws-footer"]}
+{
+  "name": "YWS Footer",
+  "type": "footer",
+  "sections": {
+    "yws-footer": {
+      "type": "yws-footer",
+      "settings": {
+        "bg_color": "#F3ECDE",
+        "text_color": "#0b3449",
+        "contact_us_email": "phil@york.nyc"
+      }
+    }
+  },
+  "order": [
+    "yws-footer"
+  ]
+}

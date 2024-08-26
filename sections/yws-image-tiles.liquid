@@ -7,6 +7,17 @@
     [data-section-id="{{ section.id }}"] h2 {
         color: {{ section.settings.text_color }};
     }
+    [data-section-id="{{ section.id }}"] .yws-tile-container .swiper {
+        /* display: none; */
+    }
+    @media screen and (max-width: 390px) {
+        [data-section-id="{{ section.id }}"] .yws-tile-container .swiper {
+            /* display: block; */
+        }
+    }
+    .yws-tile-container .col {
+        display: none !important;
+    }
 {% endstyle %}
 
 <div data-section-id="{{ section.id }}">
@@ -15,6 +26,21 @@
             <h2>{{ section.settings.header }}</h2>
         {% endif %}
         <div class="yws-tile-container">
+            {% if section.settings.enable_mobile_carousel %}
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            {% render 'yws-tile-image', img: section.settings.image_1,  title: section.settings.title_1, subtitle: section.settings.subtitle_1, tile_link: section.settings.tile_link_1 %}
+                        </div>
+                        <div class="swiper-slide">
+                            {% render 'yws-tile-image', img: section.settings.image_2,  title: section.settings.title_2, subtitle: section.settings.subtitle_2, tile_link: section.settings.tile_link_2 %}
+                        </div>
+                        <div class="swiper-slide">
+                            {% render 'yws-tile-image', img: section.settings.image_3,  title: section.settings.title_3, subtitle: section.settings.subtitle_3, tile_link: section.settings.tile_link_3 %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
             <div class="col">
                 {% render 'yws-tile-image', img: section.settings.image_1,  title: section.settings.title_1, subtitle: section.settings.subtitle_1, tile_link: section.settings.tile_link_1 %}
             </div>
@@ -37,6 +63,17 @@
          </div>
     </div>
 </div>
+
+{% if section.settings.enable_mobile_carousel %}
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const swiper = new Swiper('.swiper', {
+                speed: 400,
+                spaceBetween: 10,
+            })
+        })
+    </script>
+{% endif %}
 
 {% schema %}
 {
