@@ -1,11 +1,72 @@
 {
-    "sections":{
-        "top":{
-            "type":"yws-about-top",
-            "settings":{}
-        }
+  "sections": {
+    "top": {
+      "type": "yws-about-top",
+      "settings": {
+        "top_text": "York Work Shop is an independent, multidisciplinary creative agency based in Brooklyn, New York specializing in design, branding, marketing, apparel production and more.",
+        "text_color": "#f3ecde",
+        "background_img": "shopify:\/\/shop_images\/about-top.png"
+      }
     },
-    "order":[
-        "top"
-    ]
+    "agency": {
+      "type": "yws-the-agency",
+      "blocks": {
+        "slide_images_ggcfgm": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Graphic Design",
+            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+          }
+        },
+        "slide_images_MUT6tz": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Slide 2",
+            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+          }
+        },
+        "slide_images_K48WYD": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Slide 3",
+            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+          }
+        },
+        "slide_images_fTNbYH": {
+          "type": "slide-images",
+          "settings": {
+            "title": "test",
+            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+          }
+        },
+        "slide_images_Vbe4jn": {
+          "type": "slide-images",
+          "settings": {
+            "title": "test",
+            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_images_ggcfgm",
+        "slide_images_MUT6tz",
+        "slide_images_K48WYD",
+        "slide_images_fTNbYH",
+        "slide_images_Vbe4jn"
+      ],
+      "settings": {
+        "agency_img": "shopify:\/\/shop_images\/the-agency.png",
+        "header": "The Agency",
+        "header_color": "#9c2c24",
+        "agency_desc": "<p>Having operated our own multi-million dollar apparel brand for 15+ years, we have in-depth, firsthand experience at all stages of development, from creative to fulfillment and everything in between.<br\/><br\/>Through our in-house team and extensive community of trusted collaborators, YWS offers a diverse range of services to help start or grow your brand.<\/p>",
+        "desc_color": "#0b3449",
+        "btn_link": "shopify:\/\/collections\/frontpage",
+        "btn_txt": "Past Work"
+      }
+    }
+  },
+  "order": [
+    "top",
+    "agency"
+  ]
 }
