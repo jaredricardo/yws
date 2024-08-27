@@ -36,19 +36,19 @@ div:has([data-section-id="{{ section.id }}"]) {
             </div>
         </div>
         <div class="logo-area">
-            <div class="footer-y-area svg-letter-area">
+            <a href="{{ settings.y_link }}" class="footer-y-area svg-letter-area">
                 {% render 'yws-y-footer-unlettered' %}
                 {% render 'yws-y-lettered' %}
-            </div>
-            <div class="footer-w-area svg-letter-area">
+            </a>
+            <a href="{{ settings.s_link }}" class="footer-w-area svg-letter-area">
                 {% render 'yws-w-footer-unlettered' %}
                 {% render 'yws-w-lettered' %}
                
-            </div>
-            <div class="footer-s-area svg-letter-area">
+            </a>
+            <a href="{{ settings.s_link }}" class="footer-s-area svg-letter-area">
                 {% render 'yws-s-footer-unlettered' %}
                 {% render 'yws-s-lettered' %}
-            </div>
+            </a>
         </div>
     </div>
 </footer>

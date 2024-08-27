@@ -7,8 +7,11 @@
     [data-section-id="{{ section.id }}"] h2 {
         color: {{ section.settings.text_color }};
     }
+
+    /*  testing swiper */
+
     [data-section-id="{{ section.id }}"] .yws-tile-container .swiper {
-        /* display: none; */
+        display: none;
     }
     @media screen and (max-width: 390px) {
         [data-section-id="{{ section.id }}"] .yws-tile-container .swiper {
@@ -16,7 +19,7 @@
         }
     }
     .yws-tile-container .col {
-        display: none !important;
+        /* display: none !important; */
     }
 {% endstyle %}
 
