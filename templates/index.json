@@ -25,7 +25,7 @@
         "text_color": "#9c2c24",
         "button_text": "All Work",
         "button_link": "#",
-        "enable_mobile_carousel": false,
+        "enable_mobile_carousel": true,
         "image_1": "shopify:\/\/shop_images\/b95ba07e31263a22af4d668f8fbd89b4.jpg",
         "tile_link_1": "#",
         "title_1": "Belief NYC",
