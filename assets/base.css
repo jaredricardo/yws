@@ -3762,6 +3762,10 @@ yws-sticky-header svg {
   height: 100%;
 }
 
+yws-sticky-header .yws-header__logo-text svg {
+  width: 100%;
+}
+
 yws-sticky-header .yws-header__logo-text {
   width: 100%;
   min-height: 62px;
@@ -3784,6 +3788,13 @@ yws-sticky-header .yws-header__icons path {
 yws-sticky-header .yws-header__letters a {
   display: flex;
   max-width: 100%;
+  padding-top: 10px;
+}
+
+yws-sticky-header .yws-header__logo-text a {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
 }
 
 yws-sticky-header.scrolled-in .yws-header__logo-text path {
