@@ -3765,7 +3765,7 @@ yws-sticky-header svg {
 }
 
 yws-sticky-header .yws-header__logo-text svg {
-  width: 100%;
+  max-width: 100%;
 }
 
 yws-sticky-header .yws-header__logo-text {
@@ -3797,10 +3797,7 @@ yws-sticky-header .yws-header__letters a {
 
 yws-sticky-header .yws-header__logo-text a {
   cursor: pointer;
-  width: 100%;
-  height: max-content;
   display: flex;
-  
 }
 
 yws-sticky-header.scrolled-in .yws-header__logo-text path {
