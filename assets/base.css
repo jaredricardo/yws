@@ -3730,6 +3730,7 @@ yws-sticky-header {
 yws-sticky-header.scrolled-in {
   background: linear-gradient(to bottom, var(--yws-off-white), transparent);
   position: relative;
+  /* padding: 40px var(--yws-spacing); */
 }
 
 yws-sticky-header .col {
@@ -3765,14 +3766,17 @@ yws-sticky-header svg {
 }
 
 yws-sticky-header .yws-header__logo-text svg {
-  max-width: 100%;
+  width: 100%;
+  height: max-content;
+  display: block;
 }
 
 yws-sticky-header .yws-header__logo-text {
   width: 100%;
   min-height: 62px;
-  align-items: start;
+  align-items: center;
   justify-content: center;
+  gap: 3%;
 }
 
 yws-sticky-header path {
@@ -3792,12 +3796,17 @@ yws-sticky-header .yws-header__icons path {
 yws-sticky-header .yws-header__letters a {
   display: flex;
   max-width: 100%;
-  padding-top: 10px;
+  height: 100%;
+}
+
+yws-sticky-header .yws-header__letters svg {
+  height: 100%;
 }
 
 yws-sticky-header .yws-header__logo-text a {
   cursor: pointer;
   display: flex;
+  flex: 1;
 }
 
 yws-sticky-header.scrolled-in .yws-header__logo-text path {
@@ -3807,6 +3816,7 @@ yws-sticky-header.scrolled-in .yws-header__logo-text path {
 yws-sticky-header.scrolled-in .yws-header__logo-text svg {
   cursor: pointer;
 }
+
 
 .just-image-container {
   width: 100vw;
@@ -3862,7 +3872,7 @@ yws-menu-drawer.active {
 }
 
 .yws-2-6 h1 {
-  max-width: 600px;
+  max-width: 760px; 
   margin: var(--yws-spacing);
   font-size: 48px;
   font-weight: 700;
@@ -4314,10 +4324,6 @@ yws-menu-drawer.active {
   opacity: 0.7;
 }
 
-.yws-footer input:active {
-  display: none;
-}
-
 .yws-footer .field input:active,
 .yws-footer .field input:focus {
   background-color: white; 
@@ -4597,6 +4603,9 @@ yws-menu-drawer .field input:focus {
   }
   .yws-2-6 {
     max-height: 640px;
+  }
+  .yws-2-6 h1 {
+    max-width: 600px;
   }
   .yws-capabilities .row:nth-of-type(1) {
     align-items: end;
