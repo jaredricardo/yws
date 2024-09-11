@@ -1,1 +1,29 @@
-{"name":"YWS Header","type":"header","sections":{"yws-header":{"type":"yws-header","settings":{"menu":"yws-cart-drawer-menu"}}},"order":["yws-header"]}
+{
+  "name": "YWS Header",
+  "type": "header",
+  "sections": {
+    "yws-header": {
+      "type": "yws-header",
+      "blocks": {
+        "color_designation_4Cjbhy": {
+          "type": "color-designation",
+          "settings": {
+            "check_url": "\/pages\/about-us",
+            "header_designation_color": "#f3ecde",
+            "enable_color_gradient": false,
+            "header_gradient_color": "#0b3449"
+          }
+        }
+      },
+      "block_order": [
+        "color_designation_4Cjbhy"
+      ],
+      "settings": {
+        "menu": "yws-cart-drawer-menu"
+      }
+    }
+  },
+  "order": [
+    "yws-header"
+  ]
+}

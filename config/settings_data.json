@@ -119,6 +119,7 @@
     "cart_color_scheme": "scheme-1",
     "yws_main_yws": "york-work-shop-main",
     "yws_drawer_menu": "yws-cart-drawer-menu",
+    "york_url": "shopify:\/\/pages\/about-us",
     "drawer_menu": "yws-cart-drawer-menu",
     "sections": {
       "main-password-header": {
