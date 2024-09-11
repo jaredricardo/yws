@@ -83,12 +83,17 @@
   class YWSStickyHeader extends HTMLElement {
     constructor() {
       super()
-      this.observer = new IntersectionObserver(this.handleIntersect.bind(this), {
-        threshold: Array.from({ length: 1001 }, (_, i) => i / 1000) // Thresholds from 0 to 1 in 0.001 increments
-      })
         this.sections = document.querySelectorAll('.header-scrollable-section')
         this.logoArea = document.querySelector('.yws-header__logo-text')
-        this.sections.forEach(section => this.observer.observe(section))
+        console.log(this.sections)
+        if(this.sections.length < 1) {
+          this.classList.add('scrolled-in')
+        } else {
+          this.observer = new IntersectionObserver(this.handleIntersect.bind(this), {
+            threshold: Array.from({ length: 1001 }, (_, i) => i / 1000) // Thresholds from 0 to 1 in 0.001 increments
+          })
+          this.sections.forEach(section => this.observer.observe(section))
+        }
       }
 
       handleIntersect(entries) {
