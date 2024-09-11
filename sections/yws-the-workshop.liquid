@@ -289,11 +289,11 @@
                 {% for block in slider %}
                     {% if forloop.first %}
                         <div class="full-col">
-                            <img src="{{ block.settings.slide_img | img_url:'1000x' }}" alt="{{ block.settings.slide_img | alt }}">
+                            <img src="{{ block.settings.slide_img | img_url:'master' }}" alt="{{ block.settings.slide_img | alt }}">
                         </div>
                     {% else %}
                         <div class="half-col">
-                            <img src="{{ block.settings.slide_img | img_url:'600x' }}" alt="{{ block.settings.slide_img | alt }}">
+                            <img src="{{ block.settings.slide_img | img_url:'master' }}" alt="{{ block.settings.slide_img | alt }}">
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -305,7 +305,7 @@
                     {% for block in slider %}
                         <div data-slide-index="{{ forloop.index }}" class="swiper-slide">
                             <div class="slide-container">
-                                <img src="{{ block.settings.slide_img | img_url:'600x' }}" alt="{{ block.settings.slide_img | alt }}">
+                                <img src="{{ block.settings.slide_img | img_url:'master' }}" alt="{{ block.settings.slide_img | alt }}">
                             </div>
                         </div>
                     {% assign count = count | plus:1 %}
