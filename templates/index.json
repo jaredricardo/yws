@@ -25,7 +25,7 @@
         "text_color": "#9c2c24",
         "button_text": "All Work",
         "button_link": "#",
-        "enable_mobile_carousel": false,
+        "enable_mobile_carousel": true,
         "image_1": "shopify:\/\/shop_images\/b95ba07e31263a22af4d668f8fbd89b4.jpg",
         "tile_link_1": "#",
         "title_1": "Belief NYC",
@@ -113,7 +113,6 @@
     },
     "yws_image_tiles_3q3d6T": {
       "type": "yws-image-tiles",
-      "disabled": true,
       "settings": {
         "bg_color": "#f3ecde",
         "header": "Studio Shop",
@@ -137,7 +136,6 @@
     },
     "yws_image_text_fPCttd": {
       "type": "yws-image-text",
-      "disabled": true,
       "settings": {
         "bg_color": "#f3ecde",
         "inner_bg_color": "#9c2c24",

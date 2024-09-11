@@ -7,12 +7,68 @@
     [data-section-id="{{ section.id }}"] h2 {
         color: {{ section.settings.text_color }};
     }
+
+    {% if section.settings.enable_mobile_carousel %}
+   
+
+        [data-section-id="{{ section.id }}"] .swiper,
+        [data-section-id="{{ section.id }}"] .swiper-pagination,
+        [data-section-id="{{ section.id }}"] .swiper-pagination-container {
+            display: none;
+        }
+
+        @media screen and (max-width: 390px) {
+            [data-section-id="{{ section.id }}"] .swiper,
+            [data-section-id="{{ section.id }}"] .swiper-pagination {
+                display: block;
+            }
+            [data-section-id="{{ section.id }}"] .swiper-pagination-container {
+                display: flex;
+            }
+            [data-section-id="{{ section.id }}"] .yws-tile-container {
+                display: none;
+            }
+            [data-section-id="{{ section.id }}"] .non-swiper {
+                display: none;
+            }
+        }
+
+    {% endif %}
+
 {% endstyle %}
 
 <div data-section-id="{{ section.id }}">
     <div class="yws-section-content yws-tile-section">
         {% if section.settings.header != blank %}
             <h2>{{ section.settings.header }}</h2>
+        {% endif %}
+        {% if section.settings.enable_mobile_carousel %}
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {% render 'yws-tile-image', img: section.settings.image_1,  title: section.settings.title_1, subtitle: section.settings.subtitle_1, tile_link: section.settings.tile_link_1 %}
+                    </div>
+                    <div class="swiper-slide">
+                        {% render 'yws-tile-image', img: section.settings.image_2,  title: section.settings.title_2, subtitle: section.settings.subtitle_2, tile_link: section.settings.tile_link_2 %}
+                    </div>
+                    <div class="swiper-slide">
+                        {% render 'yws-tile-image', img: section.settings.image_3,  title: section.settings.title_3, subtitle: section.settings.subtitle_3, tile_link: section.settings.tile_link_3 %}
+                    </div>
+                </div>
+                <div class="button-container swiper-pagination-container">
+                    <div class="col">
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="col">
+                        {% if section.settings.button_link != blank %}
+                            <a href="{{ section.settings.button_link }}" class="yws-link-button">   
+                                {{ section.settings.button_text }}
+                                {% render 'yws-icon-right' %}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         {% endif %}
         <div class="yws-tile-container">
             <div class="col">
@@ -24,7 +80,7 @@
             </div>
         </div>
         {% comment %} just adding empty cols and container here for alignment purposes {% endcomment %}
-         <div class="button-container">
+         <div class="button-container non-swiper">
             <div class="col"></div>
             <div class="col">
                 {% if section.settings.button_link != blank %}
@@ -37,6 +93,23 @@
          </div>
     </div>
 </div>
+
+{% if section.settings.enable_mobile_carousel %}
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const swiper = new Swiper('.swiper', {
+                slidesPerView: 1,
+                speed: 400,
+                spaceBetween: 10,
+                width: 310,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            })
+        })
+    </script>
+{% endif %}
 
 {% schema %}
 {

@@ -38,9 +38,11 @@
 
 <yws-sticky-header>
   <div class="col yws-header__letters">
-    {% render 'yws-y' %}
-    {% render 'yws-w' %}
-    {% render 'yws-s' %}
+    <a href="{{ shopify.routes.root }}">
+      {% render 'yws-y' %}
+      {% render 'yws-w' %}
+      {% render 'yws-s' %}
+    </a>
   </div>
   <div class="col yws-header__logo-text" style="width:100%">
     {% render 'yws-header-text' %}
@@ -59,20 +61,20 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
 
-  const logoPaths = document.querySelectorAll('.yws-header__logo-text path')
+  const logoAnchors = document.querySelectorAll('.yws-header__logo-text svg')
 
-  logoPaths.forEach((path) => {
-    path.addEventListener('mouseover', () => {
-      logoPaths.forEach((p) => {
-        p.style.transition = '0ms'
-        p.style.opacity = 0.3
+  logoAnchors.forEach((anchor) => {
+    anchor.addEventListener('mouseover', () => {
+      logoAnchors.forEach((a) => {
+        a.style.transition = '0ms'
+        a.style.opacity = 0.3
       })
-      path.style.opacity = 1
+      anchor.style.opacity = 1
     })
-    path.addEventListener('mouseleave', () => {
-      logoPaths.forEach((p) => {
-        p.style.opacity = 1
-        p.style.transition = '500ms'
+    anchor.addEventListener('mouseleave', () => {
+      logoAnchors.forEach((a) => {
+        a.style.opacity = 1
+        a.style.transition = '500ms'
       })
      
     })
