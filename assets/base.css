@@ -3721,7 +3721,14 @@ yws-sticky-header {
   transform: translatex(-50%);
 }
 
+yws-sticky-header .yws-header__logo-text a { 
+  opacity: 1;
+  transition: 500ms;
+}
 
+yws-sticky-header .yws-header__logo-text a:hover {
+  opacity: 1;
+}
 
 .yws-modal__open:hover {
   text-decoration: underline;
@@ -4781,7 +4788,6 @@ yws-menu-drawer .field input:focus {
     padding: 80px 15px;
   }
 }
-
 
 @media screen and (max-width: 405px) {
   .drawer {

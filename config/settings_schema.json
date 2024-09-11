@@ -1478,7 +1478,27 @@
                 "type": "link_list",
                 "id": "yws_drawer_menu",
                 "label": "YWS Slide out drawer menu"
-              }
+            }
+        ]
+    },
+    {
+        "name": "YWS letter opacity URLS",
+        "settings":[
+            {
+                "type": "url",
+                "id": "york_url",
+                "label": "York opacity URL"
+            },
+            {
+                "type": "url",
+                "id": "work_url",
+                "label": "Work opacity URL"
+            },
+            {
+                "type": "url",
+                "id": "shop_url",
+                "label": "Shop opacity URL"
+            }
         ]
     }
 ]
