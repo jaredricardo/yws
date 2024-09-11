@@ -63,10 +63,83 @@
         "btn_link": "shopify:\/\/collections\/frontpage",
         "btn_txt": "Past Work"
       }
+    },
+    "brand": {
+      "type": "yws-the-brand",
+      "settings": {
+        "bg_color": "#0b3449",
+        "brand_img": "shopify:\/\/shop_images\/YWS-Apparel-Homepage-Image_1.jpg",
+        "brand_img_desk": "shopify:\/\/shop_images\/brandimg.jpg",
+        "title": "The Brand",
+        "text": "In addition to our studio practice, York Work Shop produces and sells limited edition apparel and found objects.",
+        "btn_txt": "Our Shop",
+        "btn_url": "shopify:\/\/collections"
+      }
+    },
+    "story": {
+      "type": "yws-our-story",
+      "settings": {
+        "desk_img": "shopify:\/\/shop_images\/story-desk.png",
+        "mob_img": "shopify:\/\/shop_images\/story-mobile.png",
+        "title": "Our Story",
+        "text": "<p>York Work Shop was founded by identical twin brothers, Phil & Raffie Gordon, who in 2010 co-founded the successful NYC-based apparel brand, Belief NYC. <br\/><br\/>YWS is an effort by the Gordon brothers to provide new and existing companies with the creative services, production, logistics support, and more that help brands blah blah blah blah overcome the hurdles....<br\/><br\/>Subway tile JOMO roof party letterpress franzen viral chillwave sus mlkshk hashtag. Small batch enamel pin hella messenger bag pitchfork tofu. Air plant bitters chambray microdosing, 8-bit cliche la croix.<\/p>",
+        "header_color": "#9c2c24",
+        "p_color": "#0b3449"
+      }
+    },
+    "workshop": {
+      "type": "yws-the-workshop",
+      "blocks": {
+        "slide_images_GWt7m9": {
+          "type": "slide-images",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/workshop.png"
+          }
+        },
+        "slide_images_LNRGaK": {
+          "type": "slide-images",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/workshop.png"
+          }
+        },
+        "slide_images_zkGbyX": {
+          "type": "slide-images",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/workshop.png"
+          }
+        },
+        "text_block_Yt8wBL": {
+          "type": "text-block",
+          "settings": {
+            "heading": "Pop-Up at York",
+            "caption": "<p>We offer our Work Shop to forward-thinking people and brands as a platform for others to share and celebrate their creative endeavors. Reach out to work@york.nyc for info on our location and pop-up service packages.<\/p>"
+          }
+        },
+        "text_block_6HxdwR": {
+          "type": "text-block",
+          "settings": {
+            "heading": "Studio Series",
+            "caption": "<p>Our “Studio Series” offers a chance to connect and experiment together in creative ways. If you are interested in hosting a workshop or collaborating with YWS on an installation please email projects@york.nyc.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_images_GWt7m9",
+        "slide_images_LNRGaK",
+        "slide_images_zkGbyX",
+        "text_block_Yt8wBL",
+        "text_block_6HxdwR"
+      ],
+      "settings": {
+        "background_color": "#9c2c24"
+      }
     }
   },
   "order": [
     "top",
-    "agency"
+    "agency",
+    "brand",
+    "story",
+    "workshop"
   ]
 }
