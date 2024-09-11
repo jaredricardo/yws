@@ -3555,7 +3555,7 @@ details-disclosure > details {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 405px) {
   .desktop {
     display: none;
   }
@@ -4763,7 +4763,7 @@ yws-menu-drawer .field input:focus {
 }
 
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 405px) {
   .drawer {
     justify-content: center;
   }
