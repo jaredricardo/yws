@@ -1,0 +1,462 @@
+{% style %}
+    [data-section-id="{{ section.id }}"]{
+        display: flex;
+        padding: 40px 0px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] .yws-the-agency{
+        display: flex;
+        padding: 0px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] .col-3{
+        display:inline-flex;
+        width:100%;
+    }
+    [data-section-id="{{ section.id }}"] .the-agency-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+        padding:0 20px;
+    }
+    [data-section-id="{{ section.id }}"] img{
+        max-width:100%;
+    }
+    [data-section-id="{{ section.id }}"] p{
+        margin:0;
+        flex:1 0 0;
+        color: {{section.settings.desc_color}};
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 133.333% */
+        letter-spacing: 0.36px;
+    }
+    [data-section-id="{{ section.id }}"] .btn-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] h2{
+        color:{{ section.settings.header_color }};
+        font-family: "Forma DJR Display" sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px; /* 100% */
+        letter-spacing: 0.4px;
+        margin:0;
+        flex:1 0 0;
+    }
+    [data-section-id="{{ section.id }}"] a{
+        display: flex;
+        width: 180px;
+        height: 30px;
+        padding: 0px 15px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 16px; /* 114.286% */
+        letter-spacing: 1px;
+    }
+    [data-section-id="{{ section.id }}"] a svg{
+        width: 19.204px;
+        height: 12px;
+    }
+    [data-section-id="{{ section.id }}"] .yws-agency-slider{
+        display: flex;
+        padding: 0px 10px;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] .yws-agency-slider .slider{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] .slider{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide{
+        display: flex;
+        align-items: flex-start;
+        width:307px;
+        height:307px !important;
+        border-radius:10px;
+        overflow:hidden;
+    }
+    [data-section-id="{{ section.id }}"] .slide-container{
+        position:relative;
+        width:100%;
+        height:100%;
+        background:rgba(17, 17, 17, 0.2);
+    }
+    [data-section-id="{{ section.id }}"] .slide-title{
+        color: #F3ECDE;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.4px;
+        position:absolute;
+        bottom:30px;
+        left:20px;
+    }
+    [data-section-id="{{ section.id }}"] .swiper-pagination{
+        position:unset;
+        display: flex;
+        height: 21px;
+        padding: 0px 20px;
+        align-items: center;
+        gap: 5px;
+        flex: 1 0 0;
+    }
+    [data-section-id="{{ section.id }}"] .pagination-container{
+        margin-top:20px;
+        display: flex;
+        padding: 0px 10px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+    }
+    
+    [data-section-id="{{ section.id }}"] .swiper-pagination-bullet{
+        width:10px;
+        height:10px;
+        background-color:#0B3449;
+        position:relative;
+        opacity:1;
+    }
+    [data-section-id="{{ section.id }}"] .swiper-pagination-bullet-active:after{
+        content: '';
+        position: absolute;
+        padding: 3px;
+        top: -3px;
+        left: -3px;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #0B3449;
+        border-radius: 100px;
+    }
+    [data-section-id="{{ section.id }}"] .fraction{
+        padding: 0px 20px;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 10px;
+        display:flex;
+    }
+    [data-section-id="{{ section.id }}"] .fraction *{
+        color: var(--YWS-Blue, #0B3449);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 14px; /* 100% */
+        letter-spacing: 0.28px;
+        display: flex;
+        
+    }
+    [data-section-id="{{ section.id }}"] .the-agency-img img{
+        display:flex;
+        flex-direction:column;
+        border-radius:10px;
+        overflow:hidden;
+    }
+    @media(min-width:834px){
+        [data-section-id="{{ section.id }}"]{
+            padding: 80px 0px;
+            gap: 40px;
+        },
+        [data-section-id="{{ section.id }}"] .the-agency-text{
+            gap:30px;
+        }
+        [data-section-id="{{ section.id }}"] h2{
+            font-size: 36px;
+            font-style: normal;
+            line-height: 36px; /* 100% */
+            letter-spacing: 0.72px;
+        }
+        [data-section-id="{{ section.id }}"] p{ 
+            font-size: 20px;
+            line-height: 26px; /* 130% */
+            letter-spacing: 0.4px;
+        }
+        [data-section-id="{{ section.id }}"] a{
+            display: flex;
+            width: 322px;
+            height: 60px;
+            max-width: 360px;
+            padding: 0px 30px;
+            align-items: center;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+        [data-section-id="{{ section.id }}"] a svg{
+            width: 28.806px;
+            height: 18px;
+        }
+        [data-section-id="{{ section.id }}"] .yws-the-agency{
+            padding:0 15px;
+        }
+        [data-section-id="{{ section.id }}"] .yws-agency-slider{
+            display: flex;
+            padding: 0px 15px;
+            align-items: center;
+            gap: 15px;
+            align-self: stretch;
+        }
+        [data-section-id="{{ section.id }}"] .pagination-container{
+            display: flex;
+            padding: 0px 15px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            height:21px;
+            position:relative;
+        }
+        [data-section-id="{{ section.id }}"] .swiper-pagination{
+            display: flex;
+            padding: 0px 30px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width:100%;
+            position:absolute;
+            top:0;
+        }
+        [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide{
+            width: 257px;
+            height: 183px !important;
+        }
+        [data-section-id="{{section.id}}"] .swiper-pagination-bullet{
+            width:15px;
+            height:15px;
+        }
+        [data-section-id="{{ section.id }}"] .swiper-pagination-bullet-active:after{
+            width:21px;
+            height:21px;
+        }
+        [data-section-id="{{ section.id }}"] .fraction{
+            position:absolute;
+            right:0;
+            padding:0 30px;
+        }
+        [data-section-id="{{section.id}}"] .fraction *{
+            font-size:18px;
+            line-height:18px;
+        }
+        [data-section-id="{{ section.id }}"] .slide-title{
+            font-size: 28px;
+            letter-spacing: 0.56px;
+            left:30px;
+        }
+        [data-section-id="{{ section.id }}"] .the-agency-img{
+            width:100%;
+            img{
+                width:100%;
+            }
+        }
+
+    }
+    @media(min-width:1440px){
+        [data-section-id="{{ section.id }}"]{
+            padding: 100px 0px;
+            gap: 60px;
+        }
+        [data-section-id="{{ section.id }}"] .col-3{
+            flex:3;
+            width:unset;
+        }
+        [data-section-id="{{ section.id }}"] .yws-the-agency{
+            flex-direction:row;
+            padding:0 30px;
+            align-items:center;
+        }
+        [data-section-id="{{ section.id }}"] .btn-container{
+            padding:0 30px;
+        }
+        [data-section-id="{{ section.id }}"] .the-agency-text{
+            padding:0 30px;
+        }
+        [data-section-id="{{ section.id }}"] .yws-agency-slider{
+            padding:0 30px;
+        }
+        [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide{
+            width:440px;
+            height:313px !important;
+        }
+        [data-section-id="{{ section.id }}"] .slide-title{
+            font-size: 36px;
+            letter-spacing: 0.72px;
+        }
+        [data-section-id="{{ section.id }}"] p{
+            font-size:24px;
+            line-height:30px;
+            letter-spacing:0.48px;
+        }
+        [data-section-id="{{ section.id }}"] h2{
+            font-size: 48px;
+            line-height: 48px;
+            letter-spacing: 0.96px;
+        }
+    }
+{% endstyle %}
+<div data-section-id="{{ section.id }}">
+    <div class="yws-the-agency">
+        <div class="col-3">
+            <div class="the-agency-img">
+                <img alt="{{ section.settings.agency_img | alt }}" src="{{ section.settings.agency_img | img_url:'1000x' }}">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="the-agency-text">
+                <h2>{{ section.settings.header }}</h2>
+                {{ section.settings.agency_desc }}
+                <div class="btn-container">
+                    <a href="{{ section.settings.btn_link }}" class="yws-link-button">
+                        {{ section.settings.btn_txt }}
+                        {% render 'yws-icon-right' %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="yws-agency-slider">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% assign count = 0 %}
+                {% for block in section.blocks %}
+                <div data-slide-index="{{ forloop.index }}" class="swiper-slide" 
+                    style="background-image:url({{block.settings.slide_img | img_url:'600x'}});background-size:cover;"
+                >
+                    <div class="slide-container">
+                        <div class="slide-title">
+                            {{ block.settings.title }}
+                        </div>
+                    </div>
+                </div>
+                {% assign count = count | plus:1 %}
+                {% endfor %}
+            </div>
+            
+            <div class="pagination-container">
+                <div class="swiper-pagination"></div>
+                <div class="fraction">
+                    <span class="starting-num">1</span><span class="divider">/</span><span class="total-num">{{ count }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% javascript %}
+    const swiper = new Swiper(`.yws-agency-slider .swiper`,{
+        speed:400,
+        spaceBetween:10,
+        slidesPerView:1.16,
+        loop:true,
+        centeredSlides:false,
+        pagination:{
+            el:'.swiper-pagination',
+            clickable:true
+        },
+        breakpoints:{
+            834:{
+                slidesPerView:3,
+                spaceBetween:15,
+                loop:true,
+                centeredSlides:true
+            },
+            1440:{
+                slidesPerView:3,
+                spaceBetween:30,
+                loop:true,
+                centeredSlides:true
+            }
+        }
+    });
+    swiper.on('transitionEnd',function(){
+        const activeSlide = document.querySelector('.yws-agency-slider .swiper-slide-active').getAttribute('data-slide-index');
+        const startingNum = document.querySelector('.yws-agency-slider .starting-num').innerText = activeSlide;
+    });
+{% endjavascript %}
+{% schema %}
+{
+    "name":"YWS The Agency",
+    "settings":[
+        {
+            "type":"image_picker",
+            "id":"agency_img",
+            "label":"Agency Image"
+        },
+        {
+            "type":"text",
+            "id":"header",
+            "label":"Header"
+        },
+        {
+            "type": "color",
+            "id":"header_color",
+            "label":"Header Color",
+            "default":"#9C2C24"
+        },
+        {
+            "type":"richtext",
+            "id":"agency_desc",
+            "label":"Agency Description"
+        },
+        {
+            "type":"color",
+            "id":"desc_color",
+            "label":"Description Color",
+            "default":"#0B3449"
+        },
+        {
+            "type":"url",
+            "id":"btn_link",
+            "label":"Button Link"
+        },
+        {
+            "type":"text",
+            "id":"btn_txt",
+            "label":"Button Text"
+        }
+    ],
+    "blocks":[
+        {
+            "type":"slide-images",
+            "name":"Slide Images",
+            "limit":8,
+            "settings":[
+                {
+                    "type": "text",
+                    "id":"title",
+                    "label":"Title"
+                },
+                {
+                    "type":"image_picker",
+                    "id":"slide_img",
+                    "label": "Slide Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

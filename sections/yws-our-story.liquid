@@ -1,0 +1,172 @@
+{% style %}
+    [data-section-id="{{ section.id }}"]{
+        display: flex;
+        padding: 40px 0px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        align-self: stretch;
+        background-color:#F3ECDE;
+    }
+    [data-section-id="{{ section.id }}"] .yws-our-story{
+        display: flex;
+        padding: 0px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] .our-story-img{
+        width:100%;
+    }
+    [data-section-id="{{ section.id }}"] picture{
+        display:flex;
+        flex-direction:column;
+        border-radius:10px;
+        overflow:hidden;
+    }
+    [data-section-id="{{ section.id }}"] picture,
+    [data-section-id="{{ section.id }}"] img{
+        width:100%;
+    }
+    [data-section-id="{{ section.id }}"] .brand-txt{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+    }
+    [data-section-id="{{ section.id }}"] h2{
+        display: flex;
+        padding: 0px 20px;
+        align-items: flex-start;
+        align-self: stretch;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px; /* 100% */
+        letter-spacing: 0.4px;
+        color:{{ section.settings.header_color }};
+        margin:0;
+    }
+    [data-section-id="{{ section.id }}"] p{
+        display: flex;
+        padding: 0px 20px;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 133.333% */
+        letter-spacing: 0.36px;
+        color:{{ section.settings.p_color }};
+        margin:0;
+    }
+    @media(min-width:834px){
+        [data-section-id="{{ section.id }}"]{
+            padding: 80px 0px;
+            gap: 40px;
+        }
+        [data-section-id="{{ section.id }}"] .yws-our-story{
+            padding: 0px 15px;
+            gap: 40px;
+        }
+        [data-section-id="{{ section.id }}"] .brand-txt{
+            gap: 30px;
+        }
+        [data-section-id="{{ section.id }}"] h2{
+            padding:0 30px;
+            font-size: 36px;
+            line-height: 36px; /* 100% */
+            letter-spacing: 0.72px;
+        }
+        [data-section-id="{{ section.id }}"] p{
+            font-size:20px;
+            line-height:26px;
+            letter-spacing:0.4px;
+            padding:0 30px;
+        }
+    }
+    @media(min-width:1440px){
+        [data-section-id="{{ section.id }}"]{
+            padding: 100px 0px;
+            gap: 60px;
+        }
+        [data-section-id="{{ section.id }}"] .yws-our-story{
+            padding: 0px 30px;
+            gap: 30px;
+            flex-direction:row;
+        }
+        [data-section-id="{{ section.id }}"] .our-story-img{
+            display:flex;
+            flex:3;
+        }
+        [data-section-id="{{ section.id }}"] .brand-txt{
+            flex:3;
+        }
+        [data-section-id="{{ section.id }}"] h2{
+            font-size:48px;
+            line-height:48px;
+            letter-spacing:0.96px;
+        }
+        [data-section-id="{{ section.id }}"] p{
+            font-size:24px;
+            line-height:30px;
+            letter-spacing:0.48px;
+        }
+    }
+{% endstyle %}
+<div data-section-id="{{ section.id }}">
+    <div class="yws-our-story">
+        <div class="our-story-img">
+            <picture>
+                <source media="(min-width:834px)" srcset="{{ section.settings.desk_img | img_url:'1000x' }}">
+                <img src="{{ section.settings.mob_img | img_url:'600x'}}" alt="{{ section.settings.mob_img | alt }}">
+            </picture>
+        </div>
+        <div class="brand-txt">
+            <h2>{{ section.settings.title }}</h2>
+            {{ section.settings.text }}
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name":"YWS Our Story",
+        "settings":[
+            {
+                "type":"image_picker",
+                "id": "desk_img",
+                "label": "Image Desktop"
+            },
+            {
+                "type":"image_picker",
+                "id":"mob_img",
+                "label":"Image Mobile"
+            },
+            {
+                "type":"text",
+                "id":"title",
+                "label":"Title"
+            },
+            {
+                "type":"richtext",
+                "id":"text",
+                "label":"Text"
+            },
+            {
+                "type": "color",
+                "id":"header_color",
+                "label": "Header Color",
+                "default":"#9C2C24"
+            },
+            {
+                "type":"color",
+                "id":"p_color",
+                "label": "Paragraph Color",
+                "default":"#0B3449"
+            }
+        ]
+    }
+{% endschema %}
