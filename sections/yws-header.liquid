@@ -36,14 +36,6 @@
   {%- endif -%}
 </style>
 
-<script>
-  console.log('???????')
-  console.log('path:', {{ request.path }})
-  console.log({{ settings.york_url | json }})
-  console.log({{ settings.work_url | json }})
-  console.log({{ settings.shop_url | json }})
-</script>
-
 {% assign color_blocks = section.blocks | where: 'type', 'color-designation' %}
 
 {% for block in color_blocks %}
@@ -67,7 +59,7 @@
 
 <yws-sticky-header>
   <div class="col yws-header__letters">
-    <a href="{{ shopify.routes.root }}">
+    <a href="{{ routes.root_url }}">
       {% render 'yws-y' %}
       {% render 'yws-w' %}
       {% render 'yws-s' %}
@@ -87,21 +79,38 @@
   </div>
 </yws-sticky-header>
 
-{% if request.path != '/' %}
-  <style>
+<style>
 
-    /* will move this to base.css once its working right */
+  yws-sticky-header .yws-header__logo-text a {
+    transition: 0ms;  
+  }
+  yws-sticky-header .yws-header__logo-text a:hover {
+    opacity: 1 !important;
+  }
 
-    yws-sticky-header .yws-header__logo-text a { 
-      opacity: 0.5;
-      transition: 500ms;
+  yws-sticky-header .yws-header__logo-text:has(a:hover) a:not(:hover) {
+    opacity: 0.5 !important;
+  }
+
+  {% if request.path contains settings.work_url or request.path contains settings.york_url or request.path contains settings.shop_url %}
+
+    yws-sticky-header .yws-header__logo-text a {
+      opacity: 0.5
     }
 
-    yws-sticky-header .yws-header__logo-text a:hover {
+    yws-sticky-header .yws-header__logo-text a.active {
       opacity: 1;
     }
-  </style>
-{% endif %}
+
+
+  {% else %}
+    /* Initial state for all anchor elements */
+    yws-sticky-header .yws-header__logo-text a {
+      opacity: 1;
+    }
+
+  {% endif %}
+</style>
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
