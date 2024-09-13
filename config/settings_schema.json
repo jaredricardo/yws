@@ -1485,17 +1485,21 @@
         "name": "YWS letter opacity URLS",
         "settings":[
             {
-                "type": "url",
+                "type": "header",
+                "content": "Use this string to match the URL where each letter should be have default 1 opacity and others 0.5."
+            },
+            {
+                "type": "text",
                 "id": "york_url",
                 "label": "York opacity URL"
             },
             {
-                "type": "url",
+                "type": "text",
                 "id": "work_url",
                 "label": "Work opacity URL"
             },
             {
-                "type": "url",
+                "type": "text",
                 "id": "shop_url",
                 "label": "Shop opacity URL"
             }

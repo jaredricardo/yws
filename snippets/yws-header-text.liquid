@@ -4,13 +4,13 @@
     assign on_work_url = false
     assign on_shop_url = false
 
-    if request.path contains settings.york_url
+    if request.path contains settings.york_url and settings.york_url != blank
         assign on_york_url = true
     endif
-    if request.path contains settings.work_url
+    if request.path contains settings.work_url and settings.work_url != blank
         assign on_work_url = true
     endif
-    if request.path contains settings.shop_url
+    if request.path contains settings.shop_url and settings.shop_url != blank
         assign on_shop_url = true
     endif
 
