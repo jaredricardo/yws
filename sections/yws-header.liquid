@@ -12,6 +12,24 @@
   {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
+{% liquid 
+
+  assign on_york_url = false
+  assign on_work_url = false
+  assign on_shop_url = false
+
+  if request.path contains settings.york_url and settings.york_url != blank
+    assign on_york_url = true
+  endif
+  if request.path contains settings.work_url and settings.work_url != blank
+    assign on_work_url = true
+  endif
+  if request.path contains settings.shop_url and settings.shop_url != blank
+    assign on_shop_url = true
+  endif
+
+-%}
+
 <noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
@@ -66,7 +84,7 @@
     </a>
   </div>
   <div class="col yws-header__logo-text" style="width:100%">
-    {% render 'yws-header-text' %}
+    {% render 'yws-header-text', on_york_url:on_york_url , on_work_url: on_work_url, on_shop_url: on_shop_url %}
   </div>
   <div class="col yws-header__icons">
     <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
@@ -92,7 +110,7 @@
     opacity: 0.5 !important;
   }
 
-  {% if request.path contains settings.work_url or request.path contains settings.york_url or request.path contains settings.shop_url %}
+  {% if on_york_url or on_work_url or on_shop_url %}
 
     yws-sticky-header .yws-header__logo-text a {
       opacity: 0.5
