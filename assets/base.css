@@ -4020,7 +4020,7 @@ yws-menu-drawer.active {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 15px;
+  gap: 30px;
 }
 
 .yws-tile-section .yws-tile-container .col {
@@ -4035,7 +4035,7 @@ yws-menu-drawer.active {
   display: flex;
   flex-direction: column;
   flex: 2;
-  gap: 15px;
+  gap: 30px;
 }
 
 .yws-tile-section .yws-tile {
@@ -4133,6 +4133,7 @@ yws-menu-drawer.active {
   line-height: 57.6px;
   letter-spacing: 0.02em;
   text-align: left;
+  margin: 0;
 }
 
 .yws-capabilities .row {
@@ -4167,17 +4168,24 @@ yws-menu-drawer.active {
   display: none;
 }
 
-.yws-capabilities .yws-link-button {
-  margin-left: 0;
+.yws-capabilities ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.yws-capabilities p {
+.yws-capabilities li {
   font-size: 36px;
   font-weight: 700;
-  line-height: 57.6px;
+  line-height: 58px;
   letter-spacing: 0.02em;
   text-align: left;
-  margin: 30px 15px 30px 0px;
+  margin: 0 30px;
+  color: var(--yws-off-white);
+}
+
+.yws-capabilities .yws-link-button {
+  margin: 0px 0px 0px 30px;
 }
 
 .yws-image-text {
@@ -4282,7 +4290,7 @@ yws-menu-drawer.active {
 }
 
 .yws-footer .field__label {
-  padding-left: 30px;
+  padding-left: 10px;
   font-size: 36px;
   font-weight: 700;
   line-height: 43.2px;
@@ -4366,10 +4374,6 @@ yws-menu-drawer.active {
   height: max-content;
 }
 
-.yws-footer .logo-area svg:not(.lettered-svg) {
-  display: block; 
-}
-
 .yws-footer .svg-letter {
   position: relative;
 }
@@ -4377,7 +4381,6 @@ yws-menu-drawer.active {
 .yws-footer .lettered-svg {
   display: none;
 }
-
 
 yws-menu-drawer {
   display: flex;
@@ -4640,6 +4643,9 @@ yws-menu-drawer .field input:focus {
     padding: 0;
     margin-bottom: var(--yws-spacing);
   }
+  .yws-capabilities li {
+    margin: 0;
+  }
   .yws-capabilities .row .col {
     padding: 0 var(--yws-spacing);
   }
@@ -4687,6 +4693,15 @@ yws-menu-drawer .field input:focus {
     bottom: 30px;
     left: 30px
   }
+  .yws-tile-section .yws-tile-title {
+    max-width: 90%;
+  }
+  .yws-tile-section .yws-tile-container {
+    flex-direction: column;
+  }
+  .yws-tile-section .yws-tile-container .col:nth-of-type(2) {
+    flex-direction: row;
+  }
 }
 
 
@@ -4732,16 +4747,15 @@ yws-menu-drawer .field input:focus {
     gap: 15px;
   }
   .yws-tile-section .yws-tile-container {
-    flex-direction: column;
+    gap: 15px;
   }
   .yws-tile-section .yws-tile-container .col:nth-of-type(2) {
-    flex-direction: row;
+    gap: 15px;
   }
   .yws-tile-section .yws-tile-title,
   .yws-tile-section .yws-tile-subtitle {
     font-size: 28px;
     line-height: 33.6px;
-    max-width: 90%;
   }
   .yws-tile-section .button-container .col:nth-of-type(1),
   .yws-tile-section .button-container .col:nth-of-type(2) {
@@ -4766,9 +4780,9 @@ yws-menu-drawer .field input:focus {
     font-size: 36px;
     line-height: 43.2px;
   }
-  .yws-capabilities p {
+  .yws-capabilities li {
     font-size: 28px;
-    line-height: 28px;
+    line-height: 48px;
   }
   .yws-capabilities.yws-section-content {
     padding: 80px 0;
@@ -4882,6 +4896,7 @@ yws-menu-drawer .field input:focus {
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
+    padding: 15px 20px;
   }
   .yws-tile-section .yws-tile-text {
     bottom: 30px;
@@ -4905,10 +4920,9 @@ yws-menu-drawer .field input:focus {
     line-height: 24px;
     margin-bottom: 20px;
   }
-  .yws-capabilities p {
+  .yws-capabilities li {
     font-size: 16px;
-    line-height: 16px;
-    margin: 15px 0px 15px 0;
+    line-height: 28px;
   }
   .yws-capabilities.yws-section-content {
     padding: 40px 0;

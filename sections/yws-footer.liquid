@@ -1,19 +1,90 @@
 {%- style -%}
 
-div:has([data-section-id="{{ section.id }}"]) {
-    background-color: {{ section.settings.bg_color }};
-}
+	div:has([data-section-id="{{ section.id }}"]) {
+		background-color: {{ section.settings.bg_color }};
+	}
 
-[data-section-id="{{ section.id }}"] {
-    background-color: {{ section.settings.bg_color }};
-    color: {{ section.settings.text_color }};
-}
+	[data-section-id="{{ section.id }}"] {
+		background-color: {{ section.settings.bg_color }};
+		color: {{ section.settings.text_color }};
+	}
 
-[data-section-id="{{ section.id }}"] .field__label {
-    color: {{ section.settings.text_color }};
-}
+	[data-section-id="{{ section.id }}"] .field__label {
+		color: {{ section.settings.text_color }};
+	}
 
 {%- endstyle -%}
+
+{% liquid 
+
+  assign on_york_url = false
+  assign on_work_url = false
+  assign on_shop_url = false
+
+  if request.path contains settings.york_url and settings.york_url != blank
+    assign on_york_url = true
+  endif
+  if request.path contains settings.work_url and settings.work_url != blank
+    assign on_work_url = true
+  endif
+  if request.path contains settings.shop_url and settings.shop_url != blank
+    assign on_shop_url = true
+  endif
+
+-%}
+
+<style>
+
+  footer .logo-area a {
+    transition: 0ms;  
+  }
+  footer .logo-area a:hover {
+    opacity: 1 !important;
+  }
+
+  footer .logo-area:has(a:hover) a:not(:hover) {
+    opacity: 0.5 !important;
+  }
+
+	footer .logo-area a:hover .unlettered-svg {
+			display: none;
+	}
+	footer .logo-area a:hover .lettered-svg {
+		display: block;
+	}
+
+  {% if on_york_url or on_work_url or on_shop_url %}
+
+    footer .logo-area a {
+      opacity: 0.5
+    }
+
+		footer .logo-area a.active .lettered-svg {
+			display: block;
+		} 
+		footer .logo-area a.active .unlettered-svg {
+			display: none;
+		}
+		footer .logo-area:has(a:hover) a:not(:hover) .unlettered-svg {
+			display: block;
+		}
+		footer .logo-area:has(a:hover) a:not(:hover) .lettered-svg {
+			display: none;
+		}
+
+    footer .logo-area a.active {
+      opacity: 1;
+    }
+
+
+  {% else %}
+    /* Initial state for all anchor elements */
+    footerr .logo-area a {
+      opacity: 1;
+    }
+
+  {% endif %}
+</style>
 
 <footer data-section-id="{{ section.id }}" class="yws-footer">
     <div class="yws-section-content">
@@ -36,16 +107,16 @@ div:has([data-section-id="{{ section.id }}"]) {
             </div>
         </div>
         <div class="logo-area">
-            <a href="{{ settings.y_link }}" class="footer-y-area svg-letter-area">
+            <a href="{{ settings.york_url }}" class="footer-y-area svg-letter-area {% if on_york_url %} active {% endif %}">
                 {% render 'yws-y-footer-unlettered' %}
                 {% render 'yws-y-lettered' %}
             </a>
-            <a href="{{ settings.s_link }}" class="footer-w-area svg-letter-area">
+            <a href="{{ settings.work_url }}" class="footer-w-area svg-letter-area {% if on_work_url %} active {% endif %}">
                 {% render 'yws-w-footer-unlettered' %}
                 {% render 'yws-w-lettered' %}
                
             </a>
-            <a href="{{ settings.s_link }}" class="footer-s-area svg-letter-area">
+            <a href="{{ settings.shop_url }}" class="footer-s-area svg-letter-area {% if on_work_url %} active {% endif %}">
                 {% render 'yws-s-footer-unlettered' %}
                 {% render 'yws-s-lettered' %}
             </a>
@@ -53,26 +124,24 @@ div:has([data-section-id="{{ section.id }}"]) {
     </div>
 </footer>
 
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
+{% comment %} <script>
+	// for some reason when i do this with css, i get layout shift, so leaving it with JS for now.
+	window.addEventListener('DOMContentLoaded', () => {
 
-        const logoLetters = document.querySelectorAll('.logo-area .svg-letter-area')
+			const logoLetters = document.querySelectorAll('.logo-area .svg-letter-area')
 
-        logoLetters.forEach((letter) => {
-            letter.addEventListener('mouseover', () => {
-                letter.querySelector('.unlettered-svg').style.display = "none"
-                letter.querySelector('.lettered-svg').style.display = "block"
-            })
-            letter.addEventListener('mouseleave', () => {
-                letter.querySelector('.unlettered-svg').style.display = "block"
-                letter.querySelector('.lettered-svg').style.display = "none"
-            })
-        })
-
-
-
-    })
-</script>
+			logoLetters.forEach((letter) => {
+					letter.addEventListener('mouseover', () => {
+						letter.querySelector('.unlettered-svg').style.display = "none"
+						letter.querySelector('.lettered-svg').style.display = "block"
+					})
+					letter.addEventListener('mouseleave', () => {
+						letter.querySelector('.unlettered-svg').style.display = "block"
+						letter.querySelector('.lettered-svg').style.display = "none"
+					})
+			})
+	})
+</script> {% endcomment %}
 
 {% schema %}
 {

@@ -35,20 +35,24 @@
             </div>
             <div class="col">
                 <h2>{{ section.settings.header }}</h2>
-                {% for block in section.blocks %}
-                    {% assign mod = forloop.index | modulo: 2 %}
-                    {% if mod == 1 %}
-                        <p>{{ block.settings.title }}</p>
-                    {% endif %}
-                {% endfor %}
+                <ul>
+                    {% for block in section.blocks %}
+                        {% assign mod = forloop.index | modulo: 2 %}
+                        {% if mod == 1 %}
+                            <li>{{ block.settings.title }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
             <div class="col">
-                {% for block in section.blocks %}
-                    {% assign mod = forloop.index | modulo: 2 %}
-                    {% if mod == 0 %}
-                        <p>{{ block.settings.title }}</p>
-                    {% endif %}
-                {% endfor %}
+                <ul>
+                    {% for block in section.blocks %}
+                        {% assign mod = forloop.index | modulo: 2 %}
+                        {% if mod == 0 %}
+                            <li>{{ block.settings.title }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         <div class="row">
