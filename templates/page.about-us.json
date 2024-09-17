@@ -24,35 +24,42 @@
           "type": "slide-images",
           "settings": {
             "title": "Graphic Design",
-            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+            "slide_img": "shopify:\/\/shop_images\/Graphic_Design_Image_Images_0003_09FF65D0-F1D8-4D93-A2B2-DE0F31A44291.jpg"
           }
         },
         "slide_images_MUT6tz": {
           "type": "slide-images",
           "settings": {
-            "title": "Slide 2",
-            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+            "title": "Branding",
+            "slide_img": "shopify:\/\/shop_images\/Branding_Images_0004_86F81016-3C1A-4B2D-8E08-362CB70545D8.jpg"
           }
         },
         "slide_images_K48WYD": {
           "type": "slide-images",
           "settings": {
-            "title": "Slide 3",
-            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+            "title": "Apparel Production",
+            "slide_img": "shopify:\/\/shop_images\/Apparel_Production_Images_0006_IMG_0771_3.jpg"
           }
         },
         "slide_images_fTNbYH": {
           "type": "slide-images",
           "settings": {
-            "title": "test",
-            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+            "title": "Creative Direction",
+            "slide_img": "shopify:\/\/shop_images\/Creative_Direction_Images_0009_B168D2CD-B489-41B9-B734-11C6EA313F87.jpg"
           }
         },
         "slide_images_Vbe4jn": {
           "type": "slide-images",
           "settings": {
-            "title": "test",
-            "slide_img": "shopify:\/\/shop_images\/graphic_design.jpg"
+            "title": "Marketing",
+            "slide_img": "shopify:\/\/shop_images\/Marketing_Images_0005_1B55E299-B212-4FC6-888B-46A8E6C59CB1.jpg"
+          }
+        },
+        "slide_images_f3UgKt": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Logistics",
+            "slide_img": "shopify:\/\/shop_images\/Logistics-Image-3.jpg"
           }
         }
       },
@@ -61,10 +68,11 @@
         "slide_images_MUT6tz",
         "slide_images_K48WYD",
         "slide_images_fTNbYH",
-        "slide_images_Vbe4jn"
+        "slide_images_Vbe4jn",
+        "slide_images_f3UgKt"
       ],
       "settings": {
-        "agency_img": "shopify:\/\/shop_images\/the-agency.png",
+        "agency_img": "shopify:\/\/shop_images\/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
         "bg_color": "#F3ECDE",
         "header": "The Agency",
         "header_color": "#9c2c24",
@@ -89,8 +97,8 @@
     "story": {
       "type": "yws-our-story",
       "settings": {
-        "desk_img": "shopify:\/\/shop_images\/story-desk.png",
-        "mob_img": "shopify:\/\/shop_images\/story-mobile.png",
+        "desk_img": "shopify:\/\/shop_images\/OUR_STORY.jpg",
+        "mob_img": "shopify:\/\/shop_images\/OUR_STORY_7d9a9b53-1076-4bc1-84d4-2c1e4e22e5c7.jpg",
         "title": "Our Story",
         "text": "<p>York Work Shop was founded by identical twin brothers, Phil & Raffie Gordon, who in 2010 co-founded the successful NYC-based apparel brand, Belief NYC. <br\/><br\/>YWS is an effort by the Gordon brothers to provide new and existing companies with the creative services, production, logistics support, and more that help brands blah blah blah blah overcome the hurdles....<br\/><br\/>Subway tile JOMO roof party letterpress franzen viral chillwave sus mlkshk hashtag. Small batch enamel pin hella messenger bag pitchfork tofu. Air plant bitters chambray microdosing, 8-bit cliche la croix.<\/p>",
         "header_color": "#9c2c24",
@@ -103,19 +111,19 @@
         "slide_images_GWt7m9": {
           "type": "slide-images",
           "settings": {
-            "slide_img": "shopify:\/\/shop_images\/workshop.png"
+            "slide_img": "shopify:\/\/shop_images\/WORKSHOP_1.jpg"
           }
         },
         "slide_images_LNRGaK": {
           "type": "slide-images",
           "settings": {
-            "slide_img": "shopify:\/\/shop_images\/workshop.png"
+            "slide_img": "shopify:\/\/shop_images\/WORKSHOP_2.jpg"
           }
         },
         "slide_images_zkGbyX": {
           "type": "slide-images",
           "settings": {
-            "slide_img": "shopify:\/\/shop_images\/workshop.png"
+            "slide_img": "shopify:\/\/shop_images\/WORKSHOP_3.jpg"
           }
         },
         "text_block_Yt8wBL": {
