@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "top": {
@@ -5,7 +14,7 @@
       "settings": {
         "top_text": "York Work Shop is an independent, multidisciplinary creative agency based in Brooklyn, New York specializing in design, branding, marketing, apparel production and more.",
         "text_color": "#f3ecde",
-        "background_img": "shopify:\/\/shop_images\/about-top.png"
+        "background_img": "shopify:\/\/shop_images\/About_Landing_Image.jpg"
       }
     },
     "agency": {
@@ -56,6 +65,7 @@
       ],
       "settings": {
         "agency_img": "shopify:\/\/shop_images\/the-agency.png",
+        "bg_color": "#F3ECDE",
         "header": "The Agency",
         "header_color": "#9c2c24",
         "agency_desc": "<p>Having operated our own multi-million dollar apparel brand for 15+ years, we have in-depth, firsthand experience at all stages of development, from creative to fulfillment and everything in between.<br\/><br\/>Through our in-house team and extensive community of trusted collaborators, YWS offers a diverse range of services to help start or grow your brand.<\/p>",
@@ -131,7 +141,9 @@
         "text_block_6HxdwR"
       ],
       "settings": {
-        "background_color": "#9c2c24"
+        "background_color": "#9c2c24",
+        "section_heading": "",
+        "section_desc": ""
       }
     }
   },
