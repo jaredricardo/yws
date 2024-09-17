@@ -12,6 +12,24 @@
   {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
+{% liquid 
+
+  assign on_york_url = false
+  assign on_work_url = false
+  assign on_shop_url = false
+
+  if request.path contains settings.york_url and settings.york_url != blank
+    assign on_york_url = true
+  endif
+  if request.path contains settings.work_url and settings.work_url != blank
+    assign on_work_url = true
+  endif
+  if request.path contains settings.shop_url and settings.shop_url != blank
+    assign on_shop_url = true
+  endif
+
+-%}
+
 <noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
@@ -36,14 +54,37 @@
   {%- endif -%}
 </style>
 
+{% assign color_blocks = section.blocks | where: 'type', 'color-designation' %}
+
+{% for block in color_blocks %}
+  {% if request.path contains block.settings.check_url and block.settings.check_url != blank %}
+    <style>
+      yws-sticky-header.scrolled-in {
+        {% unless block.settings.enable_color_gradient %}
+          background: transparent !important;
+        {% endunless %}
+        {% if block.settings.enable_color_gradient %}
+          background: linear-gradient(to bottom,{{ block.settings.header_gradient_color }},transparent) !important
+        {% endif %}
+      }
+      yws-sticky-header.scrolled-in svg path {
+        fill: {{ block.settings.header_designation_color }} !important;
+      }
+
+    </style>
+  {% endif %}
+{% endfor %}
+
 <yws-sticky-header>
   <div class="col yws-header__letters">
-    {% render 'yws-y' %}
-    {% render 'yws-w' %}
-    {% render 'yws-s' %}
+    <a href="{{ routes.root_url }}">
+      {% render 'yws-y' %}
+      {% render 'yws-w' %}
+      {% render 'yws-s' %}
+    </a>
   </div>
   <div class="col yws-header__logo-text" style="width:100%">
-    {% render 'yws-header-text' %}
+    {% render 'yws-header-text', on_york_url:on_york_url , on_work_url: on_work_url, on_shop_url: on_shop_url %}
   </div>
   <div class="col yws-header__icons">
     <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
@@ -56,37 +97,75 @@
   </div>
 </yws-sticky-header>
 
+<style>
+
+  yws-sticky-header .yws-header__logo-text a {
+    transition: 0ms;  
+  }
+  yws-sticky-header .yws-header__logo-text a:hover {
+    opacity: 1 !important;
+  }
+
+  yws-sticky-header .yws-header__logo-text:has(a:hover) a:not(:hover) {
+    opacity: 0.5 !important;
+  }
+
+  {% if on_york_url or on_work_url or on_shop_url %}
+
+    yws-sticky-header .yws-header__logo-text a {
+      opacity: 0.5
+    }
+
+    yws-sticky-header .yws-header__logo-text a.active {
+      opacity: 1;
+    }
+
+
+  {% else %}
+    /* Initial state for all anchor elements */
+    yws-sticky-header .yws-header__logo-text a {
+      opacity: 1;
+    }
+
+  {% endif %}
+</style>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
 
-  const logoPaths = document.querySelectorAll('.yws-header__logo-text path')
 
-  logoPaths.forEach((path) => {
-    path.addEventListener('mouseover', () => {
-      logoPaths.forEach((p) => {
-        p.style.transition = '0ms'
-        p.style.opacity = 0.3
-      })
-      path.style.opacity = 1
-    })
-    path.addEventListener('mouseleave', () => {
-      logoPaths.forEach((p) => {
-        p.style.opacity = 1
-        p.style.transition = '500ms'
-      })
-     
-    })
-  })
+  // const logoAnchors = document.querySelectorAll('.yws-header__logo-text svg')
+
+  // logoAnchors.forEach((anchor) => {
+  //   anchor.addEventListener('mouseover', () => {
+  //     logoAnchors.forEach((a) => {
+  //       a.style.transition = '0ms'
+  //       a.style.opacity = 0.3
+  //     })
+  //     anchor.style.opacity = 1
+  //   })
+  //   anchor.addEventListener('mouseleave', () => {
+  //     logoAnchors.forEach((a) => {
+  //       a.style.opacity = 1
+  //       a.style.transition = '500ms'
+  //     })
+  //   })
+  // })
+ 
 
   class YWSStickyHeader extends HTMLElement {
     constructor() {
       super()
-      this.observer = new IntersectionObserver(this.handleIntersect.bind(this), {
-        threshold: Array.from({ length: 1001 }, (_, i) => i / 1000) // Thresholds from 0 to 1 in 0.001 increments
-      })
         this.sections = document.querySelectorAll('.header-scrollable-section')
         this.logoArea = document.querySelector('.yws-header__logo-text')
-        this.sections.forEach(section => this.observer.observe(section))
+        if(this.sections.length < 1) {
+          this.classList.add('scrolled-in')
+        } else {
+          this.observer = new IntersectionObserver(this.handleIntersect.bind(this), {
+            threshold: Array.from({ length: 1001 }, (_, i) => i / 1000) // Thresholds from 0 to 1 in 0.001 increments
+          })
+          this.sections.forEach(section => this.observer.observe(section))
+        }
       }
 
       handleIntersect(entries) {
@@ -213,6 +292,35 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "color-designation",
+      "name": "Color Designation",
+      "settings": [
+        {
+          "type": "url",
+          "id": "check_url",
+          "label": "Color Designation URL string",
+          "info": "page / url to check where to use the following colors"
+        },
+        {
+          "type": "color",
+          "id": "header_designation_color",
+          "label": "Text / SVG color for given URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_color_gradient",
+          "label": "Enable Color Gradient",
+          "info": "If this box is checked, it will allow for the color backdrop gradient to be shown in the sticky header",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "header_gradient_color",
+          "label": "Sticky header gradient color (if enabled)" 
+        }
+      ]
     }
   ]
 }

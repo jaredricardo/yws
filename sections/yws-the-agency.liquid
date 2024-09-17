@@ -6,6 +6,7 @@
         align-items: flex-start;
         gap: 30px;
         align-self: stretch;
+        background-color: {{ section.settings.bg_color }};
     }
     [data-section-id="{{ section.id }}"] .yws-the-agency{
         display: flex;
@@ -323,7 +324,7 @@
     <div class="yws-the-agency">
         <div class="col-3">
             <div class="the-agency-img">
-                <img alt="{{ section.settings.agency_img | alt }}" src="{{ section.settings.agency_img | img_url:'1000x' }}">
+                <img alt="{{ section.settings.agency_img | alt }}" src="{{ section.settings.agency_img | img_url:'master' }}">
             </div>
         </div>
         <div class="col-3">
@@ -345,7 +346,7 @@
                 {% assign count = 0 %}
                 {% for block in section.blocks %}
                 <div data-slide-index="{{ forloop.index }}" class="swiper-slide" 
-                    style="background-image:url({{block.settings.slide_img | img_url:'600x'}});background-size:cover;"
+                    style="background-image:url({{block.settings.slide_img | img_url:'master'}});background-size:cover;"
                 >
                     <div class="slide-container">
                         <div class="slide-title">
@@ -405,6 +406,12 @@
             "type":"image_picker",
             "id":"agency_img",
             "label":"Agency Image"
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#F3ECDE"
         },
         {
             "type":"text",
