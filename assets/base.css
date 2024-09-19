@@ -3555,7 +3555,7 @@ details-disclosure > details {
   }
 }
 
-@media screen and (max-width: 405px) {
+@media screen and (max-width: 415px) {
   .desktop {
     display: none;
   }
@@ -3924,7 +3924,14 @@ yws-menu-drawer.active {
 .yws-link-button:hover {
   background-color: var(--yws-blue);
   color: var(--yws-off-white);
-  padding: 0 20px 0 30px;
+}
+
+.yws-link-button .yws-icon-right {
+  transition: 100ms linear;
+}
+
+.yws-link-button:hover .yws-icon-right  {
+  margin-right: -5px;
 }
 
 .yws-link-button:hover path {
@@ -4197,9 +4204,6 @@ yws-menu-drawer.active {
 .yws-image-text {
   display: flex;
   flex-direction: row;
-}
-
-.yws-section-content.yws-image-text {
   height: max-content;
 }
 
@@ -4212,7 +4216,7 @@ yws-menu-drawer.active {
   padding: 0 30px;
   border-top-left-radius: var(--yws-radius);
   border-bottom-left-radius: var(--yws-radius);
-
+  gap: 60px;
 }
 
 .yws-image-text .col:nth-of-type(2) {
@@ -4226,6 +4230,7 @@ yws-menu-drawer.active {
   line-height: 60px;
   letter-spacing: 0.02em;
   text-align: left;
+  margin: 0;
 }
 
 .yws-image-text p {
@@ -4234,7 +4239,7 @@ yws-menu-drawer.active {
   line-height: 28.8px;
   letter-spacing: 0.02em;
   text-align: left;
-  margin: 60px 0;
+  margin: 0;
 }
 
 .yws-image-text img {
@@ -4674,6 +4679,7 @@ yws-menu-drawer .field input:focus {
     border-top-left-radius: initial;
     border-bottom-right-radius: var(--yws-radius);
     padding: 60px 30px;
+    gap: 30px;
   }
   .yws-image-text img {
     border-top-left-radius: var(--yws-radius);
@@ -4685,9 +4691,6 @@ yws-menu-drawer .field input:focus {
   .yws-image-text h2 {
     margin: 0;
     word-spacing: 5px;
-  }
-  .yws-image-text p {
-    margin: var(--yws-spacing) 0;
   }
   yws-sticky-header .yws-header__letters {
     padding-left: 30px;
@@ -4810,9 +4813,13 @@ yws-menu-drawer .field input:focus {
   yws-sticky-header .yws-header__letters a {
     max-width: 110px;
   }
+  .yws-footer .yws-form-buttons {
+    gap: 30px;
+    font-size: 24px;
+  }
 }
 
-@media screen and (max-width: 405px) {
+@media screen and (max-width: 415px) {
   .drawer {
     justify-content: center;
   }
@@ -4955,10 +4962,10 @@ yws-menu-drawer .field input:focus {
   .yws-image-text p {
     font-size: 16px;
     line-height: 19.2px;
-    margin: 20px 0;
   }
   .yws-image-text .col:nth-of-type(1) {
     padding:  30px 20px;
+    gap: 20px;
   }
   .yws-section-content.yws-image-text {
     padding: 40px 10px;
