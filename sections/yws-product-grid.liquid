@@ -1,0 +1,88 @@
+{% style %}
+    [data-section-id="{{ section.id }}"] {
+        background-color: {{ section.settings.bg_color }};
+         /* accounting for the header */
+        padding-top: 140px;
+    }
+
+    @media screen and (max-width: 834px) {
+        [data-section-id="{{ section.id }}"] {
+            padding-top: 120px;
+        }
+    }
+
+    @media screen and (max-width: 834px) {
+        [data-section-id="{{ section.id }}"] {
+            padding-top: 80px;
+        }
+    }
+
+{% endstyle %}
+
+<div data-section-id="{{ section.id }}">
+    <div class="yws-section-content">
+        {% if section.settings.use_filters %}
+            <div class="yws-product-grid-filters">
+                {% for block in section.blocks %}
+                    <a class="yws-link-button {% if collection.handle == block.settings.collection.handle %}active{% endif %}" href="{{ block.settings.collection.url }}">
+                        {% if block.settings.alt_name != blank %}
+                            {{ block.settings.alt_name }}
+                        {% else %}
+                            {{  block.settings.collection.title }}
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="yws-product-grid">
+            {% for product in collection.products limit: 1 %}
+                {% render 'yws-product-card', product: product %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+   "name": "YWS Product Grid",
+   "limit": 1,
+    "settings": [ 
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#F3ECDE"
+        },
+        {
+            "type": "checkbox",
+            "id": "use_filters",
+            "label": "Use Filters",
+            "default": true
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collection-filter",
+            "name": "Collection Filter",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection Filter"
+                },
+                {   
+                    "type": "text",
+                    "id": "alt_name",
+                    "label": "Collection Alt name",
+                    "info": "If the above is empty, this will not be used. This acts as a 'alternative text' for the collection name inside the filter button. It will still filter by the collection, regardless of what it is named here."
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "YWS Product Grid"
+        }
+    ]
+}
+{% endschema %}

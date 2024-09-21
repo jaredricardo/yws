@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "yws_product_grid_gVTajk": {
+      "type": "yws-product-grid",
+      "blocks": {
+        "collection_filter_YBp9Jg": {
+          "type": "collection-filter",
+          "settings": {
+            "collection": "all",
+            "alt_name": ""
+          }
+        },
+        "collection_filter_dbHjth": {
+          "type": "collection-filter",
+          "settings": {
+            "collection": "apparel",
+            "alt_name": ""
+          }
+        },
+        "collection_filter_Nf3iRy": {
+          "type": "collection-filter",
+          "settings": {
+            "collection": "headwear",
+            "alt_name": "Caps"
+          }
+        },
+        "collection_filter_89zGgL": {
+          "type": "collection-filter",
+          "settings": {
+            "collection": "accessories",
+            "alt_name": "Other"
+          }
+        },
+        "collection_filter_ga7f7F": {
+          "type": "collection-filter",
+          "settings": {
+            "collection": "found-objects",
+            "alt_name": "Found"
+          }
+        }
+      },
+      "block_order": [
+        "collection_filter_YBp9Jg",
+        "collection_filter_dbHjth",
+        "collection_filter_Nf3iRy",
+        "collection_filter_89zGgL",
+        "collection_filter_ga7f7F"
+      ],
+      "settings": {
+        "bg_color": "#f3ecde",
+        "use_filters": true
+      }
+    }
+  },
+  "order": [
+    "yws_product_grid_gVTajk"
+  ]
+}

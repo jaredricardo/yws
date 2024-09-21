@@ -4607,10 +4607,27 @@ yws-menu-drawerinput:active {
 
 yws-menu-drawer .field input:active,
 yws-menu-drawer .field input:focus {
-  background-color: white; 
+  background-color: white;
   border-radius: 50px;
   border-bottom: none;
-  background-color: #fffff7d;
+}
+
+.yws-product-grid-filters {
+  display: flex; 
+  flex-direction: row;
+  padding: 60px 30px;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+.yws-product-grid-filters .yws-link-button {
+  margin: 0;
+  width: max-content;
+}
+
+.yws-product-grid-filters .yws-link-button.active {
+  background-color: var(--yws-blue);
+  color: var(--yws-off-white);
 }
 
 @media screen and (max-width: 769px) {
@@ -4817,6 +4834,14 @@ yws-menu-drawer .field input:focus {
     gap: 30px;
     font-size: 24px;
   }
+  .yws-product-grid-filters {
+    padding: 40px 20px 40px 20px;
+    gap: 5px;
+  }
+  .yws-product-grid-filters .yws-link-button {
+    height: 30px;
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 415px) {
@@ -5004,5 +5029,8 @@ yws-menu-drawer .field input:focus {
   }
   yws-sticky-header .yws-header__icons {
     padding-right: 20px;
+  }
+  .yws-product-grid-filters {
+    padding: 40px 20px 30px 20px;
   }
 }

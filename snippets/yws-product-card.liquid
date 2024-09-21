@@ -1,0 +1,24 @@
+<a class="yws-product-card">
+    <div class="top">
+        <img src="{{ product.featured_image.src | img_url: '600x' }}" alt="{{ product.featured_image.alt }}">
+        {% comment %} <img src="{{ product. }}" alt=""> {% endcomment %}
+    </div>
+    <div class="bottom">
+        <div class="left">
+            <h3>{{ product.title }}</h3>
+            {% if product.metafields.custom.color_variant != blank %}
+                <h4>{{ product.metafields.custom.color_variant }}</h4>
+            {% endif %}
+        </div>
+        <div class="right">
+            <span class="money">{{ product.price | money }}</span>
+            {% if product.price > product.compare_at_price %}
+                <span class="money compare-at">{{ product.compare_at_price | money }}</span>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    console.log({{ product | json }})
+</script>
