@@ -4612,6 +4612,17 @@ yws-menu-drawer .field input:focus {
   border-bottom: none;
 }
 
+.yws-product-grid-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.yws-product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 .yws-product-grid-filters {
   display: flex; 
   flex-direction: row;
@@ -4628,6 +4639,26 @@ yws-menu-drawer .field input:focus {
 .yws-product-grid-filters .yws-link-button.active {
   background-color: var(--yws-blue);
   color: var(--yws-off-white);
+}
+
+.yws-product-card {
+  display: flex; 
+  flex-direction: column;
+  width: 33.333%;
+  padding: 15px;
+}
+
+.yws-product-card .top {
+  position: relative;
+}
+
+.yws-product-card .top img {
+  width: 100%;
+  border-radius: var(--yws-radius);
+}
+
+.yws-section-content.yws-product-grid-container {
+  height: auto;
 }
 
 @media screen and (max-width: 769px) {

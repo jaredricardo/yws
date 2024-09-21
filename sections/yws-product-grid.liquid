@@ -17,10 +17,11 @@
         }
     }
 
+
 {% endstyle %}
 
 <div data-section-id="{{ section.id }}">
-    <div class="yws-section-content">
+    <div class="yws-section-content yws-product-grid-container">
         {% if section.settings.use_filters %}
             <div class="yws-product-grid-filters">
                 {% for block in section.blocks %}
@@ -35,12 +36,35 @@
             </div>
         {% endif %}
         <div class="yws-product-grid">
-            {% for product in collection.products limit: 1 %}
+            {% for product in collection.products %}
                 {% render 'yws-product-card', product: product %}
             {% endfor %}
         </div>
     </div>
 </div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+        console.log({{ collection.products | json }})
+
+        // const ywsProductCards = document.querySelectorAll('.yws-product-card')
+
+        // ywsProductCards.forEach((card) => {
+        //     card.addEventListener('mouseenter', () => {
+        //         card.querySelector('.main-image').style.opacity = 0
+        //         card.querySelector('.hover-image').style.opacity = 1
+        //     })
+
+        //     card.addEventListener('mouseleave', () => {
+        //         card.querySelector('.hover-image').style.opacity = 0
+        //         card.querySelector('.main-image').style.opacity = 1
+        //     })
+        // })
+
+    })
+</script>
+
 
 {% schema %}
 {

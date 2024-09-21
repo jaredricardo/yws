@@ -1,12 +1,3 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "current": {
     "logo_width": 90,
@@ -128,9 +119,9 @@
     "cart_color_scheme": "scheme-1",
     "yws_main_yws": "york-work-shop-main",
     "yws_drawer_menu": "yws-cart-drawer-menu",
-    "york_url": "about-us",
+    "york_url": "\/pages\/about-us",
     "work_url": "",
-    "shop_url": "\/collections",
+    "shop_url": "\/collections\/all",
     "drawer_menu": "yws-cart-drawer-menu",
     "sections": {
       "main-password-header": {

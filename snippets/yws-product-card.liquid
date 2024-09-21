@@ -1,7 +1,9 @@
-<a class="yws-product-card">
+<a class="yws-product-card" href="{{ product.url }}">
     <div class="top">
         <img src="{{ product.featured_image.src | img_url: '600x' }}" alt="{{ product.featured_image.alt }}">
-        {% comment %} <img src="{{ product. }}" alt=""> {% endcomment %}
+        {% comment %} {% if product.images.size > 1 %}  
+            <img class="hover-image" src="{{ product.images[1] | img_url: '600x' }}" alt="YWS Product Image 2">
+        {% endif %} {% endcomment %}
     </div>
     <div class="bottom">
         <div class="left">
@@ -17,8 +19,4 @@
             {% endif %}
         </div>
     </div>
-</div>
-
-<script>
-    console.log({{ product | json }})
-</script>
+</a>
