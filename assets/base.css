@@ -4658,13 +4658,15 @@ yws-menu-drawer .field input:focus {
 
 .yws-product-card .top {
   position: relative;
+  flex-grow: 1;
 }
 
 .yws-product-card .top img {
   height: 100%;
   width: 100%;
-  obect-fit: cover;
+  object-fit: cover;
   border-radius: var(--yws-radius);
+  aspect-atio: 4 / 5;
 }
 
 .yws-product-card .top .feature-image {
