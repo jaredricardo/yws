@@ -4645,7 +4645,15 @@ yws-menu-drawer .field input:focus {
   display: flex; 
   flex-direction: column;
   width: 33.333%;
-  padding: 15px;
+  padding: 0 15px;
+}
+
+.yws-product-card:has(.hover-image):hover .featured-image {
+  display: none;
+}
+
+.yws-product-card:has(.hover-image):hover .hover-image {
+  display: block;
 }
 
 .yws-product-card .top {
@@ -4653,8 +4661,18 @@ yws-menu-drawer .field input:focus {
 }
 
 .yws-product-card .top img {
+  height: 100%;
   width: 100%;
+  obect-fit: cover;
   border-radius: var(--yws-radius);
+}
+
+.yws-product-card .top .feature-image {
+  diplay: block;
+}
+
+.yws-product-card .top .hover-image {
+  display: none;
 }
 
 .yws-section-content.yws-product-grid-container {

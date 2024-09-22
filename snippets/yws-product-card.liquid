@@ -1,20 +1,24 @@
 <a class="yws-product-card" href="{{ product.url }}">
     <div class="top">
-        <img src="{{ product.featured_image.src | img_url: '600x' }}" alt="{{ product.featured_image.alt }}">
-        {% comment %} {% if product.images.size > 1 %}  
+        <img class="featured-image" src="{{ product.featured_image.src | img_url: '600x' }}" alt="{{ product.featured_image.alt }}">
+        {% if product.images.size > 1 %}  
             <img class="hover-image" src="{{ product.images[1] | img_url: '600x' }}" alt="YWS Product Image 2">
-        {% endif %} {% endcomment %}
+        {% endif %} 
     </div>
     <div class="bottom">
         <div class="left">
-            <h3>{{ product.title }}</h3>
-            {% if product.metafields.custom.color_variant != blank %}
-                <h4>{{ product.metafields.custom.color_variant }}</h4>
+            {% if product.metafields.custom.alt_title != blank %}
+                    <h3>{{ product.metafields.custom.alt_title }}</h3>
+                {% else  %}
+                    <h3>{{ product.title }}</h3>
+            {% endif %}
+            {% if product.metafields.custom.color_title != blank %}
+                <h4>{{ product.metafields.custom.color_title }}</h4>
             {% endif %}
         </div>
         <div class="right">
             <span class="money">{{ product.price | money }}</span>
-            {% if product.price > product.compare_at_price %}
+            {% if product.compare_at_price > product.price %}
                 <span class="money compare-at">{{ product.compare_at_price | money }}</span>
             {% endif %}
         </div>

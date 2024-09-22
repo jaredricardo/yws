@@ -37,34 +37,17 @@
         {% endif %}
         <div class="yws-product-grid">
             {% for product in collection.products %}
-                {% render 'yws-product-card', product: product %}
+                {% if product.tags contains 'variant-breakout' %}
+                        {% for variant in product.variants %}
+                            {% render 'yws-product-card', product:variant %}
+                        {% endfor %}
+                    {% else %}  
+                        {% render 'yws-product-card', product:product %}
+                {% endif %}
             {% endfor %}
         </div>
     </div>
 </div>
-
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-
-        console.log({{ collection.products | json }})
-
-        // const ywsProductCards = document.querySelectorAll('.yws-product-card')
-
-        // ywsProductCards.forEach((card) => {
-        //     card.addEventListener('mouseenter', () => {
-        //         card.querySelector('.main-image').style.opacity = 0
-        //         card.querySelector('.hover-image').style.opacity = 1
-        //     })
-
-        //     card.addEventListener('mouseleave', () => {
-        //         card.querySelector('.hover-image').style.opacity = 0
-        //         card.querySelector('.main-image').style.opacity = 1
-        //     })
-        // })
-
-    })
-</script>
-
 
 {% schema %}
 {
