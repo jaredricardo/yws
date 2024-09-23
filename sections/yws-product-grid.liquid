@@ -39,10 +39,10 @@
             {% for product in collection.products %}
                 {% if product.tags contains 'variant-breakout' %}
                         {% for variant in product.variants %}
-                            {% render 'yws-product-card', product:variant %}
+                            {% render 'yws-product-card', parent:product, product:variant, is_variant:true %}
                         {% endfor %}
                     {% else %}  
-                        {% render 'yws-product-card', product:product %}
+                        {% render 'yws-product-card', product:product, is_variant:false %}
                 {% endif %}
             {% endfor %}
         </div>

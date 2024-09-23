@@ -7,19 +7,20 @@
     </div>
     <div class="bottom">
         <div class="left">
-            {% if product.metafields.custom.alt_title != blank %}
-                    <h3>{{ product.metafields.custom.alt_title }}</h3>
-                {% else  %}
-                    <h3>{{ product.title }}</h3>
-            {% endif %}
-            {% if product.metafields.custom.color_title != blank %}
-                <h4>{{ product.metafields.custom.color_title }}</h4>
+            {% if is_variant %}
+                <h3>{{ parent.title }}</h3>
+                <h4>{{ product.title }}</h4>
+            {% else %}
+                <h3>{{ product.title }}</h3>
+                {% if product.metafields.custom.product_color_name %}
+                    <h4>{{ product.metafields.custom.product_color_name }}</h4>
+                {% endif %}
             {% endif %}
         </div>
         <div class="right">
-            <span class="money">{{ product.price | money }}</span>
+            <span class="money">{{ product.price | money_without_trailing_zeros }}</span>
             {% if product.compare_at_price > product.price %}
-                <span class="money compare-at">{{ product.compare_at_price | money }}</span>
+                <span class="money compare-at">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
             {% endif %}
         </div>
     </div>

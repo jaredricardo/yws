@@ -4621,6 +4621,7 @@ yws-menu-drawer .field input:focus {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  gap: 30px;
 }
 
 .yws-product-grid-filters {
@@ -4644,8 +4645,59 @@ yws-menu-drawer .field input:focus {
 .yws-product-card {
   display: flex; 
   flex-direction: column;
-  width: 33.333%;
-  padding: 0 15px;
+  flex: 1 1 calc(33.333% - 30px);
+  box-sizing: border-box;
+  text-decoration: none;
+  height: max-content;
+}
+
+.yws-product-card .bottom {
+  display: flex; 
+  flex-direction: row;
+  padding: 20px 30px 0px 30px;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.yws-product-card .bottom .right {
+  display: flex;
+  gap: 5px;
+}
+
+.yws-product-card .money {
+  color: var(--yws-red);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.yws-product-card .money.compare-at {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.yws-product-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.yws-product-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.yws-product-card h3,
+.yws-product-card h4 {
+  margin: 0;
+  color: var(--yws-blue);
 }
 
 .yws-product-card:has(.hover-image):hover .featured-image {
@@ -4666,7 +4718,8 @@ yws-menu-drawer .field input:focus {
   width: 100%;
   object-fit: cover;
   border-radius: var(--yws-radius);
-  aspect-atio: 4 / 5;
+  aspect-ratio: 4 / 5;
+  vertical-align: top;
 }
 
 .yws-product-card .top .feature-image {
@@ -4893,6 +4946,13 @@ yws-menu-drawer .field input:focus {
     height: 30px;
     font-size: 14px;
   }
+  .yws-product-grid {
+    row-gap: 20px;
+    column-gap: 15px;
+  }
+  .yws-product-card {
+    flex: 1 1 calc(50% - 15px);
+  }
 }
 
 @media screen and (max-width: 415px) {
@@ -5083,5 +5143,18 @@ yws-menu-drawer .field input:focus {
   }
   .yws-product-grid-filters {
     padding: 40px 20px 30px 20px;
+  }
+  .yws-product-grid {
+    row-gap: 20px;
+    column-gap: 15px;
+  }
+  .yws-product-card {
+    flex: 1 1 calc(100%);
+  }
+  .yws-product-card .bottom {
+    padding: 10px 20px 0;
+  }  
+  .yws-product-card h4 {
+    font-size: 14px;
   }
 }
