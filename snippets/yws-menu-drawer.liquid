@@ -1,4 +1,5 @@
 <div class="yws-menu-drawer__header">
+    <div class="yws-menu-drawer__cart-text">Shopping Cart</div>
     <div id="header-cart-button">
         {% render 'yws-cart' %}
     </div>
@@ -21,6 +22,16 @@
             </li>
         {% endfor %}
     </ul>
+</div>
+<div class="yws-menu-drawer__cart-items">
+    <ul>
+        {% for item in cart.items %}
+            <li>{{ item.title }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="yws-menu-drawer__subtotal">
+    {{ cart.total_price | money }}
 </div>
 <div class="yws-menu-drawer__footer">
     <div class="yws-menu-drawer__footer--inner">

@@ -87,10 +87,12 @@
     {% render 'yws-header-text', on_york_url:on_york_url , on_work_url: on_work_url, on_shop_url: on_shop_url %}
   </div>
   <div class="col yws-header__icons">
-    <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-      {% render 'yws-cart' %}
-      <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-    </a>
+    <yws-cart-drawer> 
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        {% render 'yws-cart' %}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+      </a>
+    </yws-cart-drawer>
     <yws-burger>
       {% render 'yws-burger' %}
     </yws-burger>
@@ -132,27 +134,6 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-
-
-  // const logoAnchors = document.querySelectorAll('.yws-header__logo-text svg')
-
-  // logoAnchors.forEach((anchor) => {
-  //   anchor.addEventListener('mouseover', () => {
-  //     logoAnchors.forEach((a) => {
-  //       a.style.transition = '0ms'
-  //       a.style.opacity = 0.3
-  //     })
-  //     anchor.style.opacity = 1
-  //   })
-  //   anchor.addEventListener('mouseleave', () => {
-  //     logoAnchors.forEach((a) => {
-  //       a.style.opacity = 1
-  //       a.style.transition = '500ms'
-  //     })
-  //   })
-  // })
- 
-
   class YWSStickyHeader extends HTMLElement {
     constructor() {
       super()
@@ -207,8 +188,16 @@
       }
 
       openCartFromNav() {
+        // cheap way of closing cart drawer
         document.querySelector('#CartDrawer-Overlay').click()
         setTimeout(() => {
+          // if cart is clicked while cart is already open just close the cart
+          if(document.querySelector('yws-menu-drawer').classList.contains('cart-items-drawer-active')) {
+            this.closeDrawer()
+          }
+          // show correct drawer content by removing menu-drawer active class
+          document.querySelector('yws-menu-drawer').classList.remove('menu-drawer-active')
+          document.querySelector('yws-menu-drawer').classList.add('cart-items-drawer-active')
           document.querySelector('.yws-header__icons .header__icon--cart').click()
         }, 250)
       }
@@ -218,21 +207,34 @@
     class YWSBurger extends HTMLElement {
       constructor() {
         super()
-        this.addEventListener('click', this.showMenu)
+        this.addEventListener('click', this.showDrawerMenu)
       }
 
-      showMenu() {
+      showDrawerMenu() {
         // cheap way of opening the "cart" which is also being used as the new nav 
         document.querySelector('#cart-icon-bubble').click()
-        // show correct drawer content
-        document.querySelector('.drawer__inner-empty').classList.add('hidden')
-        document.querySelector('yws-menu-drawer').classList.add('active')
+        // show correct drawer content by removing cart-items active class
+        document.querySelector('yws-menu-drawer').classList.remove('cart-items-drawer-active')
+        document.querySelector('yws-menu-drawer').classList.add('menu-drawer-active')
+      }
+    }
+
+    class YWSCartDrawer extends HTMLElement {
+      constructor() {
+        super()
+        this.addEventListener('click', this.openCart)
+      }
+      openCart(){
+        // hide menu elements and make cart elements visible
+        document.querySelector('yws-menu-drawer').classList.remove('menu-drawer-active')
+        document.querySelector('yws-menu-drawer').classList.add('cart-items-drawer-active')
       }
     }
 
     customElements.define('yws-sticky-header', YWSStickyHeader)
     customElements.define('yws-menu-drawer', YWSMenuDrawer)
     customElements.define('yws-burger', YWSBurger)
+    customElements.define('yws-cart-drawer', YWSCartDrawer)
   })
 </script>
  
