@@ -2,6 +2,11 @@
     <div class="yws-menu-drawer__cart-text">Shopping Cart</div>
     <div id="header-cart-button">
         {% render 'yws-cart' %}
+        <span class="cart-count {% if cart.item_count > 0 %} active {% endif %}">
+            {% unless cart.item_count == 0 %}
+                <p>{{ cart.item_count }}</p>
+            {% endunless %}
+        </span>
     </div>
     <div id="header-close-menu-button">
         {% render 'yws-icon-close' %}
@@ -26,7 +31,28 @@
 <div class="yws-menu-drawer__cart-items">
     <ul>
         {% for item in cart.items %}
-            <li>{{ item.title }}</li>
+            <script>
+                console.log({{ item | json }})
+            </script>
+            <li>
+                <div class="col">
+                    <img src="{{ item.image | image_url: width: 300 }}" alt="item.featured_image.alt">
+                </div>
+                <div class="col">
+                    <div class="line-item-info">
+                        <a href="{{ item.url }}">{{ item.product.title }}</a>
+                        <a href="{{ item.url }}">
+                            {% if item.product.metafields.custom.product_color_name %}
+                                {{ item.product.metafields.custom.product_color_name }} - 
+                            {% endif %}
+                            {{ item.product.selected_or_first_available_variant.title }}
+                        </a>
+                    </div>
+                    <div class="line-item-price">
+                        {{ item.price | money }}
+                    </div>
+                </div>
+            </li>
         {% endfor %}
     </ul>
 </div>
