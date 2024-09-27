@@ -4911,6 +4911,65 @@ remove-line-item {
   align-items: center;
 }
 
+yws-menu-drawer .yws-menu-drawer__subtotal {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  letter-spacing: 0.02em;
+  text-align: right;
+  padding: 30px;
+  gap: 30px;
+}
+
+yws-menu-drawer .yws-menu-drawer__subtotal .subtotal-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+yws-menu-drawer .yws-menu-drawer__subtotal .subtotal-arae {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+yws-menu-drawer .yws-menu-drawer__subtotal p:nth-of-type(1) {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0;
+  color: var(--yws-off-white);
+}
+
+yws-menu-drawer .yws-menu-drawer__subtotal .subtotal--price {
+  color: var(--yws-off-white);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+
+yws-menu-drawer .yws-menu-drawer__subtotal p:nth-of-type(2) {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.8px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0;
+  color: var(--yws-off-white);
+} 
+
+yws-menu-drawer .yws-menu-drawer__subtotal .subtotal--text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+
 @media screen and (max-width: 769px) {
   .just-image-container img {
     max-width: 85%;
