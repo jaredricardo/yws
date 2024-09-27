@@ -31,25 +31,44 @@
 <div class="yws-menu-drawer__cart-items">
     <ul>
         {% for item in cart.items %}
-            <script>
-                console.log({{ item | json }})
-            </script>
             <li>
                 <div class="col">
                     <img src="{{ item.image | image_url: width: 300 }}" alt="item.featured_image.alt">
                 </div>
                 <div class="col">
                     <div class="line-item-info">
-                        <a href="{{ item.url }}">{{ item.product.title }}</a>
-                        <a href="{{ item.url }}">
+                        <a class="cart-item-title" href="{{ item.url }}">{{ item.product.title }}</a>
+                        <a class="cart-item-subtitle" href="{{ item.url }}">
                             {% if item.product.metafields.custom.product_color_name %}
                                 {{ item.product.metafields.custom.product_color_name }} - 
                             {% endif %}
-                            {{ item.product.selected_or_first_available_variant.title }}
+                            {% comment %} was trying to check for == null or == nil to remove variant titles that are null, but it wasnt working. Had to use contains string. {% endcomment %}
+                            {% unless item.product.selected_or_first_available_variant.title contains 'Default' %}
+                                {{ item.product.selected_or_first_available_variant.title }}
+                            {% endunless %}
                         </a>
-                    </div>
-                    <div class="line-item-price">
-                        {{ item.price | money }}
+                        <div class="line-item-controls-area">
+                            <div class="line-item-controls">
+                                <decrement-line-item>
+                                    {% render 'yws-icon-minus' %}
+                                </decrement-line-item>
+                                <div class="line-item-quantity">
+                                    {{ item.quantity }}
+                                </div>
+                                <increment-line-item>
+                                    {% render 'yws-icon-plus' %}
+                                </increment-line-item>
+                                <remove-line-item>
+                                    {% render 'yws-icon-garbage' %}
+                                </remove-line-item>
+                            </div>
+                            <div class="line-item-price">
+                                {{ item.price | money_without_trailing_zeros }}
+                                {% if item.product.compare_at_price > item.product.price %}
+                                    <span class="compare-at">{{ item.product.compare_at_price | money_without_trailing_zeros }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>

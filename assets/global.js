@@ -1276,7 +1276,7 @@ customElements.define('product-recommendations', ProductRecommendations);
 
 
 
-// i'm not doing to do this the Shopify way with classes and instead just use fucntional javascript 
+// i'm not doing to do this the Shopify way with classes and instead just use functional javascript 
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -1316,3 +1316,37 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 
 })
+
+class DecrementLineItem extends HTMLElement {
+  constructor() {
+    super()
+    this.addEventListener('click', this.decrementLineItem)
+  }
+  decrementLineItem() {
+    console.log('decrementing line item...')
+  }
+}
+
+class IncrementLineItem extends HTMLElement {
+  constructor() {
+    super()
+    this.addEventListener('click', this.incrementLineItem)
+  }
+  incrementLineItem() {
+    console.log('incrementing line item...')
+  }
+}
+
+class RemoveLineItem extends HTMLElement {
+  constructor() {
+    super()
+    this.addEventListener('click', this.removeLineItem)
+  }
+  removeLineItem() {
+    console.log('removing line item...')
+  }
+
+}
+customElements.define('decrement-line-item', DecrementLineItem)
+customElements.define('increment-line-item', IncrementLineItem)
+customElements.define('remove-line-item', RemoveLineItem)
