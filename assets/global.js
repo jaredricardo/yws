@@ -1323,7 +1323,7 @@ class DecrementLineItem extends HTMLElement {
     this.addEventListener('click', this.decrementLineItem)
   }
   decrementLineItem() {
-    console.log('decrementing line item...')
+    changeLineItem('decrement', this.closest('.yws-cart-line-item').dataset.lineQuantity, this.closest('.yws-cart-line-item').dataset.variantId)
   }
 }
 
@@ -1333,7 +1333,7 @@ class IncrementLineItem extends HTMLElement {
     this.addEventListener('click', this.incrementLineItem)
   }
   incrementLineItem() {
-    console.log('incrementing line item...')
+    changeLineItem('increment', this.closest('.yws-cart-line-item').dataset.lineQuantity, this.closest('.yws-cart-line-item').dataset.variantId)
   }
 }
 
@@ -1343,10 +1343,60 @@ class RemoveLineItem extends HTMLElement {
     this.addEventListener('click', this.removeLineItem)
   }
   removeLineItem() {
-    console.log('removing line item...')
+    changeLineItem('remove', this.closest('.yws-cart-line-item').dataset.lineQuantity, this.closest('.yws-cart-line-item').dataset.variantId)
   }
 
 }
+
+
+async function changeLineItem(eventType, currentQauntity, vid){
+
+  let formData = {
+    'items': [{
+     'id': vid,
+     'quantity': currentQauntity
+    }]
+  }
+
+  // console.log(formData)
+
+  if(eventType === 'increment'){
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
+  } else {
+    const updatedQuantity = eventType === 'decrement' ? currentQauntity - 1 : 0
+    formData = {
+      'id': vid,
+      'quantity': updatedQuantity 
+    }
+    fetch(window.Shopify.routes.root + 'cart/change.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
+  }
+}
+
+
 customElements.define('decrement-line-item', DecrementLineItem)
 customElements.define('increment-line-item', IncrementLineItem)
 customElements.define('remove-line-item', RemoveLineItem)
