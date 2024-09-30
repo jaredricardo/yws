@@ -2,8 +2,8 @@
     <div class="yws-menu-drawer__cart-text">Shopping Cart</div>
     <div id="header-cart-button">
         {% render 'yws-cart' %}
-        <span class="cart-count {% if cart.item_count > 0 %} active {% endif %}">
-            {% unless cart.item_count == 0 %}
+        <span class="cart-count{% if cart == empty %} inactive {% endif %}">
+            {% unless cart == empty %}
                 <p>{{ cart.item_count }}</p>
             {% endunless %}
         </span>
@@ -29,7 +29,12 @@
         {% endfor %}
     </ul>
 </div>
-<div class="yws-menu-drawer__cart-items">
+<div class="yws-menu-drawer__cart-items">   
+    {% if cart == empty %}
+        <div class="yws-menu-drawer__cart-items-empty">
+            Your cart is empty. 
+        </div>
+    {% endif %}
     <ul>
         {% for item in cart.items %}
             <li class="yws-cart-line-item" data-line-quantity="{{ item.quantity }}" data-variant-id="{{ item.variant_id }}">
@@ -86,8 +91,8 @@
             {{ cart.total_price | money_without_trailing_zeros }}
         </div>
     </div>
-    <form action="/checkout" method="post">
-        <button class="yws-link-button" {% if cart == empty %} disabled {% endif %}>
+    <form action="/checkout" method="post" class="{% if cart == empty %} disabled {% endif %}">
+        <button class="yws-link-button">
             Checkout
         </button>
     </form>

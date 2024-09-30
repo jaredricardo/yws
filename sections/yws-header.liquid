@@ -155,7 +155,7 @@
           if(entry.target === this.sections[0]) {
             this.updateWidth(1 - entry.intersectionRatio)
             entry.intersectionRatio === 1 ? this.setWidth(100) : null
-            if(entry.intersectionRatio > 0.12) {
+            if(entry.intersectionRatio > 0.06) {
               this.classList.remove('scrolled-in') 
             } else {
               this.classList.add('scrolled-in')
