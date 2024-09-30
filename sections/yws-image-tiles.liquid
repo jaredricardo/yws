@@ -40,7 +40,9 @@
 <div data-section-id="{{ section.id }}">
     <div class="yws-section-content yws-tile-section">
         {% if section.settings.header != blank %}
-            <h2>{{ section.settings.header }}</h2>
+            <div class="heading-container">
+                <h2>{{ section.settings.header }}</h2>
+            </div>
         {% endif %}
         {% if section.settings.enable_mobile_carousel %}
             <div class="swiper">
@@ -97,12 +99,12 @@
 {% if section.settings.enable_mobile_carousel %}
     <script>
         window.addEventListener('DOMContentLoaded', () => {
-            const swiper = new Swiper('.swiper', {
-                slidesPerView: 1,
+            const swiper = new Swiper('[data-section-id="{{ section.id }}"] .swiper', {
                 loop: true,
                 speed: 400,
                 spaceBetween: 10,
-                width: 310,
+                slidesPerView: 1.16,
+                centeredSlides: false,
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true

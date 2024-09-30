@@ -32,7 +32,7 @@
     [data-section-id="{{ section.id }}"] img{
         max-width:100%;
     }
-    [data-section-id="{{ section.id }}"] p{
+    [data-section-id="{{ section.id }}"] p {
         margin:0;
         flex:1 0 0;
         color: {{section.settings.desc_color}};
@@ -42,7 +42,7 @@
         line-height: 24px; /* 133.333% */
         letter-spacing: 0.36px;
     }
-    [data-section-id="{{ section.id }}"] .btn-container{
+    [data-section-id="{{ section.id }}"] .btn-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -50,7 +50,7 @@
         gap: 20px;
         align-self: stretch;
     }
-    [data-section-id="{{ section.id }}"] h2{
+    [data-section-id="{{ section.id }}"] h2 {
         color:{{ section.settings.header_color }};
         font-family: "Forma DJR Display" sans-serif;
         font-size: 20px;
@@ -61,7 +61,7 @@
         margin:0;
         flex:1 0 0;
     }
-    [data-section-id="{{ section.id }}"] a{
+    [data-section-id="{{ section.id }}"] a {
         display: flex;
         width: 180px;
         height: 30px;
@@ -78,28 +78,21 @@
         width: 19.204px;
         height: 12px;
     }
-    [data-section-id="{{ section.id }}"] .yws-agency-slider{
+    [data-section-id="{{ section.id }}"] .yws-agency-slider {
         display: flex;
         padding: 0px 10px;
         align-items: center;
         gap: 10px;
         align-self: stretch;
     }
-    [data-section-id="{{ section.id }}"] .yws-agency-slider .slider{
+    [data-section-id="{{ section.id }}"] .yws-agency-slider .slider {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
         align-self: stretch;
     }
-    [data-section-id="{{ section.id }}"] .slider{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        align-self: stretch;
-    }
-    [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide{
+    [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide {
         display: flex;
         align-items: flex-start;
         width:307px;
@@ -107,13 +100,13 @@
         border-radius:10px;
         overflow:hidden;
     }
-    [data-section-id="{{ section.id }}"] .slide-container{
+    [data-section-id="{{ section.id }}"] .slide-container {
         position:relative;
         width:100%;
         height:100%;
         background:rgba(17, 17, 17, 0.2);
     }
-    [data-section-id="{{ section.id }}"] .slide-title{
+    [data-section-id="{{ section.id }}"] .slide-title {
         color: #F3ECDE;
         font-size: 20px;
         font-weight: 700;
@@ -180,6 +173,9 @@
         flex-direction:column;
         border-radius:10px;
         overflow:hidden;
+    }
+    [data-section-id="{{ section.id }}"] .yws-agency-slider  {
+        padding-right: 0;
     }
     @media(min-width:834px){
         [data-section-id="{{ section.id }}"]{
@@ -345,16 +341,16 @@
             <div class="swiper-wrapper">
                 {% assign count = 0 %}
                 {% for block in section.blocks %}
-                <div data-slide-index="{{ forloop.index }}" class="swiper-slide" 
-                    style="background-image:url({{block.settings.slide_img | img_url:'master'}});background-size:cover;"
-                >
-                    <div class="slide-container">
-                        <div class="slide-title">
-                            {{ block.settings.title }}
+                    <div data-slide-index="{{ forloop.index }}" class="swiper-slide" 
+                        style="background-image:url({{block.settings.slide_img | img_url:'master'}});background-size:cover;"
+                    >
+                        <div class="slide-container">
+                            <div class="slide-title">
+                                {{ block.settings.title }}
+                            </div>
                         </div>
                     </div>
-                </div>
-                {% assign count = count | plus:1 %}
+                    {% assign count = count | plus: 1 %}
                 {% endfor %}
             </div>
             
