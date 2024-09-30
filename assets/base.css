@@ -3594,7 +3594,6 @@ details-disclosure > details {
 
 .yws-section-content {
   padding: var(--yws-spacing);
-  height: 100vh;
 }
 
 .yws-section-content.large-spacing {
@@ -4743,7 +4742,7 @@ yws-menu-drawer .field input:focus {
   display: flex; 
   flex-direction: column;
   flex: 1 1 calc(33.333% - 30px);
-  max-width: calc(33.333% - 30px);
+  min-width: calc(33.333% - 30px);
   box-sizing: border-box;
   text-decoration: none;
   height: max-content;
@@ -5249,7 +5248,7 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   }
   .yws-product-card {
     flex: 1 1 calc(50% - 15px);
-    max-width: calc(50% - 15px);
+    min-width: calc(50% - 15px);
   }
   .yws-2-6 .col:nth-of-type(2) {
     gap: 40px;
@@ -5459,7 +5458,7 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   }
   .yws-product-card {
     flex: 1 1 calc(100%);
-    max-width: 100%;
+    min-width: 100%;
   }
   .yws-product-card .bottom {
     padding: 10px 20px 0;
