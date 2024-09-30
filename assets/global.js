@@ -1,3 +1,5 @@
+// global variables 
+
 function getFocusableElements(container) {
   return Array.from(
     container.querySelectorAll(
@@ -23,6 +25,7 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
 });
 
 const trapFocusHandlers = {};
+
 
 function trapFocus(container, elementToFocus = container) {
   var elements = getFocusableElements(container);
@@ -1345,12 +1348,54 @@ class RemoveLineItem extends HTMLElement {
   removeLineItem() {
     changeLineItem('remove', this.closest('.yws-cart-line-item').dataset.lineQuantity, this.closest('.yws-cart-line-item').dataset.variantId)
   }
+}
+
+customElements.define('decrement-line-item', DecrementLineItem)
+customElements.define('increment-line-item', IncrementLineItem)
+customElements.define('remove-line-item', RemoveLineItem)
+
+// JR / YWS helper dunctions
+
+function disableCartDrawer(){
+  const YWSCartDrawer = document.querySelector('yws-menu-drawer')
+  YWSCartDrawer.classList.add('loading')
+}
+function enableCartDrawer(){
+  const YWSCartDrawer = document.querySelector('yws-menu-drawer')
+  YWSCartDrawer.classList.remove('loading')
+}
+
+async function reRenderSectionsOnCartUpdate(){
+
+  let sectionsString = ''
+
+  const sections =  [
+    {
+      id: 'CartDrawer',
+      section: 'cart-drawer',
+      selector: '.drawer__inner',
+    }
+  ]
+
+  sections.forEach((section) => {
+    sectionsString += `${section.section},`
+  })
+
+  const res = await fetch(`${Shopify.routes}?sections=${sectionsString}`)
+  const htmlObj = await res.json()
+
+  sections.forEach((section) => {
+    const parsed = new DOMParser().parseFromString(htmlObj[section.section], 'text/html').querySelector(section.selector).innerHTML
+    document.querySelector(section.selector).innerHTML = parsed
+  })
+
 
 }
 
-
 async function changeLineItem(eventType, currentQauntity, vid){
 
+  disableCartDrawer()
+  
   let formData = {
     'items': [{
      'id': vid,
@@ -1358,9 +1403,11 @@ async function changeLineItem(eventType, currentQauntity, vid){
     }]
   }
 
-  // console.log(formData)
-
   if(eventType === 'increment'){
+    formData = {
+      'id': vid,
+      'quantity': 1
+    }
     fetch(window.Shopify.routes.root + 'cart/add.js', {
       method: 'POST',
       headers: {
@@ -1369,9 +1416,14 @@ async function changeLineItem(eventType, currentQauntity, vid){
       body: JSON.stringify(formData)
     })
     .then(response => {
+      if(response.ok){
+        reRenderSectionsOnCartUpdate()
+      }
       return response.json()
     })
     .catch((error) => {
+      enableCartDrawer()
+      alert('There was an error adding the item to your cart.')
       console.error('Error:', error)
     })
   } else {
@@ -1388,15 +1440,15 @@ async function changeLineItem(eventType, currentQauntity, vid){
       body: JSON.stringify(formData)
     })
     .then(response => {
+      if(response.ok){
+        reRenderSectionsOnCartUpdate()
+      }
       return response.json()
     })
     .catch((error) => {
+      enableCartDrawer()
+      alert('There was an error removing the item to your cart.')
       console.error('Error:', error)
     })
   }
 }
-
-
-customElements.define('decrement-line-item', DecrementLineItem)
-customElements.define('increment-line-item', IncrementLineItem)
-customElements.define('remove-line-item', RemoveLineItem)
