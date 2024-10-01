@@ -1489,17 +1489,17 @@
                 "content": "Use this string to match the URL where each letter should be have default 1 opacity and others 0.5."
             },
             {
-                "type": "text",
+                "type": "url",
                 "id": "york_url",
                 "label": "York opacity URL"
             },
             {
-                "type": "text",
+                "type": "url",
                 "id": "work_url",
                 "label": "Work opacity URL"
             },
             {
-                "type": "text",
+                "type": "url",
                 "id": "shop_url",
                 "label": "Shop opacity URL"
             }

@@ -8,23 +8,28 @@
         color: {{ section.settings.text_color }};
     }
 {% endstyle %}
-<div data-section-id="{{ section.id }}">
+<div data-section-id="{{ section.id }}" class="yws-section-content yws-related-products">
     {% if section.settings.header != blank %}
         <div class="heading-container">
             <h2>{{ section.settings.header }}</h2>
         </div>
     {% endif %}
     <product-recommendations
-      class="related-products page-width section-{{ section.id }}-padding isolate"
+      class="related-products section-{{ section.id }}-padding isolate"
       data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=12"
     >
-      {% if recommendations.performed and recommendations.products_count > 0 %}
-        {% for recommendation in recommendations.products %}
-            <div class="swiper-slide">
-                {% render 'yws-product-card', product:recommendation, is_variant:false %}
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% if recommendations.performed and recommendations.products_count > 0 %}
+                    {% for recommendation in recommendations.products %}
+                        <div class="swiper-slide">
+                            {% render 'yws-product-card', product:recommendation, is_variant:false %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
             </div>
-        {% endfor %}
-      {% endif %}
+            <div class="swiper-pagination"></div>
+        </div>
     </product-recommendations>
 </div>
   

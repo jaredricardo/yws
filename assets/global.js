@@ -1253,9 +1253,40 @@ class ProductRecommendations extends HTMLElement {
           const html = document.createElement('div');
           html.innerHTML = text;
           const recommendations = html.querySelector('product-recommendations');
-
-          if (recommendations && recommendations.innerHTML.trim().length) {
-            this.innerHTML = recommendations.innerHTML;
+          
+          if(recommendations && recommendations.innerHTML.trim().length) {
+            this.innerHTML = recommendations.innerHTML
+            // init swiper
+            if(this.querySelector('.swiper')){
+              const swiper = new Swiper(this.querySelector('.swiper'), {
+                loop: true,
+                speed: 400,
+                spaceBetween: 10,
+                slidesPerView: 1.16,
+                centeredSlides: false,
+                pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true
+                },
+                breakpoints:{
+                  600:{
+                    slidesPerView: 1.16,
+                  },
+                  834:{
+                      slidesPerView: 2.4,
+                      spaceBetween: 15,
+                      loop: true,
+                      centeredSlides: true
+                  },
+                  1440:{
+                      slidesPerView: 3,
+                      spaceBetween: 30,
+                      loop: true,
+                      centeredSlides: true
+                  }
+              }
+              })
+            }
           }
 
           if (!this.querySelector('slideshow-component') && this.classList.contains('complementary-products')) {
