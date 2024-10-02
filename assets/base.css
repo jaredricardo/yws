@@ -4725,11 +4725,10 @@ yws-menu-drawer .field input:focus {
 }
 
 .yws-product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: auto;
   gap: 30px;
-  padding-bottom: 100px;
 }
 
 .yws-product-grid-filters {
@@ -4751,11 +4750,8 @@ yws-menu-drawer .field input:focus {
 }
 
 .yws-product-card {
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  flex: 1 1 calc(33.333% - 30px);
-  max-width: calc(33.333% - 30px);
-  min-width: calc(33.333% - 30px);
   box-sizing: border-box;
   text-decoration: none;
   height: max-content;
