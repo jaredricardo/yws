@@ -1258,7 +1258,7 @@ class ProductRecommendations extends HTMLElement {
             this.innerHTML = recommendations.innerHTML
             // init swiper
             if(this.querySelector('.swiper')){
-              const swiper = new Swiper(this.querySelector('.swiper'), {
+              const swiper_pdp = new Swiper(this.querySelector('.swiper'), {
                 loop: true,
                 speed: 400,
                 spaceBetween: 10,
@@ -1284,7 +1284,12 @@ class ProductRecommendations extends HTMLElement {
                       loop: true,
                       centeredSlides: true
                   }
-              }
+                }
+              })
+              swiper_pdp.on('transitionEnd',function(){
+                const activeSlide = document.querySelector('.yws-related-products .swiper-slide-active').getAttribute('data-slide-index')
+                console.log(document.querySelector('.yws-related-products .swiper-slide-active'))
+                const startingNum = document.querySelector('.yws-related-products .starting-num').innerText = activeSlide
               })
             }
           }

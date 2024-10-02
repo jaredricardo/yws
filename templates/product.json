@@ -3,13 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -20,16 +13,6 @@
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
           }
         },
         "buy_buttons": {
@@ -53,25 +36,15 @@
           "type": "shipping_returns",
           "settings": {
           }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "variant_picker",
-        "quantity_selector",
-        "price",
         "buy_buttons",
         "description_874bTV",
         "size_chart_x7zBgN",
-        "shipping_returns_enA4pd",
-        "share"
+        "shipping_returns_enA4pd"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -85,8 +58,8 @@
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "yws_related_products_3UNzUC": {

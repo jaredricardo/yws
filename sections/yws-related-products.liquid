@@ -8,7 +8,7 @@
         color: {{ section.settings.text_color }};
     }
 {% endstyle %}
-<div data-section-id="{{ section.id }}" class="yws-section-content yws-related-products">
+<div data-section-id="{{ section.id }}" class="yws-related-products">
     {% if section.settings.header != blank %}
         <div class="heading-container">
             <h2>{{ section.settings.header }}</h2>
@@ -21,14 +21,19 @@
         <div class="swiper">
             <div class="swiper-wrapper">
                 {% if recommendations.performed and recommendations.products_count > 0 %}
-                    {% for recommendation in recommendations.products %}
-                        <div class="swiper-slide">
+                    {% assign count = 0 %}
+                    {% for recommendation in recommendations.products limit: 6%}
+                        {% assign count = count | plus:1 %}
+                        <div class="swiper-slide" data-slide-index="{{ forloop.index }}">
                             {% render 'yws-product-card', product:recommendation, is_variant:false %}
                         </div>
                     {% endfor %}
                 {% endif %}
             </div>
             <div class="swiper-pagination"></div>
+            <div class="swiper-pagination-container">
+                <span class="starting-num">1</span><span class="divider">/</span><span class="total-num">{{ count }}</span>
+            </div>
         </div>
     </product-recommendations>
 </div>
