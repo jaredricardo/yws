@@ -1,0 +1,44 @@
+<div class="yws-collapse" 
+    style="border: {% if title == "Details" %}2{% else %}1{% endif %}px solid var(--YWS-Blue, #0B3449);" 
+    data-collapsed="true">
+    <div class="collapse-title">
+        <h3>{{ title }}</h3>
+    </div>
+    <div class="collapse-content" data-collapsed="true">
+        {% if size_chart %}
+            <div class="yws-size-chart">
+                <div class="size-table-row">
+                    <span class="table-title">Size</span>
+                {% assign sizes = content.value %}
+                {% for s in sizes.sizes %}
+                    <div class="table-value-size">
+                        <span class="circle">
+                            <span>{{ s.size }}</span>
+                        </span>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="size-table-row">
+                    <span class="table-title">Length</span>
+                {% for s in sizes.sizes %}
+                    <span class="table-value">{{ s.length }}</span>
+                {% endfor %}
+                </div>
+                <div class="size-table-row">
+                    <span class="table-title">Chest</span>
+                {% for s in sizes.sizes %}
+                    <span class="table-value">{{ s.chest }}</span>
+                {% endfor %}
+                </div>
+                <div class="size-table-row">
+                    <span class="table-title">Sleeve</span>
+                {% for s in sizes.sizes %}
+                    <span class="table-value">{{ s.sleeve }}</span>
+                {% endfor %}
+                </div>
+            </div>
+        {% else %}
+        {{ content }}
+        {% endif %}
+    </div>
+</div>

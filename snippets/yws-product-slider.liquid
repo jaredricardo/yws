@@ -1,0 +1,40 @@
+<style>
+    .product-slider{
+        .swiper-pagination{
+            position:relative;
+            margin:10px 0 20px;
+            top:0 !important;
+            transform:none;
+        }
+    }
+</style>
+
+<div class="product-slider ">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% for media in product_media %}
+          <div data-slide-index="{{forloop.index }}" class="swiper-slide">
+            <div class="slide-container">
+              {{media | image_url: width: 416 | image_tag:loading:'lazy',alt:media.alt }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="pagination-container">
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+</div>
+<script>
+    const swiper_product = new Swiper('.product-slider .swiper',{
+        speed:400,
+        slidesPerView:1,
+        spaceBetween:10,
+        loop:true,
+        centeredSlides:false,
+        pagination:{
+            el:'.swiper-pagination',
+            clickable:true
+        }
+    })
+</script>

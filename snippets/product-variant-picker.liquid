@@ -35,12 +35,7 @@
       -%}
       {%- if picker_type == 'swatch' -%}
         <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label">
-            {{ option.name }}:
-            <span data-selected-swatch-value="{{ option.name }}">
-              {{- option.selected_value -}}
-            </span>
-          </legend>
+          
           {% render 'product-variant-options',
             product: product,
             option: option,
@@ -69,7 +64,7 @@
                 data-selected-dropdown-swatch="options[{{ option.name | escape }}]"
                 class="dropdown-swatch"
               >
-                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+                {% render 'swatch', option:option, swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
               </span>
             {%- endif -%}
             <select

@@ -57,9 +57,8 @@
   -%}
 
   {%- capture input_id -%}
-    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
   {%- endcapture -%}
-
   {%- capture label_unavailable %}
     <span class="visually-hidden label-unavailable">
       {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
@@ -97,7 +96,7 @@
       {% endif %}
     >
     <label for="{{ input_id }}">
-      {{ value -}}
+      <span class="{{option.name}}-val">{{ value -}}</span>
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
@@ -118,3 +117,6 @@
     </option>
   {%- endif -%}
 {%- endfor -%}
+<span data-selected-swatch-value="{{ option.name }}">
+  {{- option.selected_value -}}
+</span>
