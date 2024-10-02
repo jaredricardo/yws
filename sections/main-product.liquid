@@ -1,6 +1,6 @@
 <section
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} yws-main-product"
   data-section="{{ section.id }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
@@ -69,8 +69,10 @@
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-        {% render 'product-media-gallery', variant_images: variant_images %}
+        {% comment %} {% render 'product-media-gallery', variant_images: variant_images %} {% endcomment %}
+         {% render 'yws-product-slider',product_media:product.media %}
       </div>
+      
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <product-info
           id="ProductInfo-{{ section.id }}"
@@ -186,10 +188,18 @@
                 </p>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  {% render 'yws-collapse', size_chart:false, title:'Details',content:product.description %}
+                  {% comment %} <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
-                  </div>
+                  </div> {% endcomment %}
                 {%- endif -%}
+              {% when 'size_chart' %}
+                {% if product.metafields.custom.size_chart %}
+                  {% render 'yws-collapse', size_chart:true, title:'Size Chart',content:product.metafields.custom.size_chart %}
+                {% endif %}
+              {% when 'shipping_returns' %}
+                
+                {% render 'yws-collapse', size_chart:false title:'Shipping & Returns',content:'test' %}
               {%- when 'sku' -%}
                 <p
                   class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -647,12 +657,11 @@
       </div>
       {%- if section.settings.media_position == 'right' -%}
         {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
-        <div class="grid__item product__media-wrapper small-hide">
+        {% comment %} <div class="grid__item product__media-wrapper small-hide">
           {% render 'product-media-gallery', variant_images: variant_images, is_duplicate: true %}
-        </div>
+        </div> {% endcomment %}
       {%- endif -%}
     </div>
-
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
@@ -725,7 +734,6 @@
         assign seo_media = product.featured_media
       endif
     -%}
-
     <script type="application/ld+json">
       {
         "@context": "http://schema.org/",
@@ -770,9 +778,21 @@
         ]
       }
     </script>
+    <script>
+      document.querySelectorAll('.yws-collapse').forEach(c => {
+        c.addEventListener('click',function(){
+          console.log(c)
+          const collapsed = c.getAttribute('data-collapsed');
+          const isCollapsed = (collapsed == "true");
+          const content = c.querySelector('.collapse-content');
+          content.getAttribute('data-collapsed');
+          c.setAttribute('data-collapsed',!isCollapsed);
+          content.setAttribute('data-collapsed',!isCollapsed);
+        })
+      })
+    </script>
   </div>
 </section>
-
 {% schema %}
 {
   "name": "t:sections.main-product.name",
@@ -2123,6 +2143,16 @@
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         }
       ]
+    },
+    {
+      "type":"size_chart",
+      "name":"Size Chart",
+      "limit":1
+    },
+    {
+      "type":"shipping_returns",
+      "name":"Shipping & Returns",
+      "limit":1
     }
   ],
   "settings": [

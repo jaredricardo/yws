@@ -15,11 +15,6 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -32,6 +27,11 @@
           "settings": {
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -39,8 +39,18 @@
             "show_gift_card_recipient": true
           }
         },
-        "description": {
+        "description_874bTV": {
           "type": "description",
+          "settings": {
+          }
+        },
+        "size_chart_x7zBgN": {
+          "type": "size_chart",
+          "settings": {
+          }
+        },
+        "shipping_returns_enA4pd": {
+          "type": "shipping_returns",
           "settings": {
           }
         },
@@ -54,11 +64,13 @@
       "block_order": [
         "vendor",
         "title",
-        "price",
         "variant_picker",
         "quantity_selector",
+        "price",
         "buy_buttons",
-        "description",
+        "description_874bTV",
+        "size_chart_x7zBgN",
+        "shipping_returns_enA4pd",
         "share"
       ],
       "settings": {
