@@ -2,8 +2,8 @@
     <div class="yws-menu-drawer__cart-text">Shopping Cart</div>
     <div id="header-cart-button">
         {% render 'yws-cart' %}
-        <span class="cart-count {% if cart.item_count > 0 %} active {% endif %}">
-            {% unless cart.item_count == 0 %}
+        <span class="cart-count{% if cart == empty %} inactive {% endif %}">
+            {% unless cart == empty %}
                 <p>{{ cart.item_count }}</p>
             {% endunless %}
         </span>
@@ -12,6 +12,7 @@
         {% render 'yws-icon-close' %}
     </div>
 </div>
+<div class="divider blue"></div>
 <div class="yws-menu-drawer__navigation">
     {% for link in settings.yws_main_yws.links %}
         <a href={{ link.url }} class="drawer-york drawer-letter">
@@ -28,10 +29,15 @@
         {% endfor %}
     </ul>
 </div>
-<div class="yws-menu-drawer__cart-items">
+<div class="yws-menu-drawer__cart-items">   
+    {% if cart == empty %}
+        <div class="yws-menu-drawer__cart-items-empty">
+            Your cart is empty. 
+        </div>
+    {% endif %}
     <ul>
         {% for item in cart.items %}
-            <li>
+            <li class="yws-cart-line-item" data-line-quantity="{{ item.quantity }}" data-variant-id="{{ item.variant_id }}">
                 <div class="col">
                     <img src="{{ item.image | image_url: width: 300 }}" alt="item.featured_image.alt">
                 </div>
@@ -85,8 +91,8 @@
             {{ cart.total_price | money_without_trailing_zeros }}
         </div>
     </div>
-    <form action="{{ routes.cart_url }}" method="post">
-        <button {% if cart.items.size == 0 %} disabled="disabled" {% endif %}>
+    <form action="/checkout" method="post" class="{% if cart == empty %} disabled {% endif %}">
+        <button class="yws-link-button">
             Checkout
         </button>
     </form>

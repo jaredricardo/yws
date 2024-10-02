@@ -64,7 +64,7 @@
       ],
       "settings": {
         "agency_img": "shopify:\/\/shop_images\/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
-        "bg_color": "#F3ECDE",
+        "bg_color": "#f3ecde",
         "header": "The Agency",
         "header_color": "#9c2c24",
         "agency_desc": "<p>Having operated our own multi-million dollar apparel brand for 15+ years, we have in-depth, firsthand experience at all stages of development, from creative to fulfillment and everything in between.<br\/><br\/>Through our in-house team and extensive community of trusted collaborators, YWS offers a diverse range of services to help start or grow your brand.<\/p>",
@@ -141,8 +141,8 @@
       ],
       "settings": {
         "background_color": "#9c2c24",
-        "section_heading": "",
-        "section_desc": ""
+        "section_heading": "The Work Shop",
+        "section_desc": "Our “Work Shop” in Greenpoint, Brooklyn serves as a brick-and-mortar retail store and space to create and connect with clients."
       }
     }
   },

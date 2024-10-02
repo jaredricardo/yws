@@ -24,9 +24,12 @@
   if request.path contains settings.work_url and settings.work_url != blank
     assign on_work_url = true
   endif
-  if request.path contains settings.shop_url and settings.shop_url != blank
+   if request.path contains settings.shop_url and settings.shop_url != blank
     assign on_shop_url = true
   endif
+  if request.path contains '/collections/' or request.path contains '/products/'
+    assign on_shop_url = true
+  endif 
 
 -%}
 
@@ -155,7 +158,7 @@
           if(entry.target === this.sections[0]) {
             this.updateWidth(1 - entry.intersectionRatio)
             entry.intersectionRatio === 1 ? this.setWidth(100) : null
-            if(entry.intersectionRatio > 0.12) {
+            if(entry.intersectionRatio > 0.06) {
               this.classList.remove('scrolled-in') 
             } else {
               this.classList.add('scrolled-in')

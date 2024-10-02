@@ -1,0 +1,69 @@
+{% style %}
+    [data-section-id="{{ section.id }}"] {
+        background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.text_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] h2 {
+        color: {{ section.settings.text_color }};
+    }
+{% endstyle %}
+<div data-section-id="{{ section.id }}" class="yws-section-content yws-related-products">
+    {% if section.settings.header != blank %}
+        <div class="heading-container">
+            <h2>{{ section.settings.header }}</h2>
+        </div>
+    {% endif %}
+    <product-recommendations
+      class="related-products section-{{ section.id }}-padding isolate"
+      data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=12"
+    >
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% if recommendations.performed and recommendations.products_count > 0 %}
+                    {% for recommendation in recommendations.products %}
+                        <div class="swiper-slide">
+                            {% render 'yws-product-card', product:recommendation, is_variant:false %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </product-recommendations>
+</div>
+  
+{% schema %}
+  {
+    "name": "YWS Related Products",
+    "enabled_on": {
+        "templates": ["product"]
+    },
+    "settings": [
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#F3ECDE"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header",
+            "default": "Related Products"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "(Title) Text Color",
+            "default": "#9C2C24"
+        }
+    ],
+    "presets": [
+        {
+            "name": "YWS Related Products"
+        }
+    ]
+  }
+{% endschema %}
+  
