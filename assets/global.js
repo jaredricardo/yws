@@ -1288,7 +1288,6 @@ class ProductRecommendations extends HTMLElement {
               })
               swiper_pdp.on('transitionEnd',function(){
                 const activeSlide = document.querySelector('.yws-related-products .swiper-slide-active').getAttribute('data-slide-index')
-                console.log(document.querySelector('.yws-related-products .swiper-slide-active'))
                 const startingNum = document.querySelector('.yws-related-products .starting-num').innerText = activeSlide
               })
             }

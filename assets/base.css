@@ -5065,6 +5065,46 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   padding: 200px 30px 60px 30px;
 }
 
+.yws-pdp-wrapper .regular-gallery {
+  display: grid;
+}
+
+.yws-pdp-wrapper .swiper {
+  display: none;
+}
+
+.yws-pdp-wrapper .swiper-pagination{  
+  position:relative;
+  margin:10px 0 20px;
+  top:0 !important;
+  transform:none;
+  height: 20px;
+}
+
+.yws-pdp-wrapper .pdp-main-form-container {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.yws-pdp-wrapper .pdp-main-form-container .media-wrapper,
+.yws-pdp-wrapper .pdp-main-form-container .product-info-wrapper {
+  flex: 1;
+}
+
+.yws-pdp-wrapper .regular-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.yws-pdp-wrapper:has([data-product-media-size="2"]) .regular-gallery {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.yws-pdp-wrapper .regular-gallery:not([data-product-media-size="2"]) img:nth-child(3n + 1) {
+  grid-column: span 2;
+}
 
 @media screen and (max-width: 769px) {
   .just-image-container img {
@@ -5315,6 +5355,12 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   .yws-pdp-wrapper {
     padding: 160px 15px 40px 15px;
   }
+  .yws-pdp-wrapper .regular-gallery {
+    display: none;
+  }
+  .yws-pdp-wrapper .swiper {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 415px) {
@@ -5554,6 +5600,7 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
 
 /*pdp*/
 
+
 .yws-main-product {
   
   .product__title h1{
@@ -5583,7 +5630,7 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   }
   product-info{
     display: flex;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
@@ -5680,26 +5727,17 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   .product__info-container .product-form{
     margin:0;
   }
-  .product-slider{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    gap: 20px 30px;
-    align-self: stretch;
-    flex-wrap: wrap;
-  }
   .product-slider .swiper{
     max-width: 100%;
-    min-height:0;
-    
+    min-height:0; 
   }
   .product-slider .swiper-slide{
     width:100% !important;
   }
   .product-slider img{
-    max-width:100%;
+    width:100%;
+    height: 100%;
     border-radius:10px;
-    overflow:hidden;
   }
   .product-form__input--swatch .swatch-input__input+.swatch-input__label{
     margin:0;
