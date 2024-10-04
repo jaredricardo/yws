@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "logo_width": 90,
@@ -97,10 +106,10 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
-    "brand_description": "<p><\/p>",
+    "brand_description": "<p></p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/york.nyc",
+    "social_instagram_link": "https://www.instagram.com/york.nyc",
     "social_youtube_link": "",
     "social_tiktok_link": "",
     "social_twitter_link": "",
@@ -119,9 +128,9 @@
     "cart_color_scheme": "scheme-1",
     "yws_main_yws": "york-work-shop-main",
     "yws_drawer_menu": "yws-cart-drawer-menu",
-    "york_url": "shopify:\/\/pages\/about-us",
+    "york_url": "shopify://pages/about-us",
     "work_url": "",
-    "shop_url": "shopify:\/\/collections\/all",
+    "shop_url": "shopify://collections/all",
     "drawer_menu": "yws-cart-drawer-menu",
     "sections": {
       "main-password-header": {
@@ -354,7 +363,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
