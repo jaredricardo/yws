@@ -76,16 +76,16 @@
             "title": "Web Design"
           }
         },
-        "section_link_fKMwhQ": {
-          "type": "section-link",
-          "settings": {
-            "title": "Marketing"
-          }
-        },
         "section_link_WWwPKR": {
           "type": "section-link",
           "settings": {
             "title": "Media Production"
+          }
+        },
+        "section_link_fKMwhQ": {
+          "type": "section-link",
+          "settings": {
+            "title": "Marketing"
           }
         },
         "section_link_gCpFWT": {
@@ -106,8 +106,8 @@
         "section_link_tVgeTM",
         "section_link_BiknAh",
         "section_link_mxdXLX",
-        "section_link_fKMwhQ",
         "section_link_WWwPKR",
+        "section_link_fKMwhQ",
         "section_link_gCpFWT",
         "section_link_ciH7Mz"
       ],
