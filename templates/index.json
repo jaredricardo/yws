@@ -151,8 +151,8 @@
         "text_color": "#f3ecde",
         "header": "Work \n<br>\nConnect\n<br>\nShop",
         "subheader": "76 Nassau Ave. \n<br>\nBrooklyn, NY",
-        "button_text": "Visit Us",
-        "button_link": "#",
+        "button_text": "Learn More",
+        "button_link": "shopify://pages/about-us",
         "image": "shopify://shop_images/6f4499ef24e1556944070799ab21beda.jpg"
       }
     }
