@@ -76,16 +76,16 @@
             "title": "Marketing"
           }
         },
-        "section_link_mxdXLX": {
-          "type": "section-link",
-          "settings": {
-            "title": "Web Design"
-          }
-        },
         "section_link_WWwPKR": {
           "type": "section-link",
           "settings": {
             "title": "Media Production"
+          }
+        },
+        "section_link_mxdXLX": {
+          "type": "section-link",
+          "settings": {
+            "title": "Web Design"
           }
         },
         "section_link_ciH7Mz": {
@@ -106,8 +106,8 @@
         "section_link_tVgeTM",
         "section_link_BiknAh",
         "section_link_fKMwhQ",
-        "section_link_mxdXLX",
         "section_link_WWwPKR",
+        "section_link_mxdXLX",
         "section_link_ciH7Mz",
         "section_link_gCpFWT"
       ],
@@ -151,7 +151,7 @@
         "text_color": "#f3ecde",
         "header": "Work \n<br>\nConnect\n<br>\nShop",
         "subheader": "76 Nassau Ave. \n<br>\nBrooklyn, NY",
-        "button_text": "Learn More",
+        "button_text": "Visit Us",
         "button_link": "#",
         "image": "shopify://shop_images/6f4499ef24e1556944070799ab21beda.jpg"
       }
