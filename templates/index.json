@@ -70,6 +70,12 @@
             "title": "Apparel"
           }
         },
+        "section_link_fKMwhQ": {
+          "type": "section-link",
+          "settings": {
+            "title": "Marketing"
+          }
+        },
         "section_link_mxdXLX": {
           "type": "section-link",
           "settings": {
@@ -82,10 +88,10 @@
             "title": "Media Production"
           }
         },
-        "section_link_fKMwhQ": {
+        "section_link_ciH7Mz": {
           "type": "section-link",
           "settings": {
-            "title": "Marketing"
+            "title": "Creative Direction"
           }
         },
         "section_link_gCpFWT": {
@@ -93,23 +99,17 @@
           "settings": {
             "title": "Logistics"
           }
-        },
-        "section_link_ciH7Mz": {
-          "type": "section-link",
-          "settings": {
-            "title": "Creative Direction"
-          }
         }
       },
       "block_order": [
         "section_link_4Utjij",
         "section_link_tVgeTM",
         "section_link_BiknAh",
+        "section_link_fKMwhQ",
         "section_link_mxdXLX",
         "section_link_WWwPKR",
-        "section_link_fKMwhQ",
-        "section_link_gCpFWT",
-        "section_link_ciH7Mz"
+        "section_link_ciH7Mz",
+        "section_link_gCpFWT"
       ],
       "settings": {
         "bg_color": "#f3ecde",
