@@ -1,3 +1,38 @@
+{% comment %} 
+
+USAGE:
+ 
+Place the below code inside the product for loop where yws-product-card is rendered.
+
+{% liquid 
+    assign has_color_variant = false
+    for option in product.options
+        if option == 'Color'
+            assign has_color_variant = true
+            assign color_option_index = forloop.index0
+        endif
+    endfor        
+-%}
+
+THEN RENDER USAGE AS FOLLOWS:
+{% render 'yws-product-card', product:product, has_color_variant:has_color_variant,color_option_index:color_option_index %} 
+
+{% endcomment %}
+
+{% liquid 
+
+    assign used_colors = '' 
+
+    for variant in product.variants
+        assign variant_color = variant.options[color_option_index]
+        if used_colors contains variant_color
+            continue
+        endif
+        assign used_colors = used_colors | append: variant_color | append: ','
+    endfor
+
+-%}
+
 <a class="yws-product-card" href="{{ product.url }}">
     <div class="top">
         <img class="featured-image" src="{{ product.featured_image.src | img_url: '600x' }}" alt="{{ product.featured_image.alt }}">
@@ -7,14 +42,9 @@
     </div>
     <div class="bottom">
         <div class="left">
-            {% if is_variant %}
-                <h3>{{ parent.title }}</h3>
-                <h4>{{ product.title }}</h4>
-            {% else %}
-                <h3>{{ product.title }}</h3>
-                {% if product.metafields.custom.product_color_name %}
-                    <h4>{{ product.metafields.custom.product_color_name }}</h4>
-                {% endif %}
+            <h3>{{ product.title }}</h3>
+            {% if variant_color %}
+                <h4>{{ variant_color }}</h4>
             {% endif %}
         </div>
         <div class="right">
@@ -24,4 +54,4 @@
             {% endif %}
         </div>
     </div>
-</a>
+</a>    

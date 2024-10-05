@@ -1,7 +1,7 @@
 <div class="product-slider ">
     <div class="regular-gallery" data-product-media-size="{{ product_media.size }}">
       {% for media in product_media %}
-        {{ media | image_url: width: 500 | image_tag:loading:'lazy', alt: media.alt }}
+        {{ media | image_url: width: 1200 | image_tag:loading:'lazy', alt: media.alt }}
       {% endfor %}
     </div>
     <div class="swiper">
@@ -9,7 +9,7 @@
         {% for media in product_media %}
           <div data-slide-index="{{forloop.index }}" class="swiper-slide">
             <div class="slide-container">
-              {{ media | image_url: width: 500 | image_tag:loading:'lazy', alt:media.alt }}
+              {{ media | image_url: width: 600 | image_tag:loading:'lazy', alt:media.alt }}
             </div>
           </div>
         {% endfor %}
