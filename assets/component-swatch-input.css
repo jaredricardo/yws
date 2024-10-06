@@ -6,7 +6,7 @@
   display: inline-block;
   border-radius: var(--swatch-input--border-radius);
   cursor: pointer;
-  outline-offset: 0.2rem;
+  /* outline-offset: 0.2rem; */
   forced-color-adjust: none;
 }
 
@@ -20,7 +20,7 @@
 
 .swatch-input__input:active + .swatch-input__label,
 .swatch-input__input:checked + .swatch-input__label {
-  outline: 0.1rem solid rgb(var(--color-foreground));
+  outline: 2px solid var(--yws-blue);
 }
 
 /* Visually disabled */
