@@ -1,3 +1,7 @@
+<script>
+    console.log({{ cart | json }})
+</script>
+
 <div class="yws-menu-drawer__header">
     <div class="yws-menu-drawer__cart-text">Shopping Cart</div>
     <div id="header-cart-button">
@@ -45,13 +49,48 @@
                     <div class="line-item-info">
                         <a class="cart-item-title" href="{{ item.url }}">{{ item.product.title }}</a>
                         <a class="cart-item-subtitle" href="{{ item.url }}">
-                            {% if item.product.metafields.custom.product_color_name %}
-                                {{ item.product.metafields.custom.product_color_name }} - 
+                            {% liquid 
+
+                                assign size = nil
+                                assign color = nil
+
+                                for option in item.options_with_values
+                                    if option.name == 'Size'
+                                        assign size = option.value
+                                    endif
+                                    if option.name == 'Color'
+                                        assign color = option.value
+                                    endif
+                                endfor
+
+                                if size != nil
+
+                                    assign sizing_string = nil
+
+                                    case size
+                                        when 'S'
+                                            assign sizing_string = 'Small'
+                                        when 'M'
+                                            assign sizing_string = 'Medium'
+                                        when 'L'
+                                            assign sizing_string = 'Large'
+                                        when 'XL'
+                                            assign sizing_string = 'Extra Large'
+                                        when 'XXL'
+                                            assign sizing_string = 'Extra Extra Large'
+                                    endcase
+                                endif
+                            -%}
+                            
+                            {% if sizing_string %}
+                                {{ sizing_string }}
                             {% endif %}
-                            {% comment %} was trying to check for == null or == nil to remove variant titles that are null, but it wasnt working. Had to use contains string. {% endcomment %}
-                            {% unless item.product.selected_or_first_available_variant.title contains 'Default' %}
-                                {{ item.product.selected_or_first_available_variant.title }}
-                            {% endunless %}
+                            {% if sizing_string != nil and color != nil %}
+                                -
+                            {% endif %}
+                            {% if color != nil %}
+                                {{ color }}
+                            {% endif %}
                         </a>
                         <div class="line-item-controls-area">
                             <div class="line-item-controls">
@@ -69,9 +108,10 @@
                                 </remove-line-item>
                             </div>
                             <div class="line-item-price">
-                                {{ item.price | money_without_trailing_zeros }}
+                                {{ item.final_line_price | money_without_trailing_zeros }}
                                 {% if item.product.compare_at_price > item.product.price %}
-                                    <span class="compare-at">{{ item.product.compare_at_price | money_without_trailing_zeros }}</span>
+                                    {%  assign calculated_compare_at_price = item.product.compare_at_price | times: item.quantity %}
+                                    <span class="compare-at">{{ calculated_compare_at_price | money_without_trailing_zeros }}</span>
                                 {% endif %}
                             </div>
                         </div>

@@ -4458,11 +4458,13 @@ yws-menu-drawer .yws-menu-drawer__cart-text {
   margin-right: auto;
 }
 
-yws-menu-drawer .cart-count.inactive {
+yws-menu-drawer .cart-count.inactive.
+yws-sticky-header .cart-count.inactive {
   background-color: transparent;
 }
 
-yws-menu-drawer .cart-count {
+yws-menu-drawer .cart-count,
+yws-sticky-header .cart-count {
   background-color: var(--yws-red);
   color: var(--yws-off-white);
   font-size: 16px;
@@ -4471,8 +4473,6 @@ yws-menu-drawer .cart-count {
   text-align: center;
   position: absolute;
   left: 50%;
-  width: 26px;
-  height: 21px;
   justify-content: center;
   top: 54%;
   z-index: 2;
@@ -4481,7 +4481,17 @@ yws-menu-drawer .cart-count {
   cursor: pointer;
 }
 
-yws-menu-drawer .cart-count p {
+yws-menu-drawer .cart-count {
+  width: 26px;
+  height: 21px;
+}
+yws-sticky-header .cart-count {
+  width: 28px;
+  height: 24px;
+}
+
+yws-menu-drawer .cart-count p,
+yws-sticky-header .cart-count p {
   padding-top: 3px;
 }
 
@@ -5623,11 +5633,11 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   gap: 20px;
 }
 
-.yws-main-product  fieldset {
+.yws-main-product fieldset {
   display: flex;
   padding: 30px;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   align-self: stretch;
   border-radius: 10px;
   border: 2px solid var(--YWS-Blue, #0B3449);
@@ -5655,6 +5665,19 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
 .yws-main-product .product-form__quantity, 
 .yws-main-product .product-form__input--pill [data-selected-swatch-value] {
   display: none;
+}
+
+.yws-main-product .product-form__input--pill input[type=radio]+label {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  display: flex;
+  border-radius: 100px;
+  border: 2px solid var(--YWS-Blue, #0B3449);
+  background-color:transparent !important;
 }
 
 .yws-main-product {
@@ -5732,15 +5755,6 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   }
   .product-form__input--swatch .swatch-input__input+.swatch-input__label{
     margin:0;
-  }
-  .product-form__input--pill input[type=radio]+label{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 100px;
-    border: 2px solid var(--YWS-Blue, #0B3449);
-    background-color:transparent !important;
   }
   .Size-val{
     color: var(--YWS-Blue, #0B3449) !important;

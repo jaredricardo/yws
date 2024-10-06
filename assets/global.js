@@ -1409,6 +1409,11 @@ async function reRenderSectionsOnCartUpdate(){
       id: 'CartDrawer',
       section: 'cart-drawer',
       selector: '.drawer__inner',
+    },
+    {
+      id: 'yws-sticky-header',
+      section: 'yws-header',
+      selector: '#cart-icon-bubble',
     }
   ]
 
@@ -1418,6 +1423,7 @@ async function reRenderSectionsOnCartUpdate(){
 
   const res = await fetch(`${Shopify.routes}?sections=${sectionsString}`)
   const htmlObj = await res.json()
+
 
   sections.forEach((section) => {
     const parsed = new DOMParser().parseFromString(htmlObj[section.section], 'text/html').querySelector(section.selector).innerHTML

@@ -779,7 +779,6 @@
     <script>
       document.querySelectorAll('.yws-collapse').forEach(c => {
         c.addEventListener('click',function(){
-          console.log(c)
           const collapsed = c.getAttribute('data-collapsed');
           const isCollapsed = (collapsed == "true");
           const content = c.querySelector('.collapse-content');
