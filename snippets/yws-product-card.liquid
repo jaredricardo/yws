@@ -19,39 +19,50 @@ THEN RENDER USAGE AS FOLLOWS:
 
 {% endcomment %}
 
-{% liquid 
+{% assign used_colors = ''  %}
 
-    assign used_colors = '' 
+{% for variant in product.variants %}
 
-    for variant in product.variants
+    {% liquid 
+
         assign variant_color = variant.options[color_option_index]
+
         if used_colors contains variant_color
             continue
         endif
+
         assign used_colors = used_colors | append: variant_color | append: ','
-    endfor
 
--%}
+    -%}
 
-<a class="yws-product-card" href="{{ product.url }}">
-    <div class="top">
-        <img class="featured-image" src="{{ product.featured_image.src | img_url: '600x' }}" alt="{{ product.featured_image.alt }}">
-        {% if product.images.size > 1 %}  
-            <img class="hover-image" src="{{ product.images[1] | img_url: '600x' }}" alt="YWS Product Image 2">
-        {% endif %} 
-    </div>
-    <div class="bottom">
-        <div class="left">
-            <h3>{{ product.title }}</h3>
-            {% if variant_color %}
-                <h4>{{ variant_color }}</h4>
+    <a class="yws-product-card" href="{{ product.url }}">
+        <div class="top">
+            {% if variant.metafields.custom.variant_hover_image == blank %}
+                <img class="featured-image" src="{{ product.featured_image.src | img_url: '600x' }}" alt="{{ product.featured_image.alt }}">
+                {% if product.images.size > 1 %}  
+                    <img class="hover-image" src="{{ product.images[1] | img_url: '600x' }}" alt="YWS Product Image 2">
+                {% endif %} 
+            {% else %}
+                <img class="featured-image" src="{{ variant.featured_image.src | img_url: '600x' }}" alt="{{ product.featured_image.alt }}">
+                <img class="hover-image" src="{{ variant.metafields.custom.variant_hover_image | img_url: '600x' }}" alt="YWS Product Image 2">
             {% endif %}
         </div>
-        <div class="right">
-            <span class="money">{{ product.price | money_without_trailing_zeros }}</span>
-            {% if product.compare_at_price > product.price %}
-                <span class="money compare-at">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-            {% endif %}
+        <div class="bottom">
+            <div class="left">
+                <h3>{{ product.title }}</h3>
+                {% if variant_color %}
+                    <h4>{{ variant_color }}</h4>
+                {% endif %}
+            </div>
+            <div class="right">
+                <span class="money">{{ product.price | money_without_trailing_zeros }}</span>
+                {% if product.compare_at_price > product.price %}
+                    <span class="money compare-at">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                {% endif %}
+            </div>
         </div>
-    </div>
-</a>    
+    </a>    
+
+{% endfor %}
+
+
