@@ -12,7 +12,7 @@
     "top": {
       "type": "yws-about-top",
       "settings": {
-        "top_text": "York Work Shop is an independent, multidisciplinary creative agency based in Brooklyn, New York specializing in design, branding, marketing, apparel production and more.",
+        "top_text": "York Work Shop is an independent, multidisciplinary creative agency and brand based in Brooklyn, New York. We specialize in design, branding, marketing, apparel production and more.",
         "text_color": "#f3ecde",
         "background_img": "shopify://shop_images/About_Landing_Image.jpg"
       }
