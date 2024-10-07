@@ -34,25 +34,18 @@
             "slide_img": "shopify://shop_images/Branding_Images_0004_86F81016-3C1A-4B2D-8E08-362CB70545D8.jpg"
           }
         },
+        "slide_images_4JmJPc": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Media Production",
+            "slide_img": "shopify://shop_images/s8_overscan_flat.00_04_49_10.Still009_3.jpg"
+          }
+        },
         "slide_images_K48WYD": {
           "type": "slide-images",
           "settings": {
             "title": "Apparel Production",
             "slide_img": "shopify://shop_images/Apparel_Production_Images_0006_IMG_0771_3.jpg"
-          }
-        },
-        "slide_images_haHzjc": {
-          "type": "slide-images",
-          "settings": {
-            "title": "Web Design",
-            "slide_img": "shopify://shop_images/IMG_4420.jpg"
-          }
-        },
-        "slide_images_fTNbYH": {
-          "type": "slide-images",
-          "settings": {
-            "title": "Creative Direction",
-            "slide_img": "shopify://shop_images/Creative_Direction_Images_0009_B168D2CD-B489-41B9-B734-11C6EA313F87.jpg"
           }
         },
         "slide_images_Vbe4jn": {
@@ -62,11 +55,11 @@
             "slide_img": "shopify://shop_images/Marketing_Images_0005_1B55E299-B212-4FC6-888B-46A8E6C59CB1.jpg"
           }
         },
-        "slide_images_4JmJPc": {
+        "slide_images_haHzjc": {
           "type": "slide-images",
           "settings": {
-            "title": "Media Production",
-            "slide_img": "shopify://shop_images/s8_overscan_flat.00_04_49_10.Still009_3.jpg"
+            "title": "Web Design",
+            "slide_img": "shopify://shop_images/IMG_4420.jpg"
           }
         },
         "slide_images_f3UgKt": {
@@ -75,17 +68,24 @@
             "title": "Logistics",
             "slide_img": "shopify://shop_images/Logistics-Image-3.jpg"
           }
+        },
+        "slide_images_fTNbYH": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Creative Direction",
+            "slide_img": "shopify://shop_images/Creative_Direction_Images_0009_B168D2CD-B489-41B9-B734-11C6EA313F87.jpg"
+          }
         }
       },
       "block_order": [
         "slide_images_ggcfgm",
         "slide_images_MUT6tz",
-        "slide_images_K48WYD",
-        "slide_images_haHzjc",
-        "slide_images_fTNbYH",
-        "slide_images_Vbe4jn",
         "slide_images_4JmJPc",
-        "slide_images_f3UgKt"
+        "slide_images_K48WYD",
+        "slide_images_Vbe4jn",
+        "slide_images_haHzjc",
+        "slide_images_f3UgKt",
+        "slide_images_fTNbYH"
       ],
       "settings": {
         "agency_img": "shopify://shop_images/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
