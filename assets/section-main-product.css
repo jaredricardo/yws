@@ -218,7 +218,7 @@
 /* Product info */
 
 .product__info-container > * + * {
-  margin: 1.5rem 0;
+  /* margin: 1.5rem 0; */
 }
 
 .product__info-container iframe {
@@ -739,7 +739,7 @@ a.product__text {
   }
 
   .product-media-modal__content > * + * {
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
   }
 
   .product-media-modal__content {
