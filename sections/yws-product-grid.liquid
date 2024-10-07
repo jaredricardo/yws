@@ -20,6 +20,8 @@
 
 {% endstyle %}
 
+
+
 <div data-section-id="{{ section.id }}">
     <div class="yws-section-content yws-product-grid-container">
         {% if section.settings.use_filters %}
@@ -40,6 +42,7 @@
                 
                 {% liquid 
                     assign has_color_variant = false
+                    assign color_option_index = nil
                     for option in product.options
                         if option == 'Color'
                             assign has_color_variant = true

@@ -21,7 +21,7 @@ THEN RENDER USAGE AS FOLLOWS:
 
 {% assign used_colors = ''  %}
 
-{% if skip_breakout %}
+{% if skip_breakout or color_option_index == nil %}
     {% assign breakout_limit = 1 %}
 {% else %}
     {% assign breakout_limit = 250 %}

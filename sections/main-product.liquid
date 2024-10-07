@@ -1,3 +1,10 @@
+<style>
+  yws-sticky-header {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+</style>
+
 <section
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} yws-main-product"
@@ -787,15 +794,23 @@
     </script>
     <script>
       document.querySelectorAll('.yws-collapse').forEach(c => {
-        c.addEventListener('click',function(){
+        c.addEventListener('click', function() {
+          // Close all other collapses
+          document.querySelectorAll('.yws-collapse').forEach(other => {
+            if (other !== c) {
+              other.setAttribute('data-collapsed', 'true');
+              other.querySelector('.collapse-content').setAttribute('data-collapsed', 'true');
+            }
+          });
+    
+          // Toggle the clicked collapse
           const collapsed = c.getAttribute('data-collapsed');
           const isCollapsed = (collapsed == "true");
           const content = c.querySelector('.collapse-content');
-          content.getAttribute('data-collapsed');
-          c.setAttribute('data-collapsed',!isCollapsed);
-          content.setAttribute('data-collapsed',!isCollapsed);
-        })
-      })
+          c.setAttribute('data-collapsed', !isCollapsed);
+          content.setAttribute('data-collapsed', !isCollapsed);
+        });
+      });
     </script>
   </div>
 </section>
