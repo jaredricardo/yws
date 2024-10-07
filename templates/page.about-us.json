@@ -68,6 +68,13 @@
             "title": "Logistics",
             "slide_img": "shopify://shop_images/Logistics-Image-3.jpg"
           }
+        },
+        "slide_images_4JmJPc": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Media Production",
+            "slide_img": "shopify://shop_images/s8_overscan_flat.00_04_49_10.Still009_2.jpg"
+          }
         }
       },
       "block_order": [
@@ -77,7 +84,8 @@
         "slide_images_haHzjc",
         "slide_images_fTNbYH",
         "slide_images_Vbe4jn",
-        "slide_images_f3UgKt"
+        "slide_images_f3UgKt",
+        "slide_images_4JmJPc"
       ],
       "settings": {
         "agency_img": "shopify://shop_images/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
