@@ -15,13 +15,19 @@ Place the below code inside the product for loop where yws-product-card is rende
 -%}
 
 THEN RENDER USAGE AS FOLLOWS:
-{% render 'yws-product-card', product:product, has_color_variant:has_color_variant,color_option_index:color_option_index %} 
+{% render 'yws-product-card', product:product, has_color_variant:has_color_variant,color_option_index:color_option_index, skip_breakout: boolean %} 
 
 {% endcomment %}
 
 {% assign used_colors = ''  %}
 
-{% for variant in product.variants %}
+{% if skip_breakout %}
+    {% assign breakout_limit = 1 %}
+{% else %}
+    {% assign breakout_limit = 250 %}
+{% endif %}
+
+{% for variant in product.variants limit: breakout_limit %}
 
     {% liquid 
 

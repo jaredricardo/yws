@@ -35,7 +35,7 @@
                                     endif
                                 endfor        
                             -%}
-                          {% render 'yws-product-card', product:recommendation, has_color_variant:has_color_variant,color_option_index:color_option_index %} 
+                          {% render 'yws-product-card', product:recommendation, has_color_variant:has_color_variant, color_option_index:color_option_index, skip_breakout: true %} 
                         </div>
                     {% endfor %}
                 {% endif %}
