@@ -1,12 +1,3 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "current": {
     "logo_width": 90,
@@ -106,10 +97,10 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
-    "brand_description": "<p></p>",
+    "brand_description": "<p><\/p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
-    "social_instagram_link": "https://www.instagram.com/york.nyc",
+    "social_instagram_link": "https:\/\/www.instagram.com\/york.nyc",
     "social_youtube_link": "",
     "social_tiktok_link": "",
     "social_twitter_link": "",
@@ -128,9 +119,10 @@
     "cart_color_scheme": "scheme-1",
     "yws_main_yws": "york-work-shop-main",
     "yws_drawer_menu": "yws-cart-drawer-menu",
-    "york_url": "shopify://pages/about-us",
+    "york_url": "shopify:\/\/pages\/about-us",
     "work_url": "",
-    "shop_url": "shopify://collections/all",
+    "shop_url": "shopify:\/\/collections\/all",
+    "yws_shipping_policy": "<p>All domestic orders are shipped via UPS and all international orders are shipped via DHL. Order processing may take up to 7 days. An email containing the tracking number will be sent to you when the order ships. All packages are insured and trackable.<\/p><p>If you are not completely satisfied with your purchase, you may return your item(s) for store credit. Returns must be requested within 30 days of delivery. The returned item(s) must be in new condition, unworn, with the hang tag attached in the original packaging.<\/p><p>Please note, our standard delivery & return policies do not apply to made-to-order products or items marked as Final Sale. Shipping surcharges may be applied on orders requiring multiple deliveries. If we anticipate longer delivery times for a specific product, that information will be listed above as well as in checkout and in the order confirmation email.<\/p>",
     "drawer_menu": "yws-cart-drawer-menu",
     "sections": {
       "main-password-header": {
@@ -363,7 +355,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p></p>",
+      "brand_description": "<p><\/p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",

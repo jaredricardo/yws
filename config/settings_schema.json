@@ -1504,5 +1504,15 @@
                 "label": "Shop opacity URL"
             }
         ]
+    },
+    {
+        "name": "YWS Shipping Policy",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "yws_shipping_policy",
+                "label": "YWS Shipping Policy"
+            }
+        ]
     }
 ]

@@ -37,13 +37,19 @@
         {% endif %}
         <div class="yws-product-grid">
             {% for product in collection.products %}
-                {% if product.tags contains 'variant-breakout' %}
-                        {% for variant in product.variants %}
-                            {% render 'yws-product-card', parent:product, product:variant, is_variant:true %}
-                        {% endfor %}
-                    {% else %}  
-                        {% render 'yws-product-card', product:product, is_variant:false %}
-                {% endif %}
+                
+                {% liquid 
+                    assign has_color_variant = false
+                    for option in product.options
+                        if option == 'Color'
+                            assign has_color_variant = true
+                            assign color_option_index = forloop.index0
+                        endif
+                    endfor        
+                -%}
+
+                {% render 'yws-product-card', product:product, has_color_variant:has_color_variant,color_option_index:color_option_index %}
+
             {% endfor %}
         </div>
     </div>

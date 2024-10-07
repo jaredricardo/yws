@@ -1,10 +1,23 @@
 <div class="yws-collapse" 
-    style="border: {% if title == "Details" %}2{% else %}1{% endif %}px solid var(--YWS-Blue, #0B3449);" 
-    data-collapsed="true">
+    {% if initially_open %}
+        data-collapsed="false"
+    {% else %}
+        data-collapsed="true"
+    {% endif %}
+    >
     <div class="collapse-title">
         <h3>{{ title }}</h3>
+        <div class="collapse-icon">
+            {% render 'icon-caret' %}
+        </div>
     </div>
-    <div class="collapse-content" data-collapsed="true">
+    <div class="collapse-content" 
+        {% if initially_open %}
+            data-collapsed="false"
+        {% else %}
+            data-collapsed="true"
+        {% endif %}
+    >
         {% if size_chart %}
             <div class="yws-size-chart">
                 <div class="size-table-row">
@@ -38,7 +51,7 @@
                 </div>
             </div>
         {% else %}
-        {{ content }}
+            {{ content }}
         {% endif %}
     </div>
 </div>

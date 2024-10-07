@@ -72,12 +72,13 @@ class CartDrawer extends HTMLElement {
     this.querySelector('.drawer__inner').classList.contains('is-empty') &&
       this.querySelector('.drawer__inner').classList.remove('is-empty');
     this.productId = parsedState.id;
-    this.getSectionsToRender().forEach((section) => {
-      const sectionElement = section.selector
-        ? document.querySelector(section.selector)
-        : document.getElementById(section.id);
-      sectionElement.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
-    });
+    reRenderSectionsOnCartUpdate()
+    // this.getSectionsToRender().forEach((section) => {
+    //   const sectionElement = section.selector
+    //     ? document.querySelector(section.selector)
+    //     : document.getElementById(section.id);
+    //   sectionElement.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
+    // });
 
     setTimeout(() => {
       this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
@@ -86,18 +87,22 @@ class CartDrawer extends HTMLElement {
   }
 
   getSectionInnerHTML(html, selector = '.shopify-section') {
+    console.log(html)
     return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
   }
 
   getSectionsToRender() {
     return [
       {
-        id: 'cart-drawer',
-        selector: '#CartDrawer',
+        id: 'CartDrawer',
+        section: 'cart-drawer',
+        selector: '.drawer__inner',
       },
       {
-        id: 'cart-icon-bubble',
-      },
+        id: 'yws-sticky-header',
+        section: 'yws-header',
+        selector: '#cart-icon-bubble',
+      }
     ];
   }
 

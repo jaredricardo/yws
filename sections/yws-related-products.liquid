@@ -22,10 +22,20 @@
             <div class="swiper-wrapper">
                 {% if recommendations.performed and recommendations.products_count > 0 %}
                     {% assign count = 0 %}
-                    {% for recommendation in recommendations.products limit: 6%}
+                    {% for recommendation in recommendations.products limit: 6 %}
                         {% assign count = count | plus:1 %}
                         <div class="swiper-slide" data-slide-index="{{ forloop.index }}">
-                            {% render 'yws-product-card', product:recommendation, is_variant:false %}
+
+                            {% liquid 
+                                assign has_color_variant = false
+                                for option in product.options
+                                    if option == 'Color'
+                                        assign has_color_variant = true
+                                        assign color_option_index = forloop.index0
+                                    endif
+                                endfor        
+                            -%}
+                          {% render 'yws-product-card', product:recommendation, has_color_variant:has_color_variant, color_option_index:color_option_index, skip_breakout: true %} 
                         </div>
                     {% endfor %}
                 {% endif %}

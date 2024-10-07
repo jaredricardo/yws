@@ -78,7 +78,7 @@
   {% endif %}
 {% endfor %}
 
-<yws-sticky-header>
+<yws-sticky-header id="yws-sticky-header">
   <div class="col yws-header__letters">
     <a href="{{ routes.root_url }}">
       {% render 'yws-y' %}
@@ -89,11 +89,15 @@
   <div class="col yws-header__logo-text" style="width:100%">
     {% render 'yws-header-text', on_york_url:on_york_url , on_work_url: on_work_url, on_shop_url: on_shop_url %}
   </div>
-  <div class="col yws-header__icons">
-    <yws-cart-drawer> 
+  <div class="col yws-header__icons" >
+    <yws-cart-drawer class="yws-cart-icon"> 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {% render 'yws-cart' %}
-        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        <span class="cart-count{% if cart == empty %} inactive {% endif %}">
+          {% unless cart == empty %}
+              <p>{{ cart.item_count }}</p>
+          {% endunless %}
+        </span>
       </a>
     </yws-cart-drawer>
     <yws-burger>
@@ -185,25 +189,26 @@
         this.closeCartButton.addEventListener('click', this.closeDrawer)
         this.cartButton.addEventListener('click', this.openCartFromNav) 
       }
-
-      closeDrawer() {
-        document.querySelector('#CartDrawer-Overlay').click()
-      }
-
       openCartFromNav() {
         // cheap way of closing cart drawer
         document.querySelector('#CartDrawer-Overlay').click()
         setTimeout(() => {
           // if cart is clicked while cart is already open just close the cart
           if(document.querySelector('yws-menu-drawer').classList.contains('cart-items-drawer-active')) {
-            this.closeDrawer()
+            document.querySelector('#CartDrawer-Overlay').click()
+          } else {
+            // show correct drawer content by removing menu-drawer active class
+            document.querySelector('yws-menu-drawer').classList.remove('menu-drawer-active')
+            document.querySelector('yws-menu-drawer').classList.add('cart-items-drawer-active')
+            document.querySelector('.yws-header__icons .header__icon--cart').click()
           }
-          // show correct drawer content by removing menu-drawer active class
-          document.querySelector('yws-menu-drawer').classList.remove('menu-drawer-active')
-          document.querySelector('yws-menu-drawer').classList.add('cart-items-drawer-active')
-          document.querySelector('.yws-header__icons .header__icon--cart').click()
         }, 250)
       }
+
+      closeDrawer() {
+        document.querySelector('#CartDrawer-Overlay').click()
+      }
+
 
     }
   

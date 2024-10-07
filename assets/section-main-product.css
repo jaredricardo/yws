@@ -165,7 +165,6 @@
   flex: 0 0 100%;
   padding: 0;
   margin: 0 0 1.2rem 0;
-  max-width: 44rem;
   min-width: fit-content;
   border: none;
 }
@@ -290,7 +289,7 @@ a.product__text {
 
 @media screen and (min-width: 750px) {
   .product__info-container {
-    max-width: 60rem;
+    /* max-width: 60rem; */
   }
 
   .product__info-container .price--on-sale .price-item--regular {
@@ -367,7 +366,7 @@ a.product__text {
 }
 
 .product-form__buttons {
-  max-width: 44rem;
+  max-width: 400px;
 }
 
 .product--no-media .product__info-container > modal-opener {

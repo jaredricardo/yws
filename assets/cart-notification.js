@@ -50,15 +50,15 @@ class CartNotification extends HTMLElement {
   getSectionsToRender() {
     return [
       {
-        id: 'cart-notification-product',
-        selector: `[id="cart-notification-product-${this.cartItemKey}"]`,
+        id: 'CartDrawer',
+        section: 'cart-drawer',
+        selector: '.drawer__inner',
       },
       {
-        id: 'cart-notification-button',
-      },
-      {
-        id: 'cart-icon-bubble',
-      },
+        id: 'yws-sticky-header',
+        section: 'yws-header',
+        selector: '#cart-icon-bubble',
+      }
     ];
   }
 
