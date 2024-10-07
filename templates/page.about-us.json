@@ -61,6 +61,13 @@
             "title": "Logistics",
             "slide_img": "shopify://shop_images/Logistics-Image-3.jpg"
           }
+        },
+        "slide_images_haHzjc": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Web Design",
+            "slide_img": "shopify://shop_images/IMG_4420.jpg"
+          }
         }
       },
       "block_order": [
@@ -69,7 +76,8 @@
         "slide_images_K48WYD",
         "slide_images_fTNbYH",
         "slide_images_Vbe4jn",
-        "slide_images_f3UgKt"
+        "slide_images_f3UgKt",
+        "slide_images_haHzjc"
       ],
       "settings": {
         "agency_img": "shopify://shop_images/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
