@@ -1,28 +1,72 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "sections": {
-    "main": {
-      "type": "main-blog",
+    "yws_hero_with_text_RXVP7e": {
+      "type": "yws-hero-with-text",
       "settings": {
-        "layout": "collage",
-        "show_image": true,
-        "image_height": "medium",
-        "show_date": true,
-        "show_author": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "text_color": "#f3ecde",
+        "title": "Belief NYC",
+        "subheader": "2015 - present",
+        "banner_image": "shopify:\/\/shop_images\/595b41029f618e1f25e3105ff210b494.jpg",
+        "url": "shopify:\/\/blogs\/work\/test-1"
+      }
+    },
+    "yws_hero_with_text_yw4Y8y": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Lorum Ipsum",
+        "subheader": "Lorum Ipsum Subheader",
+        "banner_image": "shopify:\/\/shop_images\/c6445e40a521ff583b3307001ff30d4b.jpg",
+        "url": ""
+      }
+    },
+    "yws_hero_with_text_h9CaVp": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Lorum Ipsum",
+        "subheader": "Lorum Ipsum Subheader",
+        "banner_image": "shopify:\/\/shop_images\/f292c80652d68875b8a5b74b52f69ffd.jpg",
+        "url": ""
+      }
+    },
+    "yws_hero_with_text_Xmfqph": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Lorum Ipsum",
+        "subheader": "Lorum Ipsum Subheader",
+        "banner_image": "shopify:\/\/shop_images\/c43f6d9e7537f930c07b5bc7db07ca30.jpg",
+        "url": ""
+      }
+    },
+    "yws_hero_with_text_UTtjQq": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Lorum Ipsum",
+        "subheader": "Lorum Ipsum Subheader",
+        "banner_image": "shopify:\/\/shop_images\/ba42d201928f6e3aa20745fe798dfee0.jpg",
+        "url": ""
+      }
+    },
+    "yws_hero_with_text_UFmfNz": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Lorum Ipsum",
+        "subheader": "Lorum Ipsum Subheader",
+        "banner_image": "shopify:\/\/shop_images\/d1a6e1dc3629aa3aa2ebb1616d567ae5.jpg",
+        "url": ""
       }
     }
   },
   "order": [
-    "main"
+    "yws_hero_with_text_RXVP7e",
+    "yws_hero_with_text_yw4Y8y",
+    "yws_hero_with_text_h9CaVp",
+    "yws_hero_with_text_Xmfqph",
+    "yws_hero_with_text_UTtjQq",
+    "yws_hero_with_text_UFmfNz"
   ]
 }

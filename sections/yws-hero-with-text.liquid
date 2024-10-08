@@ -1,0 +1,72 @@
+{% style %}
+    [data-section-id="{{ section.id }}"] h2 {
+        color: {{ section.settings.text_color }};
+    }
+{% endstyle %}
+
+
+{% if section.settings.url != blank %}
+    <a data-section-id="{{ section.id }}" class="yws-hero" href="{{ section.settings.url }}">
+{% else %}
+    <div data-section-id="{{ section.id }}" class="yws-hero">
+{% endif %}
+
+    <div class="content-wrapper">
+        <div class="empty"></div>
+        <div class="content-container-inner">
+            <h2>{{ section.settings.title }}</h2>
+            <h3>{{ section.settings.subheader }}</h3>
+        </div>
+    </div>
+
+    <div class="image-wrapper">
+        <img src="{{ section.settings.banner_image |  image_url: width: 1440  }}" alt="YWS Banner Image">
+    </div>
+
+{% if section.settings.url != blank %}
+    </a>
+{% else %}
+    </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "YWS Hero With Text",
+    "settings": [
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#F3ECDE"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Header",
+            "default": "Lorum Ipsum"
+        },
+        {
+            "type": "textarea",
+            "id": "subheader",
+            "label": "Subheader",
+            "default": "Lorum Ipsum Subheader"
+        },
+        {
+            "type": "image_picker",
+            "id": "banner_image",
+            "label": "Banner Image"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Banner Link",
+            "info": "Leave blank for no link on banner"
+        }
+    ],
+    "presets": [
+        {
+            "name": "YWS Hero With Text"
+        }
+    ]
+  }
+{% endschema %}
