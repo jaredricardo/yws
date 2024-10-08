@@ -20,6 +20,13 @@
     "agency": {
       "type": "yws-the-agency",
       "blocks": {
+        "slide_images_ggcfgm": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Graphic Design",
+            "slide_img": "shopify://shop_images/Graphic_Design_Image_Images_0003_09FF65D0-F1D8-4D93-A2B2-DE0F31A44291.jpg"
+          }
+        },
         "slide_images_MUT6tz": {
           "type": "slide-images",
           "settings": {
@@ -68,24 +75,17 @@
             "title": "Logistics",
             "slide_img": "shopify://shop_images/Logistics-Image-3.jpg"
           }
-        },
-        "slide_images_ggcfgm": {
-          "type": "slide-images",
-          "settings": {
-            "title": "Graphic Design",
-            "slide_img": "shopify://shop_images/Graphic_Design_Image_Images_0003_09FF65D0-F1D8-4D93-A2B2-DE0F31A44291.jpg"
-          }
         }
       },
       "block_order": [
+        "slide_images_ggcfgm",
         "slide_images_MUT6tz",
         "slide_images_4JmJPc",
         "slide_images_haHzjc",
         "slide_images_K48WYD",
         "slide_images_Vbe4jn",
         "slide_images_fTNbYH",
-        "slide_images_f3UgKt",
-        "slide_images_ggcfgm"
+        "slide_images_f3UgKt"
       ],
       "settings": {
         "agency_img": "shopify://shop_images/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
