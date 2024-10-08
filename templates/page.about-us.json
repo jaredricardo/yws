@@ -34,18 +34,18 @@
             "slide_img": "shopify://shop_images/s8_overscan_flat.00_04_49_10.Still009_3.jpg"
           }
         },
-        "slide_images_K48WYD": {
-          "type": "slide-images",
-          "settings": {
-            "title": "Apparel Production",
-            "slide_img": "shopify://shop_images/Apparel_Production_Images_0006_IMG_0771_3.jpg"
-          }
-        },
         "slide_images_haHzjc": {
           "type": "slide-images",
           "settings": {
             "title": "Web Design",
             "slide_img": "shopify://shop_images/IMG_4420.jpg"
+          }
+        },
+        "slide_images_K48WYD": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Apparel Production",
+            "slide_img": "shopify://shop_images/Apparel_Production_Images_0006_IMG_0771_3.jpg"
           }
         },
         "slide_images_Vbe4jn": {
@@ -80,8 +80,8 @@
       "block_order": [
         "slide_images_MUT6tz",
         "slide_images_4JmJPc",
-        "slide_images_K48WYD",
         "slide_images_haHzjc",
+        "slide_images_K48WYD",
         "slide_images_Vbe4jn",
         "slide_images_fTNbYH",
         "slide_images_f3UgKt",
