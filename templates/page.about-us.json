@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "top": {
@@ -5,7 +14,7 @@
       "settings": {
         "top_text": "York Work Shop is an independent, multidisciplinary creative agency and brand based in Brooklyn, New York. We specialize in design, branding, marketing, apparel production and more.",
         "text_color": "#f3ecde",
-        "background_img": "shopify:\/\/shop_images\/About_Landing_Image.jpg"
+        "background_img": "shopify://shop_images/About_Landing_Image.jpg"
       }
     },
     "agency": {
@@ -15,56 +24,56 @@
           "type": "slide-images",
           "settings": {
             "title": "Graphic Design",
-            "slide_img": "shopify:\/\/shop_images\/Graphic_Design_Image_Images_0003_09FF65D0-F1D8-4D93-A2B2-DE0F31A44291.jpg"
+            "slide_img": "shopify://shop_images/Graphic_Design_Image_Images_0003_09FF65D0-F1D8-4D93-A2B2-DE0F31A44291.jpg"
           }
         },
         "slide_images_MUT6tz": {
           "type": "slide-images",
           "settings": {
             "title": "Branding",
-            "slide_img": "shopify:\/\/shop_images\/Branding_Images_0004_86F81016-3C1A-4B2D-8E08-362CB70545D8.jpg"
+            "slide_img": "shopify://shop_images/Branding_Images_0004_86F81016-3C1A-4B2D-8E08-362CB70545D8.jpg"
           }
         },
         "slide_images_4JmJPc": {
           "type": "slide-images",
           "settings": {
             "title": "Media Production",
-            "slide_img": "shopify:\/\/shop_images\/s8_overscan_flat.00_04_49_10.Still009_3.jpg"
+            "slide_img": "shopify://shop_images/s8_overscan_flat.00_04_49_10.Still009_3.jpg"
           }
         },
         "slide_images_K48WYD": {
           "type": "slide-images",
           "settings": {
             "title": "Apparel Production",
-            "slide_img": "shopify:\/\/shop_images\/Apparel_Production_Images_0006_IMG_0771_3.jpg"
+            "slide_img": "shopify://shop_images/Apparel_Production_Images_0006_IMG_0771_3.jpg"
           }
         },
         "slide_images_Vbe4jn": {
           "type": "slide-images",
           "settings": {
             "title": "Marketing",
-            "slide_img": "shopify:\/\/shop_images\/Marketing_Images_0005_1B55E299-B212-4FC6-888B-46A8E6C59CB1.jpg"
+            "slide_img": "shopify://shop_images/Marketing_Images_0005_1B55E299-B212-4FC6-888B-46A8E6C59CB1.jpg"
           }
         },
         "slide_images_haHzjc": {
           "type": "slide-images",
           "settings": {
             "title": "Web Design",
-            "slide_img": "shopify:\/\/shop_images\/IMG_4420.jpg"
+            "slide_img": "shopify://shop_images/IMG_4420.jpg"
           }
         },
         "slide_images_f3UgKt": {
           "type": "slide-images",
           "settings": {
             "title": "Logistics",
-            "slide_img": "shopify:\/\/shop_images\/Logistics-Image-3.jpg"
+            "slide_img": "shopify://shop_images/Logistics-Image-3.jpg"
           }
         },
         "slide_images_fTNbYH": {
           "type": "slide-images",
           "settings": {
             "title": "Creative Direction",
-            "slide_img": "shopify:\/\/shop_images\/Creative_Direction_Images_0009_B168D2CD-B489-41B9-B734-11C6EA313F87.jpg"
+            "slide_img": "shopify://shop_images/Creative_Direction_Images_0009_B168D2CD-B489-41B9-B734-11C6EA313F87.jpg"
           }
         }
       },
@@ -79,13 +88,13 @@
         "slide_images_fTNbYH"
       ],
       "settings": {
-        "agency_img": "shopify:\/\/shop_images\/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
+        "agency_img": "shopify://shop_images/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
         "bg_color": "#f3ecde",
         "header": "The Agency",
         "header_color": "#9c2c24",
-        "agency_desc": "<p>Having operated our own multi-million dollar apparel brand for 15 years, we have in-depth, firsthand experience at all stages of development, from creative to fulfillment and everything in between.<br\/><br\/>Through our in-house team and extensive community of trusted collaborators, YWS offers a diverse range of services to help start or grow your brand.<\/p>",
+        "agency_desc": "<p>Having operated our own multi-million dollar apparel brand for 15 years, we have in-depth, firsthand experience at all stages of development, from creative to fulfillment and everything in between.<br/><br/>Through our in-house team and extensive community of trusted collaborators, YWS offers a diverse range of services to help start or grow your brand.</p>",
         "desc_color": "#0b3449",
-        "btn_link": "shopify:\/\/collections\/frontpage",
+        "btn_link": "shopify://collections/frontpage",
         "btn_txt": "Past Work"
       }
     },
@@ -93,21 +102,21 @@
       "type": "yws-the-brand",
       "settings": {
         "bg_color": "#0b3449",
-        "brand_img": "shopify:\/\/shop_images\/YWS-Apparel-Homepage-Image_1.jpg",
-        "brand_img_desk": "shopify:\/\/shop_images\/brandimg.jpg",
+        "brand_img": "shopify://shop_images/YWS-Apparel-Homepage-Image_1.jpg",
+        "brand_img_desk": "shopify://shop_images/brandimg.jpg",
         "title": "The Brand",
         "text": "In addition to our studio practice, York Work Shop produces and sells limited Made in USA apparel and found objects.",
         "btn_txt": "Our Shop",
-        "btn_url": "shopify:\/\/collections\/all"
+        "btn_url": "shopify://collections/all"
       }
     },
     "story": {
       "type": "yws-our-story",
       "settings": {
-        "desk_img": "shopify:\/\/shop_images\/OUR_STORY.jpg",
-        "mob_img": "shopify:\/\/shop_images\/OUR_STORY_7d9a9b53-1076-4bc1-84d4-2c1e4e22e5c7.jpg",
+        "desk_img": "shopify://shop_images/OUR_STORY.jpg",
+        "mob_img": "shopify://shop_images/OUR_STORY_7d9a9b53-1076-4bc1-84d4-2c1e4e22e5c7.jpg",
         "title": "Our Story",
-        "text": "<p>York Work Shop was founded by  twin brothers, Phil & Raffie Gordon, who in 2010 co-founded the successful NYC-based apparel brand, Belief.  <\/p><p>YWS is an organic new chapter in experimenting with their passion for brand building, product design and connecting with the NYC community via a creative, in-person retail environment.<\/p>",
+        "text": "<p>York Work Shop was founded by  twin brothers, Phil & Raffie Gordon, who in 2010 co-founded the successful NYC-based apparel brand, Belief.  </p><p>YWS is an organic new chapter in experimenting with their passion for brand building, product design and connecting with the NYC community via a creative, in-person retail environment.</p>",
         "header_color": "#9c2c24",
         "p_color": "#0b3449"
       }
@@ -118,33 +127,33 @@
         "slide_images_GWt7m9": {
           "type": "slide-images",
           "settings": {
-            "slide_img": "shopify:\/\/shop_images\/WORKSHOP_1.jpg"
+            "slide_img": "shopify://shop_images/Updated_York_Image_9f58b7c0-a57c-4385-bfcc-7eb9a8519e51.jpg"
           }
         },
         "slide_images_LNRGaK": {
           "type": "slide-images",
           "settings": {
-            "slide_img": "shopify:\/\/shop_images\/WORKSHOP_2.jpg"
+            "slide_img": "shopify://shop_images/WORKSHOP_2.jpg"
           }
         },
         "slide_images_zkGbyX": {
           "type": "slide-images",
           "settings": {
-            "slide_img": "shopify:\/\/shop_images\/WORKSHOP_3.jpg"
+            "slide_img": "shopify://shop_images/WORKSHOP_3.jpg"
           }
         },
         "text_block_Yt8wBL": {
           "type": "text-block",
           "settings": {
             "heading": "Pop-Up at York",
-            "caption": "<p>We offer our Work Shop to forward-thinking people and brands as a platform for others to share and celebrate their creative endeavors. Reach out to work@york.nyc for info on our location and pop-up service packages.<\/p>"
+            "caption": "<p>We offer our Work Shop to forward-thinking people and brands as a platform for others to share and celebrate their creative endeavors. Reach out to work@york.nyc for info on our location and pop-up service packages.</p>"
           }
         },
         "text_block_6HxdwR": {
           "type": "text-block",
           "settings": {
             "heading": "Studio Series",
-            "caption": "<p>Our “Studio Series” offers a chance to connect and experiment together in creative ways. If you are interested in hosting a workshop or collaborating with YWS on an installation please email projects@york.nyc.<\/p>"
+            "caption": "<p>Our “Studio Series” offers a chance to connect and experiment together in creative ways. If you are interested in hosting a workshop or collaborating with YWS on an installation please email projects@york.nyc.</p>"
           }
         }
       },
