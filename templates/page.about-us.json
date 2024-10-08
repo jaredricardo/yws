@@ -62,18 +62,18 @@
             "slide_img": "shopify://shop_images/Marketing_Images_0005_1B55E299-B212-4FC6-888B-46A8E6C59CB1.jpg"
           }
         },
-        "slide_images_f3UgKt": {
-          "type": "slide-images",
-          "settings": {
-            "title": "Logistics",
-            "slide_img": "shopify://shop_images/Logistics-Image-3.jpg"
-          }
-        },
         "slide_images_fTNbYH": {
           "type": "slide-images",
           "settings": {
             "title": "Creative Direction",
             "slide_img": "shopify://shop_images/Creative_Direction_Images_0009_B168D2CD-B489-41B9-B734-11C6EA313F87.jpg"
+          }
+        },
+        "slide_images_f3UgKt": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Logistics",
+            "slide_img": "shopify://shop_images/Logistics-Image-3.jpg"
           }
         }
       },
@@ -84,8 +84,8 @@
         "slide_images_haHzjc",
         "slide_images_K48WYD",
         "slide_images_Vbe4jn",
-        "slide_images_f3UgKt",
-        "slide_images_fTNbYH"
+        "slide_images_fTNbYH",
+        "slide_images_f3UgKt"
       ],
       "settings": {
         "agency_img": "shopify://shop_images/The_Agency_Images_0008_1536159B-5015-4CAE-A5D7-056393154410.jpg",
