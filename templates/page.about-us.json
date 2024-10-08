@@ -41,18 +41,18 @@
             "slide_img": "shopify://shop_images/Apparel_Production_Images_0006_IMG_0771_3.jpg"
           }
         },
-        "slide_images_Vbe4jn": {
-          "type": "slide-images",
-          "settings": {
-            "title": "Marketing",
-            "slide_img": "shopify://shop_images/Marketing_Images_0005_1B55E299-B212-4FC6-888B-46A8E6C59CB1.jpg"
-          }
-        },
         "slide_images_haHzjc": {
           "type": "slide-images",
           "settings": {
             "title": "Web Design",
             "slide_img": "shopify://shop_images/IMG_4420.jpg"
+          }
+        },
+        "slide_images_Vbe4jn": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Marketing",
+            "slide_img": "shopify://shop_images/Marketing_Images_0005_1B55E299-B212-4FC6-888B-46A8E6C59CB1.jpg"
           }
         },
         "slide_images_fTNbYH": {
@@ -81,8 +81,8 @@
         "slide_images_MUT6tz",
         "slide_images_4JmJPc",
         "slide_images_K48WYD",
-        "slide_images_Vbe4jn",
         "slide_images_haHzjc",
+        "slide_images_Vbe4jn",
         "slide_images_fTNbYH",
         "slide_images_f3UgKt",
         "slide_images_ggcfgm"
