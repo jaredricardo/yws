@@ -1,29 +1,104 @@
-{% style %}
-    [data-section-id="{{ section.id }}"] h2,
-    [data-section-id="{{ section.id }}"] h3 {
-        color: {{ section.settings.text_color }};
-    }
-{% endstyle %}
+{% liquid 
 
-<script>
-    console.log({{ article | json }})
-</script>
+    assign yws_date                 = yws_date
+    assign yws_location             = yws_location
+    assign yws_deliverables         = yws_deliverables 
+    assign yws_team                 = yws_team
+    assign yws_project_description  = yws_project_desription
+    assign yws_grid_items           = yws_grid_items
 
-<div data-section-id="{{ section.id }}" class="yws-hero article-hero">
-    <div class="content-wrapper">
-        <div class="content-container-inner">
-            <div class="empty"></div>
-            <div class="content-container">
-                <h1>{{ article.title}}</h1>
-                <h2>{{ article.excerpt }}</h2>
+-%}
+
+<div data-section-id="{{ section.id }}" class="yws-article-container">
+    <div class="yws-hero article-hero">
+        <div class="content-wrapper">
+            <div class="content-container-inner">
+                <div class="empty"></div>
+                <div class="content-container">
+                    <h1>{{ article.title}}</h1>
+                    <h2>{{ article.excerpt }}</h2>
+                </div>
             </div>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="{{ article.image.src |  image_url: width: 1440  }}" alt="YWS Banner Image">
         </div>
     </div>
 
-    <div class="image-wrapper">
-        <img src="{{ article.image.src |  image_url: width: 1440  }}" alt="YWS Banner Image">
+    <div class="yws-article-info">
+        <div class="col">
+            <div class="date">
+                {{ yws_date }}
+            </div>
+            <div class="location">
+                {{ yws_location }}
+            </div>
+            <div class="deliverables">
+                {{ yws_deliverables }}
+            </div>
+            <div class="team">
+                {{ yws_team }}
+            </div>
+        </div>
+        <div class="col">
+            {{ yes_project_description }}
+        </div>
+    </div>
+
+    <div class="yws-article-grid">
+        <div class="yws-article-modal-outer">
+            <div class="yws-article-modal-inner">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in yws_grid_items %}
+                            <div class="swiper-slide" data-article-modal-index="{{ forloop.index }}">
+                                <div class="slide-container">
+                                    <span>{% render 'yws-icon-close' %}</span>
+                                    {% case item.type %}
+                                        {% when 'image' %}  
+                                            <img src="{{ item.image |  image_url: width: 900  }}" alt="YWS Project Image">
+                                        {% when 'video' %}
+                                            <span id="article-play-button">
+                                                {% render 'yws-icon-play' %}
+                                            </span>
+                                            {{ video_source | media_tag: autoplay: false, controls: true, muted: false, playsinline: true, preload: false }}
+                                    {% endcase %}
+                                    <div class="slide-info">
+                                        {% if item.image.alt != blank %}
+                                            <span class="slide-caption">{{ item.image.alt }}</span>
+                                        {% endif %}
+                                        <span class="index-info">
+                                            <span class="current-index">{{ forloop.index }}</span>
+                                            /
+                                            <span class="total-slides">{{ yws_grid_items.size }}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <span>left</span>
+                        <span>right</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for item in yws_grid_items %}
+            <div class="article-grid-item" data-article-grid-index="{{ forloop.index }}">
+                {% case item.type %}
+                    {% when 'image' %}  
+                        <img src="{{ item.image |  image_url: width: 300  }}" alt="YWS Project Image">
+                    {% when 'video' %}
+                        <span id="article-play-button">
+                            {% render 'yws-icon-play' %}
+                        </span>
+                        {{ video_source | media_tag: autoplay: false, controls: true, muted: false, playsinline: true, preload: false }}
+                {% endcase %}
+            </div>
+        {% endfor %}
     </div>
 </div>
+
 
 
 {% schema %}
@@ -32,14 +107,7 @@
     "enabled_on": {
         "templates": ["article"]
     },
-    "settings": [
-        {
-            "type": "color",
-            "id": "text_color",
-            "label": "Text Color",
-            "default": "#F3ECDE"
-        }
-    ],
+    "settings": [],
     "presets": [
         {
             "name": "YWS Hero - article"
