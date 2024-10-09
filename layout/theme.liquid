@@ -259,18 +259,37 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-
-    {% if request.page_type == "blog" or request.page_type == "article" %}
+   
       <style>
-        yws-sticky-header {
-          background: transparent !important;
+
+        {% if request.page_type == "blog" or request.page_type == "article" %}
+          yws-sticky-header {
+            background: transparent !important;
+          }
+
+          yws-sticky-header svg path {
+            fill: var(--yws-off-white) !important;
+          }
+        {% endif %}
+
+        @media screen and (max-width: 834px) {
+          {% if request.page_type == "blog" %}
+            footer .yws-section-content {
+              padding-top: 80px !important;
+            }
+          {% endif %}
         }
 
-        yws-sticky-header svg path {
-          fill: var(--yws-off-white) !important;
+        @media screen and (max-width: 415px) {
+          {% if request.page_type == "blog" %}
+            footer .yws-section-content {
+              padding-top: 20px !important;
+            }
+          {% endif %}
         }
+
       </style>
-    {% endif %}
+
 
 
     {%- unless settings.type_body_font.system? -%}
