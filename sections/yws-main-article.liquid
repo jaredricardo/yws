@@ -1,0 +1,49 @@
+{% style %}
+    [data-section-id="{{ section.id }}"] h2,
+    [data-section-id="{{ section.id }}"] h3 {
+        color: {{ section.settings.text_color }};
+    }
+{% endstyle %}
+
+<script>
+    console.log({{ article | json }})
+</script>
+
+<div data-section-id="{{ section.id }}" class="yws-hero article-hero">
+    <div class="content-wrapper">
+        <div class="content-container-inner">
+            <div class="empty"></div>
+            <div class="content-container">
+                <h1>{{ article.title}}</h1>
+                <h2>{{ article.excerpt }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-wrapper">
+        <img src="{{ article.image.src |  image_url: width: 1440  }}" alt="YWS Banner Image">
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "YWS Hero - article",
+    "enabled_on": {
+        "templates": ["article"]
+    },
+    "settings": [
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#F3ECDE"
+        }
+    ],
+    "presets": [
+        {
+            "name": "YWS Hero - article"
+        }
+    ]
+  }
+{% endschema %}

@@ -1,5 +1,6 @@
 {% style %}
-    [data-section-id="{{ section.id }}"] h2 {
+    [data-section-id="{{ section.id }}"] h2,
+    [data-section-id="{{ section.id }}"] h3 {
         color: {{ section.settings.text_color }};
     }
 {% endstyle %}
@@ -12,10 +13,12 @@
 {% endif %}
 
     <div class="content-wrapper">
-        <div class="empty"></div>
         <div class="content-container-inner">
-            <h2>{{ section.settings.title }}</h2>
-            <h3>{{ section.settings.subheader }}</h3>
+            <div class="empty"></div>
+            <div class="content-container">
+                <h2>{{ section.settings.title }}</h2>
+                <h3>{{ section.settings.subheader }}</h3>
+            </div>
         </div>
     </div>
 
