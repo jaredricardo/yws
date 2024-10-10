@@ -5577,6 +5577,77 @@ shopify-payment-terms {
   }
 }
 
+.yws-article-info {
+  background-color: var(--yws-off-white);
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 100px 30px;
+}
+
+.yws-article-info .col:nth-of-type(1) {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr); 
+  gap: 30px;
+  flex: 2
+}
+.yws-article-info .col:nth-of-type(2) {
+  display: flex; 
+  justify-content: start;
+  align-items: start;
+  flex: 4;
+}
+
+.yws-article-info .col:nth-of-type(1) p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.yws-article-info .col:nth-of-type(2) p {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  max-width: 850px;
+}
+
+.yws-article-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.yws-article-info h4,
+.yws-article-info p {
+  color: var(--yws-blue);
+  margin: 0;
+}
+
+.yws-article-info ul,
+.yws-article-info li {
+  margin: 0;
+  padding: 0;
+}
+
+.yws-article-info ul {
+  list-style-type: none;
+}
+.yws-article-info .date,
+.yws-article-info .location,
+.yws-article-info .deliverables,
+.yws-article-info .team {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 30px;
+}
+
 @media screen and (max-width: 769px) {
   .just-image-container img {
     max-width: 85%;
