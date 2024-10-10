@@ -28,7 +28,7 @@
         </div>
 
         <div class="image-wrapper">
-            <img src="{{ article.image.src |  image_url: width: 1440  }}" alt="YWS Banner Image">
+            <img src="{{ article.image.src |  image_url: width: 1440 }}" alt="YWS Banner Image">
         </div>
     </div>
 
@@ -64,8 +64,8 @@
         </div>
     </div>
 
-    {% comment %} <div class="yws-article-grid">
-        <div class="yws-article-modal-outer">
+    <div class="yws-article-grid">
+        {% comment %} <div class="yws-article-modal-outer">
             <div class="yws-article-modal-inner">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -100,21 +100,26 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> {% endcomment %}
         {% for item in yws_grid_items %}
-            <div class="article-grid-item" data-article-grid-index="{{ forloop.index }}">
-                {% case item.type %}
+            <script>
+                console.log({{ item | json }})
+            </script>
+            <div class="article-grid-item" data-article-grid-index="{{ forloop.index }}" data-test="{{ item }}">
+                {{ item | media | media_tag: image_size: '300x' }}
+                {% comment %} <img src="{{ item |  image_url: width: 300  }}" alt="YWS Project Image"> {% endcomment %}
+                {% comment %} {% case item.type %}
                     {% when 'image' %}  
-                        <img src="{{ item.image |  image_url: width: 300  }}" alt="YWS Project Image">
+                        <img src="{{ item |  image_url: width: 300  }}" alt="YWS Project Image">
                     {% when 'video' %}
                         <span id="article-play-button">
                             {% render 'yws-icon-play' %}
                         </span>
                         {{ video_source | media_tag: autoplay: false, controls: true, muted: false, playsinline: true, preload: false }}
-                {% endcase %}
+                {% endcase %} {% endcomment %}
             </div>
         {% endfor %}
-    </div> {% endcomment %}
+    </div>
 </div>
 
 

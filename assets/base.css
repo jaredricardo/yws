@@ -5596,6 +5596,7 @@ shopify-payment-terms {
   justify-content: start;
   align-items: start;
   flex: 4;
+  padding: 0 30px;
 }
 
 .yws-article-info .col:nth-of-type(1) p {
@@ -5633,6 +5634,14 @@ shopify-payment-terms {
 .yws-article-info li {
   margin: 0;
   padding: 0;
+}
+
+.yws-article-info li {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
 }
 
 .yws-article-info ul {
@@ -5742,10 +5751,8 @@ shopify-payment-terms {
   }
   yws-sticky-header .col:nth-of-type(1) {
     padding-left: 30px;
-  }
-  
+  } 
 }
-
 
 @media screen and (max-width: 834px) {
   #CartDrawer {
@@ -5951,6 +5958,20 @@ shopify-payment-terms {
   .shopify-section:first-child .yws-hero img {
     aspect-ratio: 834 / 1192;
     max-height: 1200px;
+  }
+  .yws-article-info .col:nth-of-type(1) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .yws-article-info {
+    padding: 80px 15px;
+    gap: 15px;
+  }
+  .yws-article-info .col:nth-of-type(2) {
+    padding: 0 15px;
+  }
+  .yws-article-info .col:nth-of-type(2) p {
+    font-size: 20px;
+    line-height: 26px;
   }
 }
 
@@ -6285,5 +6306,30 @@ shopify-payment-terms {
   }
   .yws-hero.article-hero .content-container {
     gap: 20px;
+  }
+  .yws-article-info {
+    flex-direction: column-reverse;
+    padding: 40px 10px;
+    gap: 30px;
+  }
+  .yws-article-info .col:nth-of-type(2) p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .yws-article-info .col:nth-of-type(2) {
+    padding: 0 20px; 
+  }
+  .yws-article-info .col:nth-of-type(1) {
+    grid-template-columns: repeat(2, 2fr);
+  }
+  .yws-article-info .date, 
+  .yws-article-info .location, 
+  .yws-article-info .deliverables, 
+  .yws-article-info .team {
+    padding: 0 20px;
+  }
+  .yws-article-info li {
+    font-size: 14px;
+    line-height: 20px;
   }
 }
