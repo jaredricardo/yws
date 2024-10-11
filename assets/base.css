@@ -5592,11 +5592,13 @@ shopify-payment-terms {
   flex: 2
 }
 .yws-article-info .col:nth-of-type(2) {
-  display: flex; 
+  display: flex;
   justify-content: start;
   align-items: start;
   flex: 4;
   padding: 0 30px;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .yws-article-info .col:nth-of-type(1) p {
@@ -5622,6 +5624,7 @@ shopify-payment-terms {
   line-height: 24px;
   letter-spacing: 0.02em;
   text-align: left;
+  white-space: nowrap;
 }
 
 .yws-article-info h4,
@@ -6429,7 +6432,7 @@ shopify-payment-terms {
     line-height: 20px;
   }
   .yws-hero .content-container {
-    padding: 30px 20px;
+    padding: 30px;
     gap: 5px;
   }
   .yws-hero img {
@@ -6444,7 +6447,7 @@ shopify-payment-terms {
     max-height: 844px;
   }
   .yws-hero.article-hero .content-container {
-    gap: 20px;
+    gap: 5px;
   }
   .yws-article-info {
     flex-direction: column-reverse;
