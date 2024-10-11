@@ -102,11 +102,16 @@
             </div>
         </div> {% endcomment %}
         {% for item in yws_grid_items %}
-            <script>
-                console.log({{ item | json }})
-            </script>
             <div class="article-grid-item" data-article-grid-index="{{ forloop.index }}" data-test="{{ item }}">
-                {{ item | media | media_tag: image_size: '300x' }}
+                {% if item.media_type == 'image' %}
+                        {{ item | media | media_tag: image_size: '600x' }}
+                    {% else %}
+                    {{ item |  img_tag }}
+                    <img src="{{ item.preview_image }}">
+                        {{ item | media_tag: autoplay: false, controls: true, loop: true, muted: true, playsinline: true }}
+                {% endif %}
+
+                {% comment %} {{ item | media | media_tag: image_size: '600x' }} {% endcomment %}
                 {% comment %} <img src="{{ item |  image_url: width: 300  }}" alt="YWS Project Image"> {% endcomment %}
                 {% comment %} {% case item.type %}
                     {% when 'image' %}  

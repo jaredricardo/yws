@@ -7,57 +7,77 @@
         "title": "Belief NYC",
         "subheader": "2015 - present",
         "banner_image": "shopify:\/\/shop_images\/595b41029f618e1f25e3105ff210b494.jpg",
-        "url": "shopify:\/\/blogs\/work\/test-1"
+        "url": "shopify:\/\/blogs\/work\/belief-nyc"
       }
     },
     "yws_hero_with_text_yw4Y8y": {
       "type": "yws-hero-with-text",
       "settings": {
-        "text_color": "#F3ECDE",
-        "title": "Lorum Ipsum",
-        "subheader": "Lorum Ipsum Subheader",
+        "text_color": "#f3ecde",
+        "title": "Polartec®",
+        "subheader": "2021 - 2023",
         "banner_image": "shopify:\/\/shop_images\/c6445e40a521ff583b3307001ff30d4b.jpg",
-        "url": ""
+        "url": "shopify:\/\/blogs\/work\/polartech®"
       }
     },
     "yws_hero_with_text_h9CaVp": {
       "type": "yws-hero-with-text",
       "settings": {
-        "text_color": "#F3ECDE",
-        "title": "Lorum Ipsum",
-        "subheader": "Lorum Ipsum Subheader",
+        "text_color": "#f3ecde",
+        "title": "Realtree",
+        "subheader": "2022",
         "banner_image": "shopify:\/\/shop_images\/f292c80652d68875b8a5b74b52f69ffd.jpg",
-        "url": ""
+        "url": "shopify:\/\/blogs\/work\/realtree"
       }
     },
-    "yws_hero_with_text_Xmfqph": {
+    "yws_hero_with_text_4rCLRa": {
       "type": "yws-hero-with-text",
       "settings": {
         "text_color": "#F3ECDE",
-        "title": "Lorum Ipsum",
-        "subheader": "Lorum Ipsum Subheader",
-        "banner_image": "shopify:\/\/shop_images\/c43f6d9e7537f930c07b5bc7db07ca30.jpg",
-        "url": ""
+        "title": "Boys & Girls Club",
+        "subheader": "2020 - 2021",
+        "banner_image": "shopify:\/\/shop_images\/YWS_Case_Study_BG_Club_Images_0004_AB3FD4AE-41C2-47F0-9610-664E4263D702.jpg",
+        "url": "shopify:\/\/blogs\/work\/boys-girls-club"
       }
     },
-    "yws_hero_with_text_UTtjQq": {
+    "yws_hero_with_text_NVWYP8": {
       "type": "yws-hero-with-text",
       "settings": {
         "text_color": "#F3ECDE",
-        "title": "Lorum Ipsum",
-        "subheader": "Lorum Ipsum Subheader",
-        "banner_image": "shopify:\/\/shop_images\/ba42d201928f6e3aa20745fe798dfee0.jpg",
-        "url": ""
+        "title": "Brooklyn Brewery",
+        "subheader": "July, 2024 - Present",
+        "banner_image": "shopify:\/\/shop_images\/s8_overscan_flat.00_03_58_04.Still007_2.jpg",
+        "url": "shopify:\/\/blogs\/work\/brooklyn-brewery"
       }
     },
-    "yws_hero_with_text_UFmfNz": {
+    "yws_hero_with_text_tdidXt": {
       "type": "yws-hero-with-text",
       "settings": {
         "text_color": "#F3ECDE",
-        "title": "Lorum Ipsum",
-        "subheader": "Lorum Ipsum Subheader",
-        "banner_image": "shopify:\/\/shop_images\/d1a6e1dc3629aa3aa2ebb1616d567ae5.jpg",
-        "url": ""
+        "title": "V.... Vaughan",
+        "subheader": "2023",
+        "banner_image": "shopify:\/\/shop_images\/Case_Study_Square_Image_File_0010_7CB3E2AA-99F9-4031-88BC-E045D5F2B9DF.jpg",
+        "url": "shopify:\/\/blogs\/work\/v-vaughan"
+      }
+    },
+    "yws_hero_with_text_cWgqCG": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Astoria Park Alliance®",
+        "subheader": "2021",
+        "banner_image": "shopify:\/\/shop_images\/YWS_Case_Study_BG_Club_Images_0005_47DABE65-AC3B-422D-84C0-33A5D7A6DA83.jpg",
+        "url": "shopify:\/\/blogs\/work\/astoria-park-alliance®"
+      }
+    },
+    "yws_hero_with_text_gfeWW4": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Hungry Ghost Coffee",
+        "subheader": "February, 2024 - Present",
+        "banner_image": "shopify:\/\/shop_images\/1012.jpg",
+        "url": "shopify:\/\/blogs\/work\/hungry-ghost-coffee"
       }
     }
   },
@@ -65,8 +85,10 @@
     "yws_hero_with_text_RXVP7e",
     "yws_hero_with_text_yw4Y8y",
     "yws_hero_with_text_h9CaVp",
-    "yws_hero_with_text_Xmfqph",
-    "yws_hero_with_text_UTtjQq",
-    "yws_hero_with_text_UFmfNz"
+    "yws_hero_with_text_4rCLRa",
+    "yws_hero_with_text_NVWYP8",
+    "yws_hero_with_text_tdidXt",
+    "yws_hero_with_text_cWgqCG",
+    "yws_hero_with_text_gfeWW4"
   ]
 }

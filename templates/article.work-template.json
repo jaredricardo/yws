@@ -2,8 +2,6 @@
   "sections": {
     "main": {
       "type": "yws-main-article",
-      "blocks": {},
-      "block_order": [],
       "settings": {
       }
     }
