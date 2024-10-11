@@ -5663,13 +5663,26 @@ shopify-payment-terms {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   gap: 15px;
+  padding: 0 30px;
 }
 
 .yws-article-container .article-grid-item {
   display: flex;
+  position: relative;
   max-width: 100%;
   aspect-ratio: 258 / 323;
   object-fit: cover;
+}
+
+.yws-article-container .yws-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 13%;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .yws-article-container .article-grid-item img,
@@ -5677,6 +5690,17 @@ shopify-payment-terms {
   border-radius: 10px;
   width: 100%;
   object-fit: cover;
+}
+
+.yws-article-container .slide-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  aspect-ratio: 550 / 681;
+}
+
+.yws-article-container .slide-container img {
+  max-width: 100%;
 }
 
 @media screen and (max-width: 769px) {
@@ -5994,6 +6018,11 @@ shopify-payment-terms {
   .yws-article-info .col:nth-of-type(2) p {
     font-size: 20px;
     line-height: 26px;
+  }
+  .yws-article-container .yws-article-grid { 
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15px;
+    gap: 15px;
   }
 }
 
@@ -6353,5 +6382,10 @@ shopify-payment-terms {
   .yws-article-info li {
     font-size: 14px;
     line-height: 20px;
+  }
+  .yws-article-container .yws-article-grid { 
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 10px;
+    gap: 10px;
   }
 }

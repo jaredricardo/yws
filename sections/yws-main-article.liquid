@@ -11,10 +11,6 @@
 
 -%}
 
-<script>
-    console.log({{ obj | json }})
-</script>
-
 <div data-section-id="{{ section.id }}" class="yws-article-container">
     <div class="yws-hero article-hero">
         <div class="content-wrapper">
@@ -65,23 +61,21 @@
     </div>
 
     <div class="yws-article-grid">
-        {% comment %} <div class="yws-article-modal-outer">
-            <div class="yws-article-modal-inner">
+        <div class="yws-modal__main-area active">
+            <div class="yws-modal__close yws-modal__bg-close-area"></div>
+            <div class="yws-article-modal-inner--article">
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         {% for item in yws_grid_items %}
                             <div class="swiper-slide" data-article-modal-index="{{ forloop.index }}">
                                 <div class="slide-container">
-                                    <span>{% render 'yws-icon-close' %}</span>
-                                    {% case item.type %}
-                                        {% when 'image' %}  
-                                            <img src="{{ item.image |  image_url: width: 900  }}" alt="YWS Project Image">
-                                        {% when 'video' %}
-                                            <span id="article-play-button">
-                                                {% render 'yws-icon-play' %}
-                                            </span>
-                                            {{ video_source | media_tag: autoplay: false, controls: true, muted: false, playsinline: true, preload: false }}
-                                    {% endcase %}
+                                    <span class="yws-modal__close">{% render 'yws-icon-close' %}</span>
+                                    {% if item.media_type == 'image' %}
+                                        {{ item | media | media_tag: image_size: '600x' }}
+                                    {% elsif item.media_type == 'video' %}
+                                        {% comment %} {% render 'yws-icon-play' %} {% endcomment %}
+                                        {% comment %} {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true }} {% endcomment %}
+                                    {% endif %}
                                     <div class="slide-info">
                                         {% if item.image.alt != blank %}
                                             <span class="slide-caption">{{ item.image.alt }}</span>
@@ -100,32 +94,53 @@
                     </div>
                 </div>
             </div>
-        </div> {% endcomment %}
-        {% for item in yws_grid_items %}
-            <div class="article-grid-item" data-article-grid-index="{{ forloop.index }}" data-test="{{ item }}">
+        </div> 
+      {% for item in yws_grid_items %}
+            <div class="article-grid-item" data-article-grid-index="{{ forloop.index }}">
                 {% if item.media_type == 'image' %}
                         {{ item | media | media_tag: image_size: '600x' }}
-                    {% else %}
-                    {{ item |  img_tag }}
-                    <img src="{{ item.preview_image }}">
-                        {{ item | media_tag: autoplay: false, controls: true, loop: true, muted: true, playsinline: true }}
+                    {% elsif item.media_type == 'video' %}
+                        {% render 'yws-icon-play' %}
+                        {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true }}
                 {% endif %}
-
-                {% comment %} {{ item | media | media_tag: image_size: '600x' }} {% endcomment %}
-                {% comment %} <img src="{{ item |  image_url: width: 300  }}" alt="YWS Project Image"> {% endcomment %}
-                {% comment %} {% case item.type %}
-                    {% when 'image' %}  
-                        <img src="{{ item |  image_url: width: 300  }}" alt="YWS Project Image">
-                    {% when 'video' %}
-                        <span id="article-play-button">
-                            {% render 'yws-icon-play' %}
-                        </span>
-                        {{ video_source | media_tag: autoplay: false, controls: true, muted: false, playsinline: true, preload: false }}
-                {% endcase %} {% endcomment %}
             </div>
         {% endfor %}
     </div>
 </div>
+<script>
+
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const gridItems = document.querySelectorAll('.article-grid-item')
+
+        gridItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                if(window.innerWidth <= 415) {
+                    if(item.querySelector('video')) {
+                        item.querySelector('video').play()
+                        item.querySelector('video').controls = true
+                        item.querySelector('.yws-play-icon').style.display = 'none'
+                    }
+                } else {
+                    console.log('open YWS Modal')
+                }
+            })
+        })
+
+        
+        
+        const swiper = new Swiper('[data-section-id="{{ section.id }}"] .swiper', {
+            loop: true,
+            speed: 400,
+            spaceBetween: 10,
+            width: 550,
+            slidesPerView: 1,
+            centeredSlides: true,
+        })
+
+    })
+
+</script>
 
 
 
