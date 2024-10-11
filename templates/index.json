@@ -36,15 +36,15 @@
         "button_link": "shopify://blogs/work",
         "enable_mobile_carousel": true,
         "image_1": "shopify://shop_images/b95ba07e31263a22af4d668f8fbd89b4.jpg",
-        "tile_link_1": "#",
+        "tile_link_1": "shopify://blogs/work/belief-nyc",
         "title_1": "Belief NYC",
         "subtitle_1": "2010 - Present",
         "image_2": "shopify://shop_images/9be9746168873c0fb9c6c9c8f1058021.jpg",
-        "tile_link_2": "#",
+        "tile_link_2": "shopify://blogs/work/polartech®",
         "title_2": "Polartec®",
         "subtitle_2": "2021",
         "image_3": "shopify://shop_images/s8_overscan_flat.00_03_55_15.Still006_3.jpg",
-        "tile_link_3": "#",
+        "tile_link_3": "shopify://blogs/work/brooklyn-brewery",
         "title_3": "Brooklyn Brewery",
         "subtitle_3": "2024"
       }
