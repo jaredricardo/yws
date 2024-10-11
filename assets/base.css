@@ -3525,7 +3525,7 @@ details-disclosure > details {
   --yws-off-white: #F3ECDE;
   --yws-red: #9C2C24;
   --yws-blue: #0B3449;
-  --yws-modal-blue: #0b3449cf;
+  --yws-modal-blue: #0b3449d9;
   --yws-spacing: 30px;
   --yws-spacing-l: 100px 30px;
   --yws-radius: 10px;
@@ -5672,6 +5672,7 @@ shopify-payment-terms {
   max-width: 100%;
   aspect-ratio: 258 / 323;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .yws-article-container .yws-play-icon {
@@ -5692,15 +5693,102 @@ shopify-payment-terms {
   object-fit: cover;
 }
 
+.yws-article-container .slide-container img,
+.yws-article-container .slide-container video {
+  width: 100%;
+  max-width: 80vw;
+  max-height: 80vh;
+  vertical-align: top;
+  object-fit: cover;
+}
+
+.yws-article-container .slide-container img {
+  aspect-ratio: 550 / 681;
+}
+
+.yws-article-container .slide-container video {
+  aspect-ratio: 16 / 9;
+  width: 75vw;
+}
+
 .yws-article-container .slide-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
   aspect-ratio: 550 / 681;
 }
 
-.yws-article-container .slide-container img {
-  max-width: 100%;
+.yws-article-container .media-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.yws-article-container .yws-article-modal-inner--article {
+  width: 100vw;
+  height: 100vh;
+  background: var(--yws-modal-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yws-article-container .yws-modal__close {
+  position: absolute;
+  background-color: var(--yws-off-white);
+  top: -25px;
+  right: -25px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.yws-article-container .yws-modal__close path {
+  fill: var(--yws-blue);
+}
+
+.yws-article-container .slide-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.yws-article-container .slide-caption,
+.yws-article-container .index-info {
+  color: var(--yws-off-white);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.yws-article-container .index-info {
+  margin-left: auto;
+}
+
+.yws-article-container .swiper-left,
+.yws-article-container .swiper-right {
+  position: absolute;
+  top: 45%;
+  padding: 30px;
+  transform: perspective(10px);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.yws-article-container .swiper-left {
+  left: 3%;
+}
+
+.yws-article-container .swiper-right {
+  right: 3%;
 }
 
 @media screen and (max-width: 769px) {
