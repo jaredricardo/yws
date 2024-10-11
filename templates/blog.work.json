@@ -29,6 +29,16 @@
         "url": "shopify://blogs/work/polartech®"
       }
     },
+    "yws_hero_with_text_NVWYP8": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#f3ecde",
+        "title": "Brooklyn Brewery",
+        "subheader": "July, 2024 - Present",
+        "banner_image": "shopify://shop_images/s8_overscan_flat.00_03_58_04.Still007_2.jpg",
+        "url": "shopify://blogs/work/brooklyn-brewery"
+      }
+    },
     "yws_hero_with_text_4rCLRa": {
       "type": "yws-hero-with-text",
       "settings": {
@@ -49,14 +59,14 @@
         "url": "shopify://blogs/work/realtree"
       }
     },
-    "yws_hero_with_text_NVWYP8": {
+    "yws_hero_with_text_cWgqCG": {
       "type": "yws-hero-with-text",
       "settings": {
         "text_color": "#f3ecde",
-        "title": "Brooklyn Brewery",
-        "subheader": "July, 2024 - Present",
-        "banner_image": "shopify://shop_images/s8_overscan_flat.00_03_58_04.Still007_2.jpg",
-        "url": "shopify://blogs/work/brooklyn-brewery"
+        "title": "Astoria Park Alliance®",
+        "subheader": "2021",
+        "banner_image": "shopify://shop_images/YWS_Case_Study_BG_Club_Images_0005_47DABE65-AC3B-422D-84C0-33A5D7A6DA83.jpg",
+        "url": "shopify://blogs/work/astoria-park-alliance®"
       }
     },
     "yws_hero_with_text_tdidXt": {
@@ -67,16 +77,6 @@
         "subheader": "2023",
         "banner_image": "shopify://shop_images/Case_Study_Square_Image_File_0010_7CB3E2AA-99F9-4031-88BC-E045D5F2B9DF.jpg",
         "url": "shopify://blogs/work/v-vaughan"
-      }
-    },
-    "yws_hero_with_text_cWgqCG": {
-      "type": "yws-hero-with-text",
-      "settings": {
-        "text_color": "#f3ecde",
-        "title": "Astoria Park Alliance®",
-        "subheader": "2021",
-        "banner_image": "shopify://shop_images/YWS_Case_Study_BG_Club_Images_0005_47DABE65-AC3B-422D-84C0-33A5D7A6DA83.jpg",
-        "url": "shopify://blogs/work/astoria-park-alliance®"
       }
     },
     "yws_hero_with_text_gfeWW4": {
@@ -96,8 +96,8 @@
     "yws_hero_with_text_NVWYP8",
     "yws_hero_with_text_4rCLRa",
     "yws_hero_with_text_h9CaVp",
-    "yws_hero_with_text_tdidXt",
     "yws_hero_with_text_cWgqCG",
+    "yws_hero_with_text_tdidXt",
     "yws_hero_with_text_gfeWW4"
   ]
 }
