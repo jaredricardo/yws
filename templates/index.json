@@ -1,10 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "yws_video_section_3JdyFz": {
       "type": "yws-video-section",
       "settings": {
-        "video_short": "shopify:\/\/files\/videos\/YWS Hero Video Snippet 480.mov",
-        "yt_embed_string": "https:\/\/www.youtube.com\/embed\/F1vZDpZlhPE?si=LkK60JuBvJMis2bA"
+        "video_short": "shopify://files/videos/YWS Hero Video Snippet 480.mov",
+        "yt_embed_string": "https://www.youtube.com/embed/F1vZDpZlhPE?si=LkK60JuBvJMis2bA"
       }
     },
     "yws_intro_section_nhiEzU": {
@@ -14,7 +23,7 @@
         "text_color": "#0b3449",
         "header": "An independent creative agency \nand brand based in Brooklyn, NY.",
         "button_link_text": "Our Story",
-        "button_link": "shopify:\/\/pages\/about-us"
+        "button_link": "shopify://pages/about-us"
       }
     },
     "yws_image_tiles_k4tUeq": {
@@ -24,17 +33,17 @@
         "header": "Select Work",
         "text_color": "#9c2c24",
         "button_text": "All Work",
-        "button_link": "#",
+        "button_link": "shopify://blogs/work",
         "enable_mobile_carousel": true,
-        "image_1": "shopify:\/\/shop_images\/b95ba07e31263a22af4d668f8fbd89b4.jpg",
+        "image_1": "shopify://shop_images/b95ba07e31263a22af4d668f8fbd89b4.jpg",
         "tile_link_1": "#",
         "title_1": "Belief NYC",
         "subtitle_1": "2010 - Present",
-        "image_2": "shopify:\/\/shop_images\/9be9746168873c0fb9c6c9c8f1058021.jpg",
+        "image_2": "shopify://shop_images/9be9746168873c0fb9c6c9c8f1058021.jpg",
         "tile_link_2": "#",
         "title_2": "Polartec®",
         "subtitle_2": "2021",
-        "image_3": "shopify:\/\/shop_images\/s8_overscan_flat.00_03_55_15.Still006_3.jpg",
+        "image_3": "shopify://shop_images/s8_overscan_flat.00_03_55_15.Still006_3.jpg",
         "tile_link_3": "#",
         "title_3": "Brooklyn Brewery",
         "subtitle_3": "2024"
@@ -108,7 +117,7 @@
         "text_color": "#f3ecde",
         "header": "Capabilities",
         "button_text": "Learn More",
-        "button_link": "shopify:\/\/pages\/about-us"
+        "button_link": "shopify://pages/about-us"
       }
     },
     "yws_image_tiles_3q3d6T": {
@@ -118,18 +127,18 @@
         "header": "Studio Shop",
         "text_color": "#9c2c24",
         "button_text": "Shop All",
-        "button_link": "shopify:\/\/collections\/all",
+        "button_link": "shopify://collections/all",
         "enable_mobile_carousel": false,
-        "image_1": "shopify:\/\/shop_images\/b6082e332389835bc57bf486bcd7e3fe.jpg",
-        "tile_link_1": "shopify:\/\/collections\/all",
+        "image_1": "shopify://shop_images/b6082e332389835bc57bf486bcd7e3fe.jpg",
+        "tile_link_1": "shopify://collections/all",
         "title_1": "Shop All",
         "subtitle_1": "",
-        "image_2": "shopify:\/\/shop_images\/2b704fb32ec904d6edf8ba6c89f2f2b4.jpg",
-        "tile_link_2": "shopify:\/\/collections\/found-objects",
+        "image_2": "shopify://shop_images/2b704fb32ec904d6edf8ba6c89f2f2b4.jpg",
+        "tile_link_2": "shopify://collections/found-objects",
         "title_2": "Found Objects",
         "subtitle_2": "",
-        "image_3": "shopify:\/\/shop_images\/6358923881a58fc8668e53aa36c9a946-1.jpg",
-        "tile_link_3": "shopify:\/\/collections\/apparel",
+        "image_3": "shopify://shop_images/6358923881a58fc8668e53aa36c9a946-1.jpg",
+        "tile_link_3": "shopify://collections/apparel",
         "title_3": "YWS Apparel",
         "subtitle_3": ""
       }
@@ -143,8 +152,8 @@
         "header": "Work \n<br>\nConnect\n<br>\nShop",
         "subheader": "76 Nassau Ave. \n<br>\nBrooklyn, NY",
         "button_text": "Learn More",
-        "button_link": "shopify:\/\/pages\/about-us",
-        "image": "shopify:\/\/shop_images\/Updated_York_Image2.jpg"
+        "button_link": "shopify://pages/about-us",
+        "image": "shopify://shop_images/Updated_York_Image2.jpg"
       }
     }
   },
