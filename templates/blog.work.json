@@ -29,16 +29,6 @@
         "url": "shopify://blogs/work/polartech®"
       }
     },
-    "yws_hero_with_text_h9CaVp": {
-      "type": "yws-hero-with-text",
-      "settings": {
-        "text_color": "#f3ecde",
-        "title": "Realtree",
-        "subheader": "2022",
-        "banner_image": "shopify://shop_images/YWS_Case_Study_Realtree_Images_0005_1AFD42DF-9B83-4182-B4B6-D4E0B9CE83E9.jpg",
-        "url": "shopify://blogs/work/realtree"
-      }
-    },
     "yws_hero_with_text_4rCLRa": {
       "type": "yws-hero-with-text",
       "settings": {
@@ -47,6 +37,16 @@
         "subheader": "2020 - 2021",
         "banner_image": "shopify://shop_images/YWS_Case_Study_BG_Club_Images_0004_AB3FD4AE-41C2-47F0-9610-664E4263D702.jpg",
         "url": "shopify://blogs/work/boys-girls-club"
+      }
+    },
+    "yws_hero_with_text_h9CaVp": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#f3ecde",
+        "title": "Realtree",
+        "subheader": "2022",
+        "banner_image": "shopify://shop_images/YWS_Case_Study_Realtree_Images_0005_1AFD42DF-9B83-4182-B4B6-D4E0B9CE83E9.jpg",
+        "url": "shopify://blogs/work/realtree"
       }
     },
     "yws_hero_with_text_NVWYP8": {
@@ -93,9 +93,9 @@
   "order": [
     "yws_hero_with_text_RXVP7e",
     "yws_hero_with_text_yw4Y8y",
-    "yws_hero_with_text_h9CaVp",
-    "yws_hero_with_text_4rCLRa",
     "yws_hero_with_text_NVWYP8",
+    "yws_hero_with_text_4rCLRa",
+    "yws_hero_with_text_h9CaVp",
     "yws_hero_with_text_tdidXt",
     "yws_hero_with_text_cWgqCG",
     "yws_hero_with_text_gfeWW4"
