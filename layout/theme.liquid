@@ -262,7 +262,7 @@
    
       <style>
 
-        {% if request.page_type == "blog" or request.page_type == "article" %}
+        {% if request.page_type == "blog" or request.page_type == "article" or request.page_type == "blog" %}
           yws-sticky-header {
             background: transparent !important;
           }
@@ -270,6 +270,13 @@
           yws-sticky-header svg path {
             fill: var(--yws-off-white) !important;
           }
+
+          yws-sticky-header.scrolled-in .cart-count, 
+          yws-sticky-header.scrolled-in .cart-count {
+            background-color: transparent;
+
+          }
+
         {% endif %}
 
         @media screen and (max-width: 834px) {
