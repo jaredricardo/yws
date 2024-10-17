@@ -66,6 +66,16 @@
     </div>
 
     <div class="yws-article-grid">
+      {% for item in yws_grid_items %}
+            <div class="article-grid-item" data-article-grid-index="{{ forloop.index0 }}">
+                {% if item.media_type == 'image' %}
+                        {{ item | media | media_tag: image_size: '600x' }}
+                    {% elsif item.media_type == 'video' %}
+                        {% render 'yws-icon-play' %}
+                        {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true }}
+                {% endif %}
+            </div>
+        {% endfor %}
         <div class="yws-modal__main-area">
             <div class="yws-article-modal-inner--article">
                 <div class="swiper">
@@ -106,19 +116,13 @@
                 </div>
             </div>
         </div> 
-      {% for item in yws_grid_items %}
-            <div class="article-grid-item" data-article-grid-index="{{ forloop.index0 }}">
-                {% if item.media_type == 'image' %}
-                        {{ item | media | media_tag: image_size: '600x' }}
-                    {% elsif item.media_type == 'video' %}
-                        {% render 'yws-icon-play' %}
-                        {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true }}
-                {% endif %}
-            </div>
-        {% endfor %}
     </div>
 </div>
 <script>
+
+    window.addEventListener('click', (e) => {
+        console.log(e.target)
+    })
 
     window.addEventListener('DOMContentLoaded', () => {
 
@@ -136,34 +140,47 @@
         let aVideoIsPlaying = false
 
         gridItems.forEach((item) => {
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation()
+                console.log('clicked an item')
                 if(window.innerWidth <= 415) {
-                    if(item.querySelector('video')) {
-                        item.querySelector('video').play()
-                        item.querySelector('video').controls = true
-                        item.querySelector('.yws-play-icon').style.display = 'none'
-                    }
+                    const video = item.querySelector('video')
+     
+                    if(video) {
+                        video.addEventListener('pause', () => {
+                            console.log('video paused')
+                            setTimeout(() => {
+                                console.log('pausing video after delay')
+                                video.pause()
+                            }, 50)
+                        })
+                        playVideo(item) 
+                    } 
                 } else {
 
                     const cardNumber = Number(item.dataset.articleGridIndex)
 
-                    swiper.slideTo(cardNumber, 0, false)
+                    swiper.slideToLoop(cardNumber, 0, 0)
                     document.querySelector('.yws-article-grid .yws-modal__main-area').classList.add('active')
                     document.body.classList.add('overflow-hidden')
 
                     if(item.querySelector('video')){
-                        const selectedVideo = document.querySelector(`[data-article-modal-index="${cardNumber}"]`)
-                        selectedVideo.querySelector('video').play()
-                        selectedVideo.querySelector('video').controls = true
-                        selectedVideo.querySelector('.yws-play-icon').style.display = 'none'
-                        aVideoIsPlaying = true
+                        const selectedVideo = document.querySelector(`[data-swiper-slide-index="${cardNumber}"]`)
+                        playVideo(selectedVideo)
                     }
                 }
             })
         })
 
+        document.querySelectorAll('.yws-modal__main-area .yws-play-icon').forEach((icon) => {
+            icon.addEventListener('click', () => {
+                const container = icon.closest('.slide-container')
+                playVideo(container)
+            })
+        })
+
         ywsModalClose.forEach((modal) => {
-            swiper.slideTo(0)
+            swiper.slideToLoop(0, 0, true)
             modal.addEventListener('click', () => {
                 if(aVideoIsPlaying) {
                     pauseAllVideos()
@@ -171,12 +188,10 @@
             })
         })
 
-
         swiperLeft.addEventListener('click', () => {
             if(aVideoIsPlaying) {
                 pauseAllVideos()
             }
-            console.log(swiper)
             swiper.slidePrev()
         })
 
@@ -184,7 +199,6 @@
             if(aVideoIsPlaying) {
                 pauseAllVideos()
             }
-             console.log(swiper)
             swiper.slideNext()
         })
 
@@ -194,8 +208,15 @@
             }
         })
 
+        function playVideo(container) {
+            const video = container.querySelector('video')
+            video.controls = true
+            video.play()
+            container.querySelector('.yws-play-icon').style.display = 'none'
+            aVideoIsPlaying = true    
+        }
+
         function pauseAllVideos() {
-            console.log('pausing all videos')
             document.querySelectorAll('.yws-article-container video').forEach((video) => {
                 video.pause()
                 video.currentTime = 0 

@@ -11,6 +11,18 @@
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
 <div class="buy-button-form-container" style="width:100%" {{ block.shopify_attributes }}>
+
+  {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+    <span class="sold-out-money-copy">
+      {{ 'products.product.sold_out' | t }}
+    </span>  
+  {% else %}
+    <span class="money">{{ product.price | money_without_trailing_zeros }}</span>
+    {% if product.compare_at_price > product.price %}
+        <span class="money compare-at">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+    {% endif %}
+  {% endif %}
+
   {%- if product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false

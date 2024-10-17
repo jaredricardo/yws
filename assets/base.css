@@ -5122,7 +5122,19 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
 
 .yws-pdp-wrapper .buy-button-form-container {
   width: 100%;
-  padding-left: 30px;
+  gap: 20px;
+  /* padding-left: 30px; */
+  align-items: center;
+  display: flex;
+}
+
+.yws-pdp-wrapper .sold-out-money-copy {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--yws-red);
 }
 
 shopify-payment-terms {
@@ -5443,6 +5455,7 @@ shopify-payment-terms {
   }
   .product__info-container .product-form{
     margin:0;
+    flex-grow: 1;
   }
   .product-slider .swiper{
     max-width: 100%;
@@ -5617,9 +5630,10 @@ shopify-payment-terms {
   text-align: left;
 }
 
-.yws-article-info .col:nth-of-type(2) p {
+.yws-article-info .col:nth-of-type(2) p,
+.yws-article-info .col:nth-of-type(2) span {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 700 !important;
   line-height: 30px;
   letter-spacing: 0.02em;
   text-align: left;
@@ -6114,7 +6128,8 @@ shopify-payment-terms {
   .yws-article-info .col:nth-of-type(2) {
     padding: 0 15px;
   }
-  .yws-article-info .col:nth-of-type(2) p {
+  .yws-article-info .col:nth-of-type(2) p,
+  .yws-article-info .col:nth-of-type(2) span {
     font-size: 20px;
     line-height: 26px;
   }
@@ -6122,6 +6137,13 @@ shopify-payment-terms {
     grid-template-columns: repeat(2, 1fr);
     padding: 0 15px;
     gap: 15px;
+  }
+  .yws-pdp-wrapper .buy-button-form-container {
+    flex-direction: column;
+    align-items: start;
+  }
+  .yws-main-product .product-form {
+    width: 100%;
   }
 }
 
@@ -6354,7 +6376,7 @@ shopify-payment-terms {
     padding: 0 10px;
   }
   .yws-pdp-wrapper {
-    padding: 160px 10px 40px 10px;
+    padding: 100px 10px 40px 10px;
   }
   .yws-main-product .product__title h1 {
     font-size: 20px;
@@ -6462,7 +6484,8 @@ shopify-payment-terms {
     padding: 40px 10px;
     gap: 30px;
   }
-  .yws-article-info .col:nth-of-type(2) p {
+  .yws-article-info .col:nth-of-type(2) p,
+  .yws-article-info .col:nth-of-type(2) span {
     font-size: 18px;
     line-height: 24px;
   }

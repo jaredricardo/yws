@@ -976,6 +976,7 @@ class VariantSelects extends HTMLElement {
     }
   }
 
+
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {
       if (element.tagName === 'SELECT') {
@@ -1108,7 +1109,6 @@ class VariantSelects extends HTMLElement {
   renderProductInfo() {
     const requestedVariantId = this.currentVariant.id;
     const sectionId = this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section;
-
     fetch(
       `${this.dataset.url}?variant=${requestedVariantId}&section_id=${
         this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section
@@ -1121,6 +1121,11 @@ class VariantSelects extends HTMLElement {
 
         const html = new DOMParser().parseFromString(responseText, 'text/html');
         const destination = document.getElementById(`price-${this.dataset.section}`);
+
+        const moneyCopyDestination = document.querySelector('.buy-button-form-container')
+        const moneyCopy = html.querySelector('.buy-button-form-container')
+
+
         const source = html.getElementById(
           `price-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
@@ -1164,6 +1169,10 @@ class VariantSelects extends HTMLElement {
         if (pricePerItemSource && pricePerItemDestination) {
           pricePerItemDestination.innerHTML = pricePerItemSource.innerHTML;
           pricePerItemDestination.classList.toggle('hidden', pricePerItemSource.classList.contains('hidden'));
+        }
+
+        if(moneyCopy && moneyCopyDestination){
+          moneyCopyDestination.innerHTML = moneyCopy.innerHTML
         }
 
         const price = document.getElementById(`price-${this.dataset.section}`);

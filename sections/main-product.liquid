@@ -469,16 +469,12 @@
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
                 <div class="buy-price-container">
-                  <span class="money">{{ product.price | money_without_trailing_zeros }}</span>
-                  {% if product.compare_at_price > product.price %}
-                      <span class="money compare-at">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-                  {% endif %}
                   {%- render 'buy-buttons',
                     block: block,
                     product: product,
                     product_form_id: product_form_id,
                     section_id: section.id,
-                    show_pickup_availability: true
+                    show_pickup_availability: false
                   -%}
                 </div>
                 {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}

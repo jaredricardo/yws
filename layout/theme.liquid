@@ -262,9 +262,22 @@
    
       <style>
 
-        {% if request.page_type == "blog" or request.page_type == "article" or request.page_type == "blog" %}
+        {% if request.page_type != "index" %}
           yws-sticky-header {
-            background: transparent !important;
+            visibility: hidden;
+          }
+
+          yws-sticky-header.scrolled-in {
+            visibility: visible;
+          }
+
+        {% endif %}
+
+        {% if request.page_type == "blog" or request.page_type == "article" or request.page_type == "blog" %}
+
+
+          yws-sticky-header {
+            background: transparent !important;;
           }
 
           yws-sticky-header svg path {
@@ -274,7 +287,6 @@
           yws-sticky-header.scrolled-in .cart-count, 
           yws-sticky-header.scrolled-in .cart-count {
             background-color: transparent;
-
           }
 
         {% endif %}
