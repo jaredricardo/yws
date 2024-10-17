@@ -26,7 +26,7 @@
                 {% for s in sizes.sizes %}
                     <div class="table-value-size">
                         <span class="circle">
-                            <span>{{ s.size }}</span>
+                            <span>{{ s.size }}"</span>
                         </span>
                     </div>
                 {% endfor %}
@@ -34,19 +34,25 @@
                 <div class="size-table-row">
                     <span class="table-title">Length</span>
                 {% for s in sizes.sizes %}
-                    <span class="table-value">{{ s.length }}</span>
+                    <span class="table-value">{{ s.length }}"</span>
                 {% endfor %}
                 </div>
                 <div class="size-table-row">
                     <span class="table-title">Chest</span>
                 {% for s in sizes.sizes %}
-                    <span class="table-value">{{ s.chest }}</span>
+                    <span class="table-value">{{ s.chest }}"</span>
                 {% endfor %}
                 </div>
                 <div class="size-table-row">
                     <span class="table-title">Sleeve</span>
                 {% for s in sizes.sizes %}
-                    <span class="table-value">{{ s.sleeve }}</span>
+                    <span class="table-value">{{ s.sleeve }}"</span>
+                {% endfor %}
+                </div>
+                <div class="size-table-row">
+                    <span class="table-title">Shoulder</span>
+                {% for s in sizes.sizes %}
+                    <span class="table-value">{{ s.shoulder }}"</span>
                 {% endfor %}
                 </div>
             </div>
