@@ -19,6 +19,7 @@
         {% endif %}
     >
         {% if size_chart %}
+
             <div class="yws-size-chart">
                 <div class="size-table-row">
                     <span class="table-title">Size</span>
@@ -26,35 +27,64 @@
                 {% for s in sizes.sizes %}
                     <div class="table-value-size">
                         <span class="circle">
-                            <span>{{ s.size }}"</span>
+                            <span>{{ s.size }}</span>
                         </span>
                     </div>
                 {% endfor %}
                 </div>
+
+                {% comment %} tops {% endcomment %}
                 <div class="size-table-row">
                     <span class="table-title">Length</span>
-                {% for s in sizes.sizes %}
-                    <span class="table-value">{{ s.length }}"</span>
-                {% endfor %}
+                    {% for s in sizes.sizes %}
+                        <span class="table-value {% if s.length == blank %} dosnt-exist {% endif %}">{{ s.length }}"</span>
+                    {% endfor %}
                 </div>
                 <div class="size-table-row">
                     <span class="table-title">Chest</span>
-                {% for s in sizes.sizes %}
-                    <span class="table-value">{{ s.chest }}"</span>
-                {% endfor %}
+                    {% for s in sizes.sizes %}
+                        <span class="table-value {% if s.chest == blank %} dosnt-exist {% endif %}">{{ s.chest }}"</span>
+                    {% endfor %}
                 </div>
                 <div class="size-table-row">
                     <span class="table-title">Sleeve</span>
-                {% for s in sizes.sizes %}
-                    <span class="table-value">{{ s.sleeve }}"</span>
-                {% endfor %}
+                    {% for s in sizes.sizes %}
+                        <span class="table-value {% if s.sleeve == blank %} dosnt-exist {% endif %}">{{ s.sleeve }}"</span>
+                    {% endfor %}
                 </div>
                 <div class="size-table-row">
                     <span class="table-title">Shoulder</span>
-                {% for s in sizes.sizes %}
-                    <span class="table-value">{{ s.shoulder }}"</span>
-                {% endfor %}
-                </div>
+                    {% for s in sizes.sizes %}
+                        <span class="table-value {% if s.shoulder == blank %} dosnt-exist {% endif %}">{{ s.shoulder }}"</span>
+                    {% endfor %}
+                </div> 
+
+                {% comment %} pants {% endcomment %}
+                <div class="size-table-row">
+                    <span class="table-title">Waist</span>
+                    {% for s in sizes.sizes %}
+                        <span class="table-value {% if s.waist == blank %} dosnt-exist {% endif %}">{{ s.waist }}"</span>
+                    {% endfor %}
+                </div>  
+                <div class="size-table-row">
+                    <span class="table-title">Rise</span>
+                    {% for s in sizes.sizes %}
+                        <span class="table-value {% if s.rise == blank %} dosnt-exist {% endif %}">{{ s.rise }}"</span>
+                    {% endfor %}
+                </div>  
+                <div class="size-table-row">
+                    <span class="table-title">Inseam</span>
+                    {% for s in sizes.sizes %}
+                        <span class="table-value {% if s.inseam == blank %} dosnt-exist {% endif %}">{{ s.inseam }}"</span>
+                    {% endfor %}
+                </div>   
+                <div class="size-table-row">
+                    <span class="table-title">Leg Opening</span>
+                    {% for s in sizes.sizes %}
+                        <span class="table-value {% if s.leg_opening == blank %} dosnt-exist {% endif %}">{{ s.leg_opening }}"</span>
+                    {% endfor %}
+                </div>  
+
             </div>
         {% else %}
             {{ content }}

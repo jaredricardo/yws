@@ -5532,6 +5532,9 @@ shopify-payment-terms {
       align-items: center;
       gap: 5px;
       border-bottom: 1px solid var(--YWS-Blue, #0B3449);
+      width: max-content;
+      min-width: 100%;
+      justify-content: space-between;
   }
   .size-table-row:last-child{
       border-bottom:none;
@@ -5550,7 +5553,6 @@ shopify-payment-terms {
   .table-value,
   .table-value-size{
       display: flex;
-      width: 80px;
       align-items: center;
   }
   .table-value-size{
@@ -5814,6 +5816,16 @@ shopify-payment-terms {
 
 .yws-article-container .swiper-right {
   right: 3%;
+}
+
+.yws-collapse .size-table-row:has(.dosnt-exist) {
+  display: none;
+}
+
+.yws-collapse .table-title,
+.yws-collapse .table-value,
+.yws-collapse .table-value-size {
+  min-width: 80px
 }
 
 @media screen and (max-width: 769px) {
@@ -6441,9 +6453,6 @@ shopify-payment-terms {
   .yws-collapse .collapse-content p {
     font-size: 16px;
     line-height: 22px;
-  }
-  .yws-collapse .table-value-size {
-    margin-left: 50px;
   }
   yws-sticky-header .yws-header__logo-text a {
     min-width: 0px;
