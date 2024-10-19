@@ -3749,7 +3749,7 @@ yws-sticky-header .yws-header__logo-text a:hover {
 yws-sticky-header.scrolled-in {
   background: linear-gradient(to bottom, var(--yws-off-white), transparent);
   position: relative;
-  padding: 40px 60px 40px 60px;
+  padding: 40px 60px;
 }
 
 yws-sticky-header .col {
@@ -5635,7 +5635,6 @@ shopify-payment-terms {
 .yws-article-info .col:nth-of-type(2) p,
 .yws-article-info .col:nth-of-type(2) span {
   font-size: 24px;
-  font-weight: 700 !important;
   line-height: 30px;
   letter-spacing: 0.02em;
   text-align: left;
@@ -5921,7 +5920,7 @@ shopify-payment-terms {
     flex-direction: row;
   }
   yws-sticky-header .col:nth-of-type(1) {
-    padding-left: 30px;
+    padding-left: 0px;
   } 
 }
 
@@ -6086,8 +6085,7 @@ shopify-payment-terms {
     padding: 0 30px;
   }
   yws-sticky-header.scrolled-in {
-    /* 15 isnt exactly right, but we're correcting for padding in header items */
-    padding: 40px 15px 40px 15px
+    padding: 40px 45px
   }
   .yws-main-product .product__title h1 {
     font-size: 36px;
@@ -6157,6 +6155,22 @@ shopify-payment-terms {
   .yws-main-product .product-form {
     width: 100%;
   }
+  .yws-main-product .product-form__buttons {
+    margin-right: auto;
+    margin-left: unset;
+  }
+}
+
+@media screen and (max-width: 631px) {
+  yws-sticky-header.scrolled-in .yws-header__logo-text svg {
+    min-width: 70px;
+  }
+}
+
+@media screen and (max-width: 541px) {
+  .col.yws-header__logo-text {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 415px) {
@@ -6189,9 +6203,6 @@ shopify-payment-terms {
   }
   .yws-video-section button {
     font-size: 18px;
-  }
-  yws-sticky-header.scrolled-in .col.yws-header__logo-text {
-    display: none !important;
   }
   yws-sticky-header.scrolled-in .yws-header__logo-text path {
     fill: transparent;

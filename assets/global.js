@@ -963,6 +963,7 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability();
     this.removeErrorMessage();
     this.updateVariantStatuses();
+    this.updateYWSMediaModal(event)
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
@@ -976,6 +977,17 @@ class VariantSelects extends HTMLElement {
     }
   }
 
+  updateYWSMediaModal(e) {
+
+    const variantImage = e.target.dataset.variantImage
+    const regularGalleryFirstImage = document.querySelector('.regular-gallery img')
+    const swiperGalleryFirstImage = document.querySelector('.yws-pdp-wrapper .swiper-slide img')
+    
+    regularGalleryFirstImage.srcset = variantImage
+    swiperGalleryFirstImage.srcset = variantImage
+
+  
+  }
 
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {

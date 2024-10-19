@@ -57,7 +57,9 @@ THEN RENDER USAGE AS FOLLOWS:
             <div class="left">
                 <h3>{{ product.title }}</h3>
                 {% if variant_color %}
-                    <h4>{{ variant_color }}</h4>
+                    {% unless variant_color contains 'Default' %}
+                        <h4>{{ variant_color }}</h4>
+                    {% endunless %}
                 {% endif %}
             </div>
             <div class="right">

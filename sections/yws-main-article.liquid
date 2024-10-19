@@ -86,7 +86,7 @@
                                     <div class="media-container">
                                         <span class="yws-modal__close">{% render 'yws-icon-close' %}</span>
                                         {% if item.media_type == 'image' %}
-                                            {{ item | media | media_tag: image_size: '1200x' }}
+                                            {{ item | media | media_tag: image_size: '1600x' }}
                                         {% elsif item.media_type == 'video' %}
                                             {% render 'yws-icon-play' %}
                                             {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true }}
@@ -120,9 +120,6 @@
 </div>
 <script>
 
-    window.addEventListener('click', (e) => {
-        console.log(e.target)
-    })
 
     window.addEventListener('DOMContentLoaded', () => {
 
@@ -142,15 +139,12 @@
         gridItems.forEach((item) => {
             item.addEventListener('click', (e) => {
                 e.stopPropagation()
-                console.log('clicked an item')
                 if(window.innerWidth <= 415) {
                     const video = item.querySelector('video')
      
                     if(video) {
                         video.addEventListener('pause', () => {
-                            console.log('video paused')
                             setTimeout(() => {
-                                console.log('pausing video after delay')
                                 video.pause()
                             }, 50)
                         })
@@ -224,7 +218,18 @@
             aVideoIsPlaying = false
         }
 
+        window.addEventListener('keydown', (e) => {
+            if(!document.querySelector('.yws-article-grid .yws-modal__main-area').classList.contains('active')) return
+            if (e.key === 'ArrowLeft' || e.keyCode === 37) {
+                swiper.slidePrev()
+            } else if (e.key === 'ArrowRight' || e.keyCode === 39) {
+                swiper.slideNext()
+            }
+        })
+
     })
+
+
 
 </script>
 

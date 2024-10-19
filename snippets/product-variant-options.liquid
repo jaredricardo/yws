@@ -49,6 +49,7 @@
 
     if value.swatch.image
       assign image_url = value.swatch.image | image_url: width: 50
+      assign large_img_url = value.swatch.image | image_url: width: 1200
       assign swatch_value = 'url(' | append: image_url | append: ')'
     elsif value.swatch.color
       assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
@@ -80,7 +81,8 @@
       checked: checked,
       disabled: option_disabled,
       shape: block.settings.swatch_shape,
-      help_text: label_unavailable
+      help_text: label_unavailable,
+      large_img_url: large_img_url
     %}
   {%- elsif picker_type == 'button' -%}
     <input
