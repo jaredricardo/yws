@@ -980,6 +980,9 @@ class VariantSelects extends HTMLElement {
   updateYWSMediaModal(e) {
 
     const variantImage = e.target.dataset.variantImage
+
+    if (variantImage === undefined) return
+
     const regularGalleryFirstImage = document.querySelector('.regular-gallery img')
     const swiperGalleryFirstImage = document.querySelector('.yws-pdp-wrapper .swiper-slide img')
     

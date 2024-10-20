@@ -3917,7 +3917,8 @@ yws-menu-drawer.cart-items-drawer-active .yws-menu-drawer__footer {
   margin: 0;
 }
 
-.yws-link-button {
+.yws-link-button,
+.klaviyo-bis-trigger {
   margin: var(--yws-spacing);
   color: var(--yws-blue);
   border: 1.5px solid var(--yws-blue);
@@ -3936,6 +3937,19 @@ yws-menu-drawer.cart-items-drawer-active .yws-menu-drawer__footer {
   letter-spacing: 1px;
   text-align: left;
   transition: 100ms linear;
+}
+
+.klaviyo-bis-trigger {
+  color: var(--yws-off-white) !important;
+  background-color: var(--yws-red) !important;
+  justify-content: center !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.klaviyo-bis-trigger::before,
+.klaviyo-bis-trigger::after {
+  display: none;
 }
 
 .yws-link-button:hover {
@@ -5135,6 +5149,7 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   letter-spacing: 0.02em;
   text-align: left;
   color: var(--yws-red);
+  width: 90px;
 }
 
 shopify-payment-terms {
@@ -5342,6 +5357,7 @@ shopify-payment-terms {
   line-height: 30px;
   letter-spacing: 0.02em;
   text-align: left;
+  width: 90px;
 }
 
 .yws-pdp-wrapper:has(.compare-at) .money {
