@@ -8,84 +8,76 @@
         color: {{ section.settings.text_color }};
     }
 {% endstyle %}
-<div data-section-id="{{ section.id }}" class="yws-more-work">
-    {% if section.settings.header != blank %}
-        <div class="heading-container">
-            <h2>{{ section.settings.header }}</h2>
-        </div>
-    {% endif %}
-    <div class="more-work-container">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                {% if recommendations.performed and recommendations.products_count > 0 %}
-                    {% assign count = 0 %}
-                    {% for recommendation in recommendations.products limit: 6 %}
-                        {% assign count = count | plus:1 %}
-                        <div class="swiper-slide" data-slide-index="{{ forloop.index }}">
 
-                            {% liquid 
-                                assign has_color_variant = false
-                                for option in product.options
-                                    if option == 'Color'
-                                        assign has_color_variant = true
-                                        assign color_option_index = forloop.index0
-                                    endif
-                                endfor        
-                            -%}
-                            {% render 'yws-product-card', product:recommendation, has_color_variant:has_color_variant, color_option_index:color_option_index, skip_breakout: true %}
-                        </div>
-                    {% endfor %}
-                {% endif %}
+{% liquid 
+
+    assign count = 0
+
+    for blog_article in blog.articles
+        unless article.handle == blog_article.handle
+            assign count = count | plus: 1
+        endunless
+    endfor    
+
+-%}
+
+{% if count > 3 %}
+    <div data-section-id="{{ section.id }}" class="yws-more-work">
+        {% if section.settings.header != blank %}
+            <div class="heading-container">
+                <h2>{{ section.settings.header }}</h2>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-pagination-container">
-                <span class="starting-num">1</span><span class="divider">/</span><span class="total-num">{{ count }}</span>
+        {% endif %}
+        <div class="more-work-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                {% for blog_article in blog.articles limit: 20 %}
+                    {% unless article.handle == blog_article.handle %}
+                        <div class="swiper-slide" data-slide-index="{{ forloop.index }}">
+                            {% render 'yws-tile-image', img: blog_article.image.src,  title: blog_article.title, subtitle: blog_article.excerpt | truncate: 10, tile_link: blog_article.handle %}
+                        </div>
+                    {% endunless %}
+                {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination-container">
+                    <span class="starting-num">1</span><span class="divider">/</span><span class="total-num">{{ count }}</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        console.log('////')
-        console.log{{ article | json }}
-        return
-        const swiperMoreWork = new Swiper('.yws-more-work .swiper', {
-            loop: true,
-            speed: 400,
-            spaceBetween: 10,
-            slidesPerView: 1.16,
-            centeredSlides: false,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-            },
-            breakpoints:{
-                600:{
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const swiperMoreWork = new Swiper('[data-section-id="{{ section.id }}"] .swiper', {
+                loop: true,
+                speed: 400,
+                spaceBetween: 10,
                 slidesPerView: 1.16,
+                centeredSlides: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
                 },
-                834:{
-                    slidesPerView: 2.4,
-                    spaceBetween: 15,
-                    loop: true,
-                    centeredSlides: true
-                },
-                1440:{
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                    loop: true,
-                    centeredSlides: true
+                breakpoints:{
+                    515:{
+                        slidesPerView: 2,
+                        spaceBetween: 15
+                    },
+                    843:{
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    }
                 }
-            }
+            })
+                
+            swiperMoreWork.on('transitionEnd',function(){
+                const activeSlide = document.querySelector('.yws-more-work .swiper-slide-active').getAttribute('data-slide-index')
+                const startingNum = document.querySelector('.yws-more-work .starting-num').innerText = activeSlide
+            })
         })
-              
-        swiperMoreWork.on('transitionEnd',function(){
-            const activeSlide = document.querySelector('.yws-more-work .swiper-slide-active').getAttribute('data-slide-index')
-            const startingNum = document.querySelector('.yws-more-work .starting-num').innerText = activeSlide
-        })
-    })
-</script>
+    </script>
+{% endif %}
   
 {% schema %}
   {
@@ -104,7 +96,7 @@
             "type": "text",
             "id": "header",
             "label": "Header",
-            "default": "Related Products"
+            "default": "More Work"
         },
         {
             "type": "color",

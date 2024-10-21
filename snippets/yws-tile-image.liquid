@@ -1,12 +1,12 @@
 <a class="yws-tile" href="{{ tile_link }}">
     <div class="img-overlay"></div>
-    <img src="{{ img |  img_url: 'master' }}" alt="YWS Image Tile">
+    <img src="{{ img | image_url: width: 800 }}" alt="YWS Image Tile">
     <div class="yws-tile-text">
         {% if title != blank %}
-            <div class="yws-tile-title">{{ title }}</div>
+            <h4 class="yws-tile-title">{{ title }}</h4>
         {% endif %}
         {% if subtitle != blank %}
-            <div class="yws-tile-subtitle">{{ subtitle }}</div>
+            <h5 class="yws-tile-subtitle">{{ subtitle }}</h5>
         {% endif %}
     </div>
 </a>

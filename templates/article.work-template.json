@@ -4,9 +4,18 @@
       "type": "yws-main-article",
       "settings": {
       }
+    },
+    "yws_related_blog_posts_aRFVUa": {
+      "type": "yws-related-blog-posts",
+      "settings": {
+        "bg_color": "#F3ECDE",
+        "header": "More Work",
+        "text_color": "#9C2C24"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "yws_related_blog_posts_aRFVUa"
   ]
 }

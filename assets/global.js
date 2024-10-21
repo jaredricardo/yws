@@ -1288,25 +1288,23 @@ class ProductRecommendations extends HTMLElement {
                 spaceBetween: 10,
                 slidesPerView: 1.16,
                 centeredSlides: false,
+                loop: true,
                 pagination: {
                   el: '.swiper-pagination',
                   clickable: true
                 },
                 breakpoints:{
-                  600:{
-                    slidesPerView: 1.16,
-                  },
-                  834:{
-                      slidesPerView: 2.4,
-                      spaceBetween: 15,
-                      loop: true,
-                      centeredSlides: true
-                  },
-                  1440:{
+                  515:{
+                    slidesPerView: 2.4,
+                    spaceBetween: 15,
+                    loop: true,
+                    centeredSlides: true
+                  },  
+                  1024:{
                       slidesPerView: 3,
                       spaceBetween: 30,
                       loop: true,
-                      centeredSlides: true
+                      centeredSlides: false
                   }
                 }
               })
