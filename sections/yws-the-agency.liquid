@@ -96,8 +96,7 @@
     [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide {
         display: flex;
         align-items: flex-start;
-        width:307px;
-        height:307px !important;
+        aspect-ratio: 1 / 1;
         border-radius:10px;
         overflow:hidden;
     }
@@ -115,13 +114,12 @@
         letter-spacing: 0.4px;
         position:absolute;
         bottom:30px;
-        left: 30px;
+        left: 20px;
     }
     [data-section-id="{{ section.id }}"] .swiper-pagination{
         position:unset;
         display: flex;
-        height: 21px;
-        padding: 0px 20px;
+        padding: 0px 10px;
         align-items: center;
         gap: 5px;
         flex: 1 0 0;
@@ -180,11 +178,60 @@
     }
 
 
+    @media(min-width: 415px){
+        [data-section-id="{{ section.id }}"]{
+            padding: 100px 0px;
+            gap: 60px;
+        }
+        [data-section-id="{{ section.id }}"] .col-3{
+            flex:3;
+        }
+        [data-section-id="{{ section.id }}"] .yws-the-agency{
+            padding:0 15px;
+            align-items:center;
+        }
+        [data-section-id="{{ section.id }}"] .btn-container{
+            /* padding:0 30px; */
+        }
+        [data-section-id="{{ section.id }}"] a {
+            height: 60px;
+            font-size: 24px;
+            line-height: 28px;
+            width: 400px;
+            padding: 0 30px;
+        }
+        [data-section-id="{{ section.id }}"] .the-agency-text{
+            padding:0 30px;
+            gap: 30px;
+        }
+        [data-section-id="{{ section.id }}"] .yws-agency-slider{
+            padding:0 15px;
+        }
+        [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide {
+            aspect-ratio: 440 / 313;    
+        }
+        [data-section-id="{{ section.id }}"] .slide-title{
+            font-size: 28px;
+            letter-spacing: 0.72px;
+            left: 30px;
+        }
+        [data-section-id="{{ section.id }}"] p{
+            font-size: 20px;
+            line-height: 26px;
+        }
+        [data-section-id="{{ section.id }}"] h2{
+            font-size: 36px;
+            line-height: 36px;
+        }
+        [data-section-id="{{ section.id }}"] .swiper-pagination { 
+            justify-content: center;
+        }
+    }
 
     @media(min-width:834px){
         [data-section-id="{{ section.id }}"]{
             padding: 80px 0px;
-            gap: 40px;
+            gap: 60px;
         }
         [data-section-id="{{ section.id }}"] .col-3 {
             width: 50%;
@@ -199,9 +246,8 @@
             letter-spacing: 0.72px;
         }
         [data-section-id="{{ section.id }}"] p{ 
-            font-size: 20px;
-            line-height: 26px; /* 130% */
-            letter-spacing: 0.4px;
+            font-size: 24px;
+            line-height: 30px; /* 130% */
         }
         [data-section-id="{{ section.id }}"] a{
             display: flex;
@@ -221,12 +267,12 @@
             height: 18px;
         }
         [data-section-id="{{ section.id }}"] .yws-the-agency{
-            padding:0 15px;
+            padding:0 30px;
             flex-direction: row;
         }
         [data-section-id="{{ section.id }}"] .yws-agency-slider{
             display: flex;
-            padding: 0px 15px;
+            padding: 0px 30px;
             align-items: center;
             gap: 15px;
             align-self: stretch;
@@ -251,8 +297,9 @@
             top:0;
         }
         [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide{
-            width: 257px;
-            height: 183px !important;
+            aspect-ratio: 440 / 313;
+            /* width: 440px;
+            height: 313px !important; */
         }
         [data-section-id="{{section.id}}"] .swiper-pagination-bullet{
             width:15px;
@@ -281,42 +328,6 @@
             img{
                 width:100%;
             }
-        }
-    }
-
-    @media(min-width: 415px){
-        [data-section-id="{{ section.id }}"]{
-            padding: 100px 0px;
-            gap: 60px;
-        }
-        [data-section-id="{{ section.id }}"] .col-3{
-            flex:3;
-        }
-        [data-section-id="{{ section.id }}"] .yws-the-agency{
-            padding:0 30px;
-            align-items:center;
-        }
-        [data-section-id="{{ section.id }}"] .btn-container{
-            /* padding:0 30px; */
-        }
-        [data-section-id="{{ section.id }}"] .the-agency-text{
-            padding:0 30px;
-        }
-        [data-section-id="{{ section.id }}"] .yws-agency-slider{
-            padding:0 30px;
-        }
-        [data-section-id="{{ section.id }}"] .yws-agency-slider .swiper-slide{
-            width:440px;
-            height:313px !important;
-        }
-        [data-section-id="{{ section.id }}"] .slide-title{
-            font-size: 36px;
-            letter-spacing: 0.72px;
-        }
-        [data-section-id="{{ section.id }}"] p{
-            font-size:24px;
-            line-height:30px;
-            letter-spacing:0.48px;
         }
         [data-section-id="{{ section.id }}"] h2{
             font-size: 48px;
@@ -351,7 +362,7 @@
                 {% assign count = 0 %}
                 {% for block in section.blocks %}
                     <div data-slide-index="{{ forloop.index }}" class="swiper-slide" 
-                        style="background-image:url({{block.settings.slide_img | img_url:'master'}});background-size:cover;"
+                        style="background-image:url({{block.settings.slide_img | img_url:'600x'}});background-size:cover;"
                     >
                         <div class="slide-container">
                             <div class="slide-title">

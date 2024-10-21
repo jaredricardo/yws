@@ -6228,7 +6228,7 @@ shopify-payment-terms {
 }
 
 @media screen and (max-width: 541px) {
-  .col.yws-header__logo-text {
+  yws-sticky-header.scrolled-in  .col.yws-header__logo-text {
     display: none !important;
   }
 }
