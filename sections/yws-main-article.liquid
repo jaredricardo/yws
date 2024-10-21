@@ -82,9 +82,6 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         {% for item in yws_grid_items %}
-                            <script>
-                                console.log({{ item | json }})
-                            </script>
                             <div class="swiper-slide" data-article-modal-index="{{ forloop.index0 }}">
                                 <div class="slide-container">
                                     <div class="media-container">

@@ -31,11 +31,14 @@
         <div class="more-work-container">
             <div class="swiper">
                 <div class="swiper-wrapper">
+                    <script>
+                        console.log({{ blog.articles | json }})
+                    </script>
                 {% for blog_article in blog.articles limit: 20 %}
                     {% unless article.handle == blog_article.handle %}
                         <div class="swiper-slide" data-slide-index="{{ forloop.index }}">
                             {% assign truncated_subtitle = blog_article.excerpt | truncate: 20 %}
-                            {% render 'yws-tile-image', img: blog_article.image.src,  title: blog_article.title, subtitle: truncated_subtitle, tile_link: blog_article.link %}
+                            {% render 'yws-tile-image', img: blog_article.image.src,  title: blog_article.title, subtitle: truncated_subtitle, tile_link: blog_article.url %}
                         </div>
                     {% endunless %}
                 {% endfor %}
