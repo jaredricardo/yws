@@ -3571,15 +3571,27 @@ details-disclosure > details {
   padding: 0 var(--yws-spacing);
 }
 
-.yws-related-products .swiper-pagination,
-.yws-more-work .swiper-pagination {
+.yws-related-products .swiper-pagination{
   bottom: 0;
   top: auto !important;
   transform: unset;
 }
 
+.yws-more-work .swiper-pagination {
+  left: 50% !important;
+  top: auto !important;
+  transform: translate(-50%);
+  height: max-content;
+  margin-left: 0 !important;
+  bottom: 0 !important;
+}
+
 .yws-related-products .swiper-wrapper {
   padding-bottom: 45px;
+}
+
+.yws-more-work .swiper-wrapper {
+  padding-bottom: 30px;
 }
 
 .swiper-pagination {
@@ -6204,6 +6216,9 @@ shopify-payment-terms {
   .yws-more-work {
     padding: 0 15px 0px 15px;
   }
+  .yws-more-work .swiper-wrapper {
+    padding-bottom: 15px;
+  }
 }
 
 @media screen and (max-width: 631px) {
@@ -6581,5 +6596,13 @@ shopify-payment-terms {
   }
   .yws-more-work .swiper .yws-tile img {
     aspect-ratio: 1 / 1;
+  }
+  .yws-more-work .swiper-wrapper {
+    padding-bottom: 10px;
+  }
+  .yws-more-work .swiper-pagination {
+    transform: unset;
+    left: 0 !important;
+    margin-left: 15px !important;
   }
 }
