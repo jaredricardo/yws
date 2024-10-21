@@ -6609,4 +6609,7 @@ shopify-payment-terms {
   .yws-2-6 .col:nth-of-type(2) {
     padding: 0 20px;
   }
+  .yws-pdp-wrapper .sold-out-money-copy {
+    font-size: 18px;
+  }
 }
