@@ -1,0 +1,115 @@
+{% style %}
+    [data-section-id="{{ section.id }}"] {
+        background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.text_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] h2 {
+        color: {{ section.settings.text_color }};
+    }
+{% endstyle %}
+
+{% liquid 
+
+    assign count = 0
+
+    for blog_article in blog.articles
+        unless article.handle == blog_article.handle
+            assign count = count | plus: 1
+        endunless
+    endfor    
+
+-%}
+
+{% if count > 3 %}
+    <div data-section-id="{{ section.id }}" class="yws-more-work">
+        {% if section.settings.header != blank %}
+            <div class="heading-container">
+                <h2>{{ section.settings.header }}</h2>
+            </div>
+        {% endif %}
+        <div class="more-work-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                {% for blog_article in blog.articles limit: 20 %}
+                    {% unless article.handle == blog_article.handle %}
+                        <div class="swiper-slide" data-slide-index="{{ forloop.index }}">
+                            {% render 'yws-tile-image', img: blog_article.image.src,  title: blog_article.title, subtitle: blog_article.excerpt | truncate: 10, tile_link: blog_article.handle %}
+                        </div>
+                    {% endunless %}
+                {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination-container">
+                    <span class="starting-num">1</span><span class="divider">/</span><span class="total-num">{{ count }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const swiperMoreWork = new Swiper('[data-section-id="{{ section.id }}"] .swiper', {
+                loop: true,
+                speed: 400,
+                spaceBetween: 10,
+                slidesPerView: 1.16,
+                centeredSlides: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                breakpoints:{
+                    515:{
+                        slidesPerView: 2,
+                        spaceBetween: 15
+                    },
+                    843:{
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    }
+                }
+            })
+                
+            swiperMoreWork.on('transitionEnd',function(){
+                const activeSlide = document.querySelector('.yws-more-work .swiper-slide-active').getAttribute('data-slide-index')
+                const startingNum = document.querySelector('.yws-more-work .starting-num').innerText = activeSlide
+            })
+        })
+    </script>
+{% endif %}
+  
+{% schema %}
+  {
+    "name": "YWS More Work",
+    "enabled_on": {
+        "templates": ["article"]
+    },
+    "settings": [
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#F3ECDE"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header",
+            "default": "More Work"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "(Title) Text Color",
+            "default": "#9C2C24"
+        }
+    ],
+    "presets": [
+        {
+            "name": "YWS More Work"
+        }
+    ]
+  }
+{% endschema %}
+  
