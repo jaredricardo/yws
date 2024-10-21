@@ -1,0 +1,123 @@
+{% style %}
+    [data-section-id="{{ section.id }}"] {
+        background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.text_color }};
+    }
+
+    [data-section-id="{{ section.id }}"] h2 {
+        color: {{ section.settings.text_color }};
+    }
+{% endstyle %}
+<div data-section-id="{{ section.id }}" class="yws-more-work">
+    {% if section.settings.header != blank %}
+        <div class="heading-container">
+            <h2>{{ section.settings.header }}</h2>
+        </div>
+    {% endif %}
+    <div class="more-work-container">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% if recommendations.performed and recommendations.products_count > 0 %}
+                    {% assign count = 0 %}
+                    {% for recommendation in recommendations.products limit: 6 %}
+                        {% assign count = count | plus:1 %}
+                        <div class="swiper-slide" data-slide-index="{{ forloop.index }}">
+
+                            {% liquid 
+                                assign has_color_variant = false
+                                for option in product.options
+                                    if option == 'Color'
+                                        assign has_color_variant = true
+                                        assign color_option_index = forloop.index0
+                                    endif
+                                endfor        
+                            -%}
+                            {% render 'yws-product-card', product:recommendation, has_color_variant:has_color_variant, color_option_index:color_option_index, skip_breakout: true %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination-container">
+                <span class="starting-num">1</span><span class="divider">/</span><span class="total-num">{{ count }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        console.log('////')
+        console.log{{ article | json }}
+        return
+        const swiperMoreWork = new Swiper('.yws-more-work .swiper', {
+            loop: true,
+            speed: 400,
+            spaceBetween: 10,
+            slidesPerView: 1.16,
+            centeredSlides: false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints:{
+                600:{
+                slidesPerView: 1.16,
+                },
+                834:{
+                    slidesPerView: 2.4,
+                    spaceBetween: 15,
+                    loop: true,
+                    centeredSlides: true
+                },
+                1440:{
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    loop: true,
+                    centeredSlides: true
+                }
+            }
+        })
+              
+        swiperMoreWork.on('transitionEnd',function(){
+            const activeSlide = document.querySelector('.yws-more-work .swiper-slide-active').getAttribute('data-slide-index')
+            const startingNum = document.querySelector('.yws-more-work .starting-num').innerText = activeSlide
+        })
+    })
+</script>
+  
+{% schema %}
+  {
+    "name": "YWS More Work",
+    "enabled_on": {
+        "templates": ["article"]
+    },
+    "settings": [
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color",
+            "default": "#F3ECDE"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header",
+            "default": "Related Products"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "(Title) Text Color",
+            "default": "#9C2C24"
+        }
+    ],
+    "presets": [
+        {
+            "name": "YWS More Work"
+        }
+    ]
+  }
+{% endschema %}
+  

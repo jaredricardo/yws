@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "yws_hero_with_text_RXVP7e": {
@@ -15,8 +6,8 @@
         "text_color": "#f3ecde",
         "title": "Belief NYC",
         "subheader": "2010 - Present",
-        "banner_image": "shopify://shop_images/595b41029f618e1f25e3105ff210b494.jpg",
-        "url": "shopify://blogs/work/belief-nyc"
+        "banner_image": "shopify:\/\/shop_images\/595b41029f618e1f25e3105ff210b494.jpg",
+        "url": "shopify:\/\/blogs\/work\/belief-nyc"
       }
     },
     "yws_hero_with_text_yw4Y8y": {
@@ -25,8 +16,8 @@
         "text_color": "#f3ecde",
         "title": "Polartec®",
         "subheader": "2021 - 2023",
-        "banner_image": "shopify://shop_images/YWS_Case_Study_BG_Club_Images_0002_AAD543D4-F9FB-447D-9C9C-74B2DA72BC91.jpg",
-        "url": "shopify://blogs/work/polartech®"
+        "banner_image": "shopify:\/\/shop_images\/YWS_Case_Study_BG_Club_Images_0002_AAD543D4-F9FB-447D-9C9C-74B2DA72BC91.jpg",
+        "url": "shopify:\/\/blogs\/work\/polartech®"
       }
     },
     "yws_hero_with_text_NVWYP8": {
@@ -35,8 +26,8 @@
         "text_color": "#f3ecde",
         "title": "Brooklyn Brewery",
         "subheader": "July, 2024 - Present",
-        "banner_image": "shopify://shop_images/s8_overscan_flat.00_03_58_04.Still007_2.jpg",
-        "url": "shopify://blogs/work/brooklyn-brewery"
+        "banner_image": "shopify:\/\/shop_images\/s8_overscan_flat.00_03_58_04.Still007_2.jpg",
+        "url": "shopify:\/\/blogs\/work\/brooklyn-brewery"
       }
     },
     "yws_hero_with_text_4rCLRa": {
@@ -45,8 +36,8 @@
         "text_color": "#f3ecde",
         "title": "Boys & Girls Club",
         "subheader": "2020 - 2021",
-        "banner_image": "shopify://shop_images/YWS_Case_Study_BG_Club_Images_0004_AB3FD4AE-41C2-47F0-9610-664E4263D702.jpg",
-        "url": "shopify://blogs/work/boys-girls-club"
+        "banner_image": "shopify:\/\/shop_images\/YWS_Case_Study_BG_Club_Images_0004_AB3FD4AE-41C2-47F0-9610-664E4263D702.jpg",
+        "url": "shopify:\/\/blogs\/work\/boys-girls-club"
       }
     },
     "yws_hero_with_text_h9CaVp": {
@@ -55,8 +46,8 @@
         "text_color": "#f3ecde",
         "title": "Realtree",
         "subheader": "2022",
-        "banner_image": "shopify://shop_images/YWS_Case_Study_Realtree_Images_0005_1AFD42DF-9B83-4182-B4B6-D4E0B9CE83E9.jpg",
-        "url": "shopify://blogs/work/realtree"
+        "banner_image": "shopify:\/\/shop_images\/YWS_Case_Study_Realtree_Images_0005_1AFD42DF-9B83-4182-B4B6-D4E0B9CE83E9.jpg",
+        "url": "shopify:\/\/blogs\/work\/realtree"
       }
     },
     "yws_hero_with_text_cWgqCG": {
@@ -65,8 +56,8 @@
         "text_color": "#f3ecde",
         "title": "Astoria Park Alliance®",
         "subheader": "2021",
-        "banner_image": "shopify://shop_images/YWS_Case_Study_BG_Club_Images_0005_47DABE65-AC3B-422D-84C0-33A5D7A6DA83.jpg",
-        "url": "shopify://blogs/work/astoria-park-alliance®"
+        "banner_image": "shopify:\/\/shop_images\/YWS_Case_Study_BG_Club_Images_0005_47DABE65-AC3B-422D-84C0-33A5D7A6DA83.jpg",
+        "url": "shopify:\/\/blogs\/work\/astoria-park-alliance®"
       }
     },
     "yws_hero_with_text_tdidXt": {
@@ -75,8 +66,8 @@
         "text_color": "#f3ecde",
         "title": "V.... Vaughan",
         "subheader": "2023",
-        "banner_image": "shopify://shop_images/Case_Study_Square_Image_File_0010_7CB3E2AA-99F9-4031-88BC-E045D5F2B9DF.jpg",
-        "url": "shopify://blogs/work/v-vaughan"
+        "banner_image": "shopify:\/\/shop_images\/Case_Study_Square_Image_File_0010_7CB3E2AA-99F9-4031-88BC-E045D5F2B9DF.jpg",
+        "url": "shopify:\/\/blogs\/work\/v-vaughan"
       }
     },
     "yws_hero_with_text_gfeWW4": {
@@ -85,8 +76,8 @@
         "text_color": "#f3ecde",
         "title": "Hungry Ghost Coffee",
         "subheader": "February, 2024 - Present",
-        "banner_image": "shopify://shop_images/1012.jpg",
-        "url": "shopify://blogs/work/hungry-ghost-coffee"
+        "banner_image": "shopify:\/\/shop_images\/1012.jpg",
+        "url": "shopify:\/\/blogs\/work\/hungry-ghost-coffee"
       }
     }
   },
