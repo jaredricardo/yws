@@ -34,7 +34,7 @@
                 {% for blog_article in blog.articles limit: 20 %}
                     {% unless article.handle == blog_article.handle %}
                         <div class="swiper-slide" data-slide-index="{{ forloop.index }}">
-                            {% render 'yws-tile-image', img: blog_article.image.src,  title: blog_article.title, subtitle: blog_article.excerpt | truncate: 10, tile_link: blog_article.handle %}
+                            {% render 'yws-tile-image', img: blog_article.image.src,  title: blog_article.title, subtitle: blog_article.excerpt | truncate: 10, tile_link: blog_article.link %}
                         </div>
                     {% endunless %}
                 {% endfor %}

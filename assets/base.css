@@ -5770,7 +5770,7 @@ shopify-payment-terms {
 }
 
 .yws-article-container .slide-container img {
-  aspect-ratio: 550 / 681;
+  /* aspect-ratio: 550 / 681; */
 }
 
 .yws-article-container .slide-container video {
