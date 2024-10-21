@@ -5691,7 +5691,8 @@ shopify-payment-terms {
 }
 
 .yws-article-info h4,
-.yws-article-info p {
+.yws-article-info p,
+.yws-article-info li  {
   color: var(--yws-blue);
   margin: 0;
 }
@@ -6604,5 +6605,8 @@ shopify-payment-terms {
     transform: unset;
     left: 0 !important;
     margin-left: 15px !important;
+  }
+  .yws-2-6 .col:nth-of-type(2) {
+    padding: 0 20px;
   }
 }

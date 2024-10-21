@@ -21,13 +21,14 @@
     }
     [data-section-id="{{ section.id }}"] .workshop-slider{
         display: flex;
-        padding: 0px 10px;
+        padding-left: 10px;
         align-items: center;
         gap: 10px;
         align-self: stretch;
     }
     [data-section-id="{{ section.id }}"] .workshop-slider img{
         width:100%;
+        aspect-ratio: 1/1;
     }
     [data-section-id="{{ section.id }}"] .workshop-slider .swiper-slide{
         display: flex;
@@ -56,8 +57,6 @@
     [data-section-id="{{ section.id }}"] .swiper-pagination{
         position:unset;
         display: flex;
-        height: 21px;
-        padding: 0px 20px;
         align-items: center;
         gap: 5px;
         flex: 1 0 0;
@@ -65,7 +64,7 @@
     [data-section-id="{{ section.id }}"] .pagination-container{
         margin-top:20px;
         display: flex;
-        padding: 0px 10px;
+        padding: 0px 20px;
         justify-content: space-between;
         align-items: center;
         align-self: stretch;
@@ -121,7 +120,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 10px;
+        gap: 20px;
         align-self: stretch;
     }
     [data-section-id="{{ section.id }}"] .workshop-txt .heading{
@@ -161,7 +160,7 @@
         letter-spacing: 0.36px;
         margin:0;
     }
-    @media(min-width:834px){
+    @media(min-width:415px){
         [data-section-id="{{ section.id }}"]{
             padding: 80px 0px;
         }
@@ -197,7 +196,7 @@
         [data-section-id="{{ section.id }}"] .workshop-img-grid{
             display: flex;
             align-items: flex-start;
-            align-content: flex-start;
+            align-content: center;
             gap: 15px;
             align-self: stretch;
             flex-wrap: wrap;
@@ -212,12 +211,17 @@
         [data-section-id="{{ section.id }}"] .workshop-img-grid .half-col{
             display:flex;
             flex:3;
-            border-radius:10px;
-            overflow:hidden;
             flex-direction:column;
         }
+        [data-section-id="{{ section.id }}"] .workshop-slider { 
+            padding: 0;
+        }
+        [data-section-id="{{ section.id }}"] .workshop-slider img {
+            aspect-ratio: 395/282;
+            border-radius:10px;
+        }
     }
-    @media(min-width:1440px){
+    @media(min-width:834px){
         [data-section-id="{{ section.id }}"]{
             display: flex;
             padding: 100px 0px;
@@ -268,12 +272,6 @@
         [data-section-id="{{ section.id }}"] .text-container .heading h3{
             font-size:24px;
             line-height:30px;
-        }
-        [data-section-id="{{ section.id }}"] .workshop-img-grid .full-col{
-            max-height:482px;
-        }
-        [data-section-id="{{ section.id }}"] .workshop-img-grid .half-col{
-            max-height:231px;
         }
         [data-section-id="{{ section.id }}"] .workshop-slider{
             padding:0;
