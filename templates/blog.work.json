@@ -69,6 +69,16 @@
         "url": "shopify://blogs/work/astoria-park-alliance®"
       }
     },
+    "yws_hero_with_text_TFdj9b": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "New York Sign Museum",
+        "subheader": "August, 2024 - Present",
+        "banner_image": "shopify://shop_images/kodak_gold_200_10_14_2024_000144640018.jpg",
+        "url": "shopify://blogs/work/new-york-sign-museum"
+      }
+    },
     "yws_hero_with_text_tdidXt": {
       "type": "yws-hero-with-text",
       "settings": {
@@ -88,16 +98,6 @@
         "banner_image": "shopify://shop_images/1012.jpg",
         "url": "shopify://blogs/work/hungry-ghost-coffee"
       }
-    },
-    "yws_hero_with_text_TFdj9b": {
-      "type": "yws-hero-with-text",
-      "settings": {
-        "text_color": "#F3ECDE",
-        "title": "New York Sign Museum",
-        "subheader": "August, 2024 - Present",
-        "banner_image": "shopify://shop_images/kodak_gold_200_10_14_2024_000144640018.jpg",
-        "url": "shopify://blogs/work/new-york-sign-museum"
-      }
     }
   },
   "order": [
@@ -105,10 +105,10 @@
     "yws_hero_with_text_yw4Y8y",
     "yws_hero_with_text_NVWYP8",
     "yws_hero_with_text_4rCLRa",
+    "yws_hero_with_text_TFdj9b",
     "yws_hero_with_text_h9CaVp",
     "yws_hero_with_text_cWgqCG",
     "yws_hero_with_text_tdidXt",
-    "yws_hero_with_text_gfeWW4",
-    "yws_hero_with_text_TFdj9b"
+    "yws_hero_with_text_gfeWW4"
   ]
 }
