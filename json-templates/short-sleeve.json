@@ -1,0 +1,32 @@
+{
+    "sizes": [
+        {
+            "size": "S",
+            "chest": "19",
+            "length": "27 1/2",
+            "shoulder": "17 1/4",
+            "sleeve": "8"
+        },
+        {
+            "size": "M",
+            "chest": "21",
+            "length": "28",
+            "shoulder": "19",
+            "sleeve": "8 1/4"
+        },
+        {
+            "size": "L",
+            "chest": "23",
+            "length": "28 1/2",
+            "shoulder": "20 1/2",
+            "sleeve": "8 1/2"
+        },
+        {
+            "size": "XL",
+            "chest": "24",
+            "length": "29",
+            "shoulder": "21",
+            "sleeve": "8 3/4"
+        }
+    ]
+}

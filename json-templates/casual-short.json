@@ -1,0 +1,32 @@
+{
+    "sizes": [
+        {
+            "size": "S",
+            "waist": "14",
+            "rise": "12",
+            "inseam": "7 3/8",
+            "leg_opening": "12 1/2"
+        },
+        {
+            "size": "M",
+            "waist": "15",
+            "rise": "12 1/4",
+            "inseam": "7 1/2",
+            "leg_opening": "13"
+        },
+        {
+            "size": "L",
+            "waist": "16",
+            "rise": "12 1/2",
+            "inseam": "7 5/8",
+            "leg_opening": "13 1/2"
+        },
+        {
+            "size": "XL",
+            "waist": "17",
+            "rise": "12 3/4",
+            "inseam": "7 3/4",
+            "leg_opening": "14"
+        }
+    ]
+}
