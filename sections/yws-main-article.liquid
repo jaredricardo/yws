@@ -71,9 +71,9 @@
                 {% if item.media_type == 'image' %}
                         {{ item | media | media_tag: image_size: '600x' }}
                     {% elsif item.media_type == 'video' %}
-                        {% assign poster = item.preview_image.src | image_url: width: 400 %}
+                        {% assign poster = item.preview_image.src | image_url: width: 800 %}
                         {% render 'yws-icon-play' %}
-                        {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true, poster: poster }}
+                        {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true, poster:poster }}
                 {% endif %}
             </div>
         {% endfor %}
@@ -89,9 +89,9 @@
                                         {% if item.media_type == 'image' %}
                                             {{ item | media | media_tag: image_size: '1600x' }}
                                         {% elsif item.media_type == 'video' %}
-                                            {% assign poster = item.preview_image.src | image_url: width: 600 %}
+                                            {% assign poster = item.preview_image.src | image_url: width: 800 %}
                                             {% render 'yws-icon-play' %}
-                                            {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true, poster: poster  }}
+                                            {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true, poster:poster }}
                                         {% endif %}
                                         <div class="slide-info">
                                             {% if item.image.alt != blank %}
@@ -215,7 +215,7 @@
         function pauseAllVideos() {
             document.querySelectorAll('.yws-article-container video').forEach((video) => {
                 video.pause()
-                video.currentTime = 0 
+                video.load() 
             })
             aVideoIsPlaying = false
         }
