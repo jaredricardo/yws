@@ -5740,6 +5740,7 @@ shopify-payment-terms {
   aspect-ratio: 258 / 323;
   object-fit: cover;
   cursor: pointer;
+  flex-direction: column;
 }
 
 .yws-article-container .yws-play-icon {
@@ -5756,6 +5757,7 @@ shopify-payment-terms {
 .yws-article-container .article-grid-item img,
 .yws-article-container .article-grid-item video {
   border-radius: 10px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
@@ -5767,6 +5769,7 @@ shopify-payment-terms {
   max-height: 80vh;
   vertical-align: top;
   object-fit: cover;
+  vertical-align: top;
 }
 
 .yws-article-container .slide-container img {
@@ -5792,6 +5795,10 @@ shopify-payment-terms {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+.yws-article-container .grid-item-media-container {
+  position: relative;
+  height: 100%;
 }
 
 .yws-article-container .yws-article-modal-inner--article {
@@ -5831,9 +5838,17 @@ shopify-payment-terms {
   color: var(--yws-off-white);
   font-size: 20px;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 20px;
   letter-spacing: 0.02em;
   text-align: left;
+}
+
+.yws-article-container .article-grid-item .slide-caption {
+  color: var(--yws-blue);
+  padding-top: 10px;
+  font-size: 16px;
+  line-height: 1;
+  display: none;
 }
 
 .yws-article-container .index-info {
@@ -6611,5 +6626,14 @@ shopify-payment-terms {
   }
   .yws-pdp-wrapper .sold-out-money-copy {
     font-size: 18px;
+  }
+  .yws-article-container .article-grid-item .slide-caption {
+    display: block;
+  }
+  .yws-article-container .article-grid-item {
+    aspect-ratio: auto;
+  }
+  .yws-article-container .article-grid-item video {
+    aspect-ratio: 16 / 9;
   }
 }
