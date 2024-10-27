@@ -1,1 +1,26 @@
-{"sections":{"main":{"type":"main-page","settings":{"padding_top":28,"padding_bottom":28}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "yws_hero_with_text_UmMTrV": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Studio Shop coming soon. Sign up below to keep in touch…",
+        "subheader": "",
+        "banner_image": "shopify:\/\/shop_images\/unnamed.jpg",
+        "url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "yws_hero_with_text_UmMTrV"
+  ]
+}

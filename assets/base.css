@@ -3743,7 +3743,9 @@ yws-sticky-header {
   left: 50%;
   transform: translatex(-50%);
   align-items: center;
+  justify-content: center;
 }
+
 
 yws-sticky-header .yws-header__logo-text a { 
   opacity: 1;
@@ -3763,6 +3765,7 @@ yws-sticky-header.scrolled-in {
   background: linear-gradient(to bottom, var(--yws-off-white), transparent);
   position: relative;
   padding: 40px 60px;
+  justify-content: space-between;
 }
 
 yws-sticky-header .col {
@@ -3796,21 +3799,25 @@ yws-sticky-header.scrolled-in .col:nth-of-type(3) {
 
 yws-sticky-header .yws-header__logo-text svg {
   width: 100%;
-  height: max-content;
+  height: 100%;
   display: block;
 }
 
 yws-sticky-header.scrolled-in .yws-header__logo-text {
   padding-right: 0 !important;
-  /* margin-right: 5.5vw; */
+  margin-bottom: -15px;
 }
 
 yws-sticky-header .yws-header__logo-text {
-  width: 100%;
-  /* min-height: 62px; */
-  align-items: center;
-  justify-content: center;
-  gap: 3%;
+  display: grid;
+  grid-template-columns: 29.6913% 36.2025% 34.1060%;
+  align-items: unset;
+  justify-content: unset;
+  gap: unset;
+}
+
+yws-sticky-header .yws-header__logo-text path {
+  fill: var(--yws-off-white);
 }
 
 yws-sticky-header path {
@@ -3839,9 +3846,8 @@ yws-sticky-header .yws-header__letters svg {
 }
 
 yws-sticky-header .yws-header__logo-text a {
-  cursor: pointer;
   display: flex;
-  flex: 1;
+  min-width: unset;
 }
 
 yws-sticky-header.scrolled-in .yws-header__logo-text path {
@@ -5226,7 +5232,7 @@ shopify-payment-terms {
   width: 100%;
   gap: 30px;
   flex: 4;
-  padding: 0px 60px 0px 30px;
+  padding-left: 30px;
   z-index: 2;
 }
 
@@ -5239,6 +5245,7 @@ shopify-payment-terms {
   text-align: left;
   color: var(--yws-off-white);
   margin: 0;
+  max-width: 850px;
 }
 
 .yws-hero.article-hero .content-container h2 {
@@ -5517,9 +5524,14 @@ shopify-payment-terms {
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
+    margin-top: 2px;
     line-height: 18px; /* 100% */
     letter-spacing: 0.36px;
     text-transform: uppercase;
+    color: var(--yws-blue);
+  }
+  variant-selects input[type=radio]:checked+label .Size-val{
+    color: var(--yws-off-white) !important;
   }
 }
 
@@ -6470,10 +6482,10 @@ shopify-payment-terms {
     text-overflow: ellipsis
   }
   .yws-related-products {
-    padding: 0 10px;
+    padding: 0 0 0 10px;
   }
   .yws-related-products .heading-container {
-    padding: 0 0px;
+    padding: 0 10px 0 0;
   }
   .yws-pdp-wrapper {
     padding: 100px 10px 40px 10px;
@@ -6534,6 +6546,7 @@ shopify-payment-terms {
   .yws-collapse .collapse-title h3 {
     font-size: 18px;
     line-height: 18px;
+    margin-top: 2px; /*  accounting for font being not aligned vertically in the font file */
   }
   .yws-collapse .collapse-content {
     padding: 20px;
@@ -6598,7 +6611,8 @@ shopify-payment-terms {
   .yws-article-info .team {
     padding: 0 20px;
   }
-  .yws-article-info li {
+  .yws-article-info li,
+  .yws-article-info .col:nth-of-type(1) p {
     font-size: 14px;
     line-height: 20px;
   }
@@ -6608,7 +6622,10 @@ shopify-payment-terms {
     gap: 10px;
   }
   .yws-more-work {
-    padding: 0 10px 0px 10px;
+    padding: 0px 0px 0px 10px;
+  }
+  .yws-more-work .heading-container {
+    padding: 0 10px 0 0;
   }
   .yws-more-work .swiper .yws-tile img {
     aspect-ratio: 1 / 1;
