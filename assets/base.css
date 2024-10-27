@@ -3743,7 +3743,9 @@ yws-sticky-header {
   left: 50%;
   transform: translatex(-50%);
   align-items: center;
+  justify-content: center;
 }
+
 
 yws-sticky-header .yws-header__logo-text a { 
   opacity: 1;
@@ -3763,6 +3765,7 @@ yws-sticky-header.scrolled-in {
   background: linear-gradient(to bottom, var(--yws-off-white), transparent);
   position: relative;
   padding: 40px 60px;
+  justify-content: space-between;
 }
 
 yws-sticky-header .col {
@@ -3796,21 +3799,26 @@ yws-sticky-header.scrolled-in .col:nth-of-type(3) {
 
 yws-sticky-header .yws-header__logo-text svg {
   width: 100%;
-  height: max-content;
+  height: 100%;
   display: block;
 }
 
 yws-sticky-header.scrolled-in .yws-header__logo-text {
   padding-right: 0 !important;
-  /* margin-right: 5.5vw; */
+  margin-bottom: -15px;
+  min-width: 440px;
 }
 
 yws-sticky-header .yws-header__logo-text {
-  width: 100%;
-  /* min-height: 62px; */
-  align-items: center;
-  justify-content: center;
-  gap: 3%;
+  display: grid;
+  grid-template-columns: 29.6913% 36.2025% 34.1060%;
+  align-items: unset;
+  justify-content: unset;
+  gap: unset;
+}
+
+yws-sticky-header .yws-header__logo-text path {
+  fill: var(--yws-off-white);
 }
 
 yws-sticky-header path {
@@ -3839,9 +3847,8 @@ yws-sticky-header .yws-header__letters svg {
 }
 
 yws-sticky-header .yws-header__logo-text a {
-  cursor: pointer;
   display: flex;
-  flex: 1;
+  min-width: unset;
 }
 
 yws-sticky-header.scrolled-in .yws-header__logo-text path {
