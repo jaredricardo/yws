@@ -273,8 +273,7 @@
 
         {% endif %}
 
-        {% if request.page_type == "blog" or request.page_type == "article" or request.page_type == "blog" %}
-
+        {% if request.page_type == "blog" or request.page_type == "article" or request.page_type == "blog" or request.page_type == "page" %}
 
           yws-sticky-header {
             background: transparent !important;;
@@ -322,6 +321,26 @@
       {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {% comment %} 
+      Code to be deleted when store launches
+    {% endcomment %}
+
+    {% if request.page_type == "collection" or request.page_type == "product" %}
+
+      <style>
+        body {
+          display: none;
+        }
+        
+      </style>
+
+      <script>
+       
+        window.location.href = "/pages/shop-coming-soon"
+
+      </script>
+    {% endif %}
 
     {%- if settings.predictive_search_enabled -%}
       <link

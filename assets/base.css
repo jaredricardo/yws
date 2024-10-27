@@ -5232,7 +5232,7 @@ shopify-payment-terms {
   width: 100%;
   gap: 30px;
   flex: 4;
-  padding: 0px 60px 0px 30px;
+  padding-left: 30px;
   z-index: 2;
 }
 
@@ -5245,6 +5245,7 @@ shopify-payment-terms {
   text-align: left;
   color: var(--yws-off-white);
   margin: 0;
+  max-width: 850px;
 }
 
 .yws-hero.article-hero .content-container h2 {
