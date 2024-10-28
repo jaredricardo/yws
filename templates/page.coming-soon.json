@@ -20,10 +20,10 @@
     "yws_hero_with_text_UmMTrV": {
       "type": "yws-hero-with-text",
       "settings": {
-        "text_color": "#F3ECDE",
-        "title": "Studio Shop coming soon. Sign up below to keep in touch…",
+        "text_color": "#f3ecde",
+        "title": "Studio Shop coming soon.",
         "subheader": "",
-        "banner_image": "shopify:\/\/shop_images\/unnamed.jpg",
+        "banner_image": "shopify://shop_images/unnamed.jpg",
         "url": ""
       }
     }
