@@ -132,7 +132,7 @@
     "york_url": "shopify://pages/about-us",
     "work_url": "shopify://blogs/work",
     "shop_url": "shopify://collections/all",
-    "yws_shipping_policy": "<p>All domestic orders are shipped via UPS and all international orders are shipped via DHL. Order processing may take up to 7 days. An email containing the tracking number will be sent to you when the order ships. All packages are insured and trackable.</p><p>If you are not completely satisfied with your purchase, you may return your item(s) for store credit. Returns must be requested within 30 days of delivery. The returned item(s) must be in new condition, unworn, with the hang tag attached in the original packaging.</p><p>Please note, our standard delivery & return policies do not apply to made-to-order products or items marked as Final Sale. Shipping surcharges may be applied on orders requiring multiple deliveries. If we anticipate longer delivery times for a specific product, that information will be listed above as well as in checkout and in the order confirmation email.</p>",
+    "yws_shipping_policy": "<p>All domestic and international orders are shipped via USPS and UPS. An email containing the tracking number will be sent to you when the order ships. Order processing generally takes 1-3 days.</p><p>If you are not completely satisfied with your purchase, you may return your item(s) for store credit. Returns must be requested within 30 days of delivery. The returned item(s) must be in new condition, unworn, with the hang tag attached in the original packaging.</p>",
     "yws_disable_shop": false,
     "drawer_menu": "yws-cart-drawer-menu",
     "sections": {
