@@ -20,7 +20,9 @@
 <script>
     window.addEventListener('load', () => {
 
-        alert(document.referrer)
+        if(!document.referrer.includes('instagram')) return
+
+        alert('instagram referal')
 
         const video = document.querySelector('.yws-video-section .initial-video video')
 
