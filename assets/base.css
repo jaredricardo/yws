@@ -3555,7 +3555,7 @@ details-disclosure > details {
   }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 430px) {
   .desktop {
     display: none;
   }
@@ -6261,7 +6261,7 @@ shopify-payment-terms {
   }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 430px) {
   yws-sticky-header .yws-header__logo-text {
     padding-right: 0px;
   }
