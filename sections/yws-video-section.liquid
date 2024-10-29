@@ -18,14 +18,15 @@
 </div>
 
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('load', () => {
         // if(document.referrer !== '') return
+
+        console.log('LOAD')
 
         const video = document.querySelector('.yws-video-section .initial-video video')
 
         if(video) {
             console.log('video exists, play')
-
             video.play()
         }
 
