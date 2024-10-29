@@ -322,24 +322,23 @@
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    {% comment %} 
-      Code to be deleted when store launches
-    {% endcomment %}
 
-    {% if request.page_type == "collection" or request.page_type == "product" %}
+    {% if settings.yws_disable_shop %}
+      {% if request.page_type == "collection" or request.page_type == "product" %}
 
-      <style>
-        body {
-          display: none;
-        }
+        <style>
+          body {
+            display: none;
+          }
+          
+        </style>
+
+        <script>
         
-      </style>
+          window.location.href = "/pages/shop-coming-soon"
 
-      <script>
-       
-        window.location.href = "/pages/shop-coming-soon"
-
-      </script>
+        </script>
+      {% endif %}
     {% endif %}
 
     {%- if settings.predictive_search_enabled -%}

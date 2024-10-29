@@ -1514,5 +1514,16 @@
                 "label": "YWS Shipping Policy"
             }
         ]
+    },
+    {
+        "name": "YWS Disable Shop",
+        "settings": [
+            {
+                "type": "checkbox",
+                "default": false,
+                "id": "yws_disable_shop",
+                "label": "Disables YWS shop for users"
+            }
+        ]
     }
 ]
