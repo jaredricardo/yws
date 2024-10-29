@@ -23,9 +23,11 @@
 
         const video = document.querySelector('.yws-video-section .initial-video video')
 
-        if(video.paused) {
+        if(video) {
+            console.log('video exists, play')
             video.play()
         }
+     
     })
 </script>
 
