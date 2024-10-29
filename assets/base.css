@@ -4066,6 +4066,7 @@ yws-menu-drawer.cart-items-drawer-active .yws-menu-drawer__footer {
   flex-direction: column;
   gap: var(--yws-spacing);
   height: max-content;
+  overflow: hidden;
 }
 
 .yws-tile-section h2,
@@ -6123,9 +6124,6 @@ shopify-payment-terms {
   }
   .yws-2-6 .col:nth-of-type(2) {
     gap: 40px;
-  }
-  yws-sticky-header .yws-header__logo-text {
-    padding-right: 30px;
   }
   yws-sticky-header.scrolled-in .yws-header__logo-text svg  {
     min-width: 72px;
