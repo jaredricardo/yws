@@ -18,19 +18,13 @@
 </div>
 
 <script>
-    // window.addEventListener('load', () => {
+    window.addEventListener('load', () => {
 
-        // alert('loaded another page?')
+        if(document.querySelector('.yws-video-section .initial-video video')) {
+            document.querySelector('.yws-video-section .initial-video video').play()
+        }        
 
-        // if(!document.referrer.includes('instagram')) return
-
-        const video = document.querySelector('.yws-video-section .initial-video video')
-
-        if(video) {
-            video.play()
-        }
-
-    // })
+    })
 </script>
 
 
