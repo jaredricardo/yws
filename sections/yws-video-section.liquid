@@ -8,7 +8,7 @@
 <div class="yws-video-section yws-section header-scrollable-section">
     <div class="yws-video-overlay"></div>
     <div class="initial-video">
-        {{ video_short | media_tag: autoplay: true, controls: false, loop: true, muted: true, playsinline: true }}
+        {{ video_short | media_tag: autoplay: false, controls: false, loop: true, muted: true, playsinline: true }}
     </div>
     <button class="yws-modal__open">
         {% render 'yws-icon-play' %}  
@@ -16,6 +16,18 @@
     </button>
     {% render 'yws-modal' type:'yt-video', yt_embed_string: yt_embed_string %}
 </div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        if(document.referrer !== '') return
+
+        const video = document.querySelector('.yws-video-section .initial-video video')
+
+        if(video.paused) {
+            video.play()
+        }
+    })
+</script>
 
 
 {% schema %}

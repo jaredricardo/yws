@@ -6263,7 +6263,7 @@ shopify-payment-terms {
 
 @media screen and (max-width: 415px) {
   yws-sticky-header .yws-header__logo-text {
-    padding-right: 15px;
+    padding-right: 0px;
   }
   .drawer {
     justify-content: center;
