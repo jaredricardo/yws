@@ -49,7 +49,7 @@
 
     if value.swatch.image
       assign image_url = value.swatch.image | image_url: width: 50
-      assign large_img_url = value.swatch.image | image_url: width: 1200
+      assign large_img_url = value.swatch.image | image_url: width: 1600
       assign swatch_value = 'url(' | append: image_url | append: ')'
     elsif value.swatch.color
       assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'

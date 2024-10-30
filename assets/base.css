@@ -6126,7 +6126,7 @@ shopify-payment-terms {
     gap: 40px;
   }
   yws-sticky-header.scrolled-in .yws-header__logo-text svg  {
-    min-width: 72px;
+    /* min-width: 72px; */
   }
   .yws-related-products .swiper-pagination {
     margin-left: 45px;
