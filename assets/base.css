@@ -3806,6 +3806,7 @@ yws-sticky-header .yws-header__logo-text svg {
 yws-sticky-header.scrolled-in .yws-header__logo-text {
   padding-right: 0 !important;
   margin-bottom: -15px;
+  width: min-content !important;
 }
 
 yws-sticky-header .yws-header__logo-text {
@@ -6126,7 +6127,7 @@ shopify-payment-terms {
     gap: 40px;
   }
   yws-sticky-header.scrolled-in .yws-header__logo-text svg  {
-    /* min-width: 72px; */
+    min-width: 72px;
   }
   .yws-related-products .swiper-pagination {
     margin-left: 45px;
