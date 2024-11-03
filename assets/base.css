@@ -5901,6 +5901,42 @@ shopify-payment-terms {
   padding: 0 30px 0px 30px;
 }
 
+.yws-colorways {
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  padding: 30px;
+  border: 2px solid var(--yws-blue);
+  border-radius: var(--yws-radius);
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.yws-colorways h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--yws-blue);
+  margin: 0 0 0 10px;
+}
+
+.yws-colorways a img,
+.yws-colorways a {
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.yws-colorways a.active-colorway {
+  outline-offset: 1.5px;
+  outline: 2px solid var(--yws-blue);
+}
+
 @media screen and (max-width: 769px) {
   .just-image-container img {
     max-width: 85%;
@@ -6651,5 +6687,18 @@ shopify-payment-terms {
   }
   .yws-article-container .article-grid-item video {
     aspect-ratio: 16 / 9;
+  }
+  .yws-colorways {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .yws-colorways h4 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .yws-colorways a img,
+  .yws-colorways a {
+    width: 55px;
+    height: 55px;
   }
 }

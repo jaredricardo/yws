@@ -9,6 +9,39 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
+
+{% if product.metafields.custom.colorway_collection %}
+
+  {% liquid 
+
+    assign colorway_handle = product.metafields.custom.colorway_collection.value.handle
+    assign colorway_products = collections[colorway_handle].products
+  
+  -%}
+
+  <div class="yws-colorways">
+    {% for colorway_product in colorway_products %}
+
+      {% liquid 
+      
+        assign active_colorway = false
+
+        if product.handle == colorway_product.handle
+          assign active_colorway = true
+        endif
+      
+      -%}
+
+      <a href="{{ colorway_product.url }}" {% if active_colorway %} class="active-colorway" {% endif %}>
+        <img src="{{ colorway_product.featured_image | image_url: width: 200 }}" alt="Color Variant">
+      </a>
+    {% endfor %}
+    {% if product.metafields.custom.colorway_name != blank %}
+      <h4>{{ product.metafields.custom.colorway_name }}</h4>
+    {% endif %}
+  </div>
+{% endif %} 
+
 {%- unless product.has_only_default_variant -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
