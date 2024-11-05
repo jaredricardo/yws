@@ -77,9 +77,12 @@
                         {{ item | media_tag: autoplay: false, controls: false, loop: false, muted: false, playsinline: true, poster:poster }}
                     {% endif %}
                 </div>
-                {% if item.image.alt != blank %}
-                    <span class="slide-caption">{{ item.image.alt }}</span>
-                {% endif %}
+                {% comment %} 
+                    desktop captions turned off for now
+                    {% if item.image.alt != blank %}
+                        <span class="slide-caption">{{ item.image.alt }}</span>
+                    {% endif %} 
+                {% endcomment %}
             </div>
         {% endfor %}
         <div class="yws-modal__main-area">

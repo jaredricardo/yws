@@ -4451,6 +4451,7 @@ yws-menu-drawer.cart-items-drawer-active .yws-menu-drawer__footer {
   width: auto; 
   max-width: 100%;
   max-height: 100%;
+  vertical-align: top;
 } 
 
 .yws-footer .svg-letter-area {
