@@ -13,13 +13,13 @@
     </div>
 </div>
 <div class="divider blue"></div>
-<div class="yws-menu-drawer__navigation">
+<div class="yws-menu-drawer__navigation" style="padding-bottom: 85px;">
     {% for link in settings.yws_main_yws.links %}
         <a href={{ link.url }} class="drawer-york drawer-letter">
             {{ link.title }}
         </a>
     {% endfor %}
-    <ul class="menu-area" style="opacity: 0;">
+    <ul class="menu-area" style="display:none; ">
         {% for link in settings.yws_drawer_menu.links %}
             <li>
                 <a href="{{ link.url }}">
