@@ -76,7 +76,7 @@
             })
                 
             swiperMoreWork.on('transitionEnd',function(){
-                const activeSlide = document.querySelector('.yws-more-work .swiper-slide-active').getAttribute('data-slide-index')
+                const activeSlide = Number(document.querySelector('.yws-more-work .swiper-slide-active').getAttribute('data-slide-index')) - 1
                 const startingNum = document.querySelector('.yws-more-work .starting-num').innerText = activeSlide
             })
         })
