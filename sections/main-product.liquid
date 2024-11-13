@@ -100,7 +100,12 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
+                  <h1>
+                    {{ product.title | escape }}
+                    {% if product.metafields.custom.colorway_name %}
+                      — {{ product.metafields.custom.colorway_name }}
+                    {% endif %}
+                  </h1>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
