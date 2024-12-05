@@ -1,7 +1,7 @@
 <div class="product-slider ">
     <div class="regular-gallery" data-product-media-size="{{ product_media.size }}">
       {% for media in product_media %}
-        {{ media | image_url: width: 1600 | image_tag:loading:'lazy', alt: media.alt }}
+        {{ media | image_url: width: 1600 | image_tag:loading:'lazy', alt: media.alt, data-index:forloop.index, data-last:forloop.last }}
       {% endfor %}
     </div>
     <div class="swiper">
@@ -17,6 +17,8 @@
       <div class="swiper-pagination"></div>
     </div>
 </div>
+
+
 <script>
   const swiper_product = new Swiper('.product-slider .swiper',{
     speed:400,

@@ -5167,6 +5167,13 @@ yws-menu-drawer .yws-menu-drawer__subtotal form.disabled {
   grid-column: span 2;
 }
 
+.yws-pdp-wrapper .regular-gallery img[data-index="5"][data-last="true"],
+.yws-pdp-wrapper .regular-gallery img[data-index="8"][data-last="true"],
+.yws-pdp-wrapper .regular-gallery img[data-index="11"][data-last="true"],
+.yws-pdp-wrapper .regular-gallery img[data-index="14"][data-last="true"] {
+  grid-column: span 2;
+}
+
 .yws-pdp-wrapper .buy-button-form-container {
   width: 100%;
   gap: 20px;
