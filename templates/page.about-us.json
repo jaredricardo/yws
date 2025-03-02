@@ -20,11 +20,11 @@
     "agency": {
       "type": "yws-the-agency",
       "blocks": {
-        "slide_images_K48WYD": {
+        "slide_images_ggcfgm": {
           "type": "slide-images",
           "settings": {
-            "title": "Apparel Production",
-            "slide_img": "shopify://shop_images/HOMEPAGE.jpg"
+            "title": "Graphic Design",
+            "slide_img": "shopify://shop_images/Graphic_Design_Image_Images_0003_09FF65D0-F1D8-4D93-A2B2-DE0F31A44291.jpg"
           }
         },
         "slide_images_MUT6tz": {
@@ -34,18 +34,18 @@
             "slide_img": "shopify://shop_images/Branding_Images_0004_86F81016-3C1A-4B2D-8E08-362CB70545D8.jpg"
           }
         },
+        "slide_images_K48WYD": {
+          "type": "slide-images",
+          "settings": {
+            "title": "Apparel Production",
+            "slide_img": "shopify://shop_images/HOMEPAGE.jpg"
+          }
+        },
         "slide_images_4JmJPc": {
           "type": "slide-images",
           "settings": {
             "title": "Media Production",
             "slide_img": "shopify://shop_images/s8_overscan_flat.00_04_49_10.Still009_3.jpg"
-          }
-        },
-        "slide_images_ggcfgm": {
-          "type": "slide-images",
-          "settings": {
-            "title": "Graphic Design",
-            "slide_img": "shopify://shop_images/Graphic_Design_Image_Images_0003_09FF65D0-F1D8-4D93-A2B2-DE0F31A44291.jpg"
           }
         },
         "slide_images_haHzjc": {
@@ -78,10 +78,10 @@
         }
       },
       "block_order": [
-        "slide_images_K48WYD",
-        "slide_images_MUT6tz",
-        "slide_images_4JmJPc",
         "slide_images_ggcfgm",
+        "slide_images_MUT6tz",
+        "slide_images_K48WYD",
+        "slide_images_4JmJPc",
         "slide_images_haHzjc",
         "slide_images_Vbe4jn",
         "slide_images_fTNbYH",
