@@ -52,22 +52,28 @@
     "yws_capabilities_CJDbWc": {
       "type": "yws-capabilities",
       "blocks": {
-        "section_link_4Utjij": {
-          "type": "section-link",
-          "settings": {
-            "title": "Graphic Design"
-          }
-        },
         "section_link_tVgeTM": {
           "type": "section-link",
           "settings": {
             "title": "Branding"
           }
         },
+        "section_link_ciH7Mz": {
+          "type": "section-link",
+          "settings": {
+            "title": "Creative Direction"
+          }
+        },
         "section_link_BiknAh": {
           "type": "section-link",
           "settings": {
             "title": "Apparel"
+          }
+        },
+        "section_link_4Utjij": {
+          "type": "section-link",
+          "settings": {
+            "title": "Graphic Design"
           }
         },
         "section_link_fKMwhQ": {
@@ -88,12 +94,6 @@
             "title": "Web Design"
           }
         },
-        "section_link_ciH7Mz": {
-          "type": "section-link",
-          "settings": {
-            "title": "Creative Direction"
-          }
-        },
         "section_link_gCpFWT": {
           "type": "section-link",
           "settings": {
@@ -102,13 +102,13 @@
         }
       },
       "block_order": [
-        "section_link_4Utjij",
         "section_link_tVgeTM",
+        "section_link_ciH7Mz",
         "section_link_BiknAh",
+        "section_link_4Utjij",
         "section_link_fKMwhQ",
         "section_link_WWwPKR",
         "section_link_mxdXLX",
-        "section_link_ciH7Mz",
         "section_link_gCpFWT"
       ],
       "settings": {
