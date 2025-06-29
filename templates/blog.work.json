@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "yws_hero_with_text_C6wAyp": {
+      "type": "yws-hero-with-text",
+      "name": "YWS Hero With Text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "New York Past & Present Exhibition",
+        "subheader": "June 12-29, 2025",
+        "banner_image": "shopify://shop_images/BEST_AD_5b393de2-7dae-4a53-a2f8-d303e2439202.jpg",
+        "url": "shopify://blogs/work/new-york-past-present-exhibition"
+      }
+    },
     "yws_hero_with_text_RXVP7e": {
       "type": "yws-hero-with-text",
       "settings": {
@@ -98,20 +109,10 @@
         "banner_image": "shopify://shop_images/Case_Study_Square_Image_File_0010_7CB3E2AA-99F9-4031-88BC-E045D5F2B9DF.jpg",
         "url": "shopify://blogs/work/v-vaughan"
       }
-    },
-    "yws_hero_with_text_C6wAyp": {
-      "type": "yws-hero-with-text",
-      "name": "YWS Hero With Text",
-      "settings": {
-        "text_color": "#F3ECDE",
-        "title": "New York Past & Present Exhibition",
-        "subheader": "June 12-29, 2025",
-        "banner_image": "shopify://shop_images/BEST_AD_5b393de2-7dae-4a53-a2f8-d303e2439202.jpg",
-        "url": "shopify://blogs/work/new-york-past-present-exhibition"
-      }
     }
   },
   "order": [
+    "yws_hero_with_text_C6wAyp",
     "yws_hero_with_text_RXVP7e",
     "yws_hero_with_text_TFdj9b",
     "yws_hero_with_text_NVWYP8",
@@ -120,7 +121,6 @@
     "yws_hero_with_text_4rCLRa",
     "yws_hero_with_text_cWgqCG",
     "yws_hero_with_text_gfeWW4",
-    "yws_hero_with_text_tdidXt",
-    "yws_hero_with_text_C6wAyp"
+    "yws_hero_with_text_tdidXt"
   ]
 }
