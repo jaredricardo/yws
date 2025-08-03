@@ -4271,6 +4271,10 @@ yws-menu-drawer.cart-items-drawer-active .yws-menu-drawer__footer {
   margin: 0px 0px 0px 30px;
 }
 
+.yws-capabilities .yws-link-button.about-us {
+  margin: 0;
+}
+
 .yws-image-text {
   display: flex;
   flex-direction: row;
