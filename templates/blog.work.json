@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "yws_hero_with_text_TFdj9b": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#f3ecde",
+        "title": "New York Sign Museum",
+        "subheader": "August, 2024 - Present",
+        "banner_image": "shopify://shop_images/NYSM_PRINT_POSTCARD.jpg",
+        "url": "shopify://blogs/work/new-york-sign-museum"
+      }
+    },
     "yws_hero_with_text_C6wAyp": {
       "type": "yws-hero-with-text",
       "name": "YWS Hero With Text",
@@ -28,16 +38,6 @@
         "subheader": "2010 - Present",
         "banner_image": "shopify://shop_images/595b41029f618e1f25e3105ff210b494.jpg",
         "url": "shopify://blogs/work/belief-nyc"
-      }
-    },
-    "yws_hero_with_text_TFdj9b": {
-      "type": "yws-hero-with-text",
-      "settings": {
-        "text_color": "#f3ecde",
-        "title": "New York Sign Museum",
-        "subheader": "August, 2024 - Present",
-        "banner_image": "shopify://shop_images/NYSM_PRINT_POSTCARD.jpg",
-        "url": "shopify://blogs/work/new-york-sign-museum"
       }
     },
     "yws_hero_with_text_NVWYP8": {
@@ -112,9 +112,9 @@
     }
   },
   "order": [
+    "yws_hero_with_text_TFdj9b",
     "yws_hero_with_text_C6wAyp",
     "yws_hero_with_text_RXVP7e",
-    "yws_hero_with_text_TFdj9b",
     "yws_hero_with_text_NVWYP8",
     "yws_hero_with_text_yw4Y8y",
     "yws_hero_with_text_h9CaVp",
