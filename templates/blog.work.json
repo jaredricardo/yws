@@ -41,6 +41,16 @@
         "url": "shopify://blogs/work/york-brand-identity"
       }
     },
+    "yws_hero_with_text_RXVP7e": {
+      "type": "yws-hero-with-text",
+      "settings": {
+        "text_color": "#f3ecde",
+        "title": "Belief NYC",
+        "subheader": "2010 - Present",
+        "banner_image": "shopify://shop_images/595b41029f618e1f25e3105ff210b494.jpg",
+        "url": "shopify://blogs/work/belief-nyc"
+      }
+    },
     "yws_hero_with_text_C6wAyp": {
       "type": "yws-hero-with-text",
       "name": "YWS Hero With Text",
@@ -50,16 +60,6 @@
         "subheader": "June 12-29, 2025",
         "banner_image": "shopify://shop_images/223_399f6f17-e9b4-4994-b6cf-440d64d3d6e3.jpg",
         "url": "shopify://blogs/work/new-york-past-present-exhibition"
-      }
-    },
-    "yws_hero_with_text_RXVP7e": {
-      "type": "yws-hero-with-text",
-      "settings": {
-        "text_color": "#f3ecde",
-        "title": "Belief NYC",
-        "subheader": "2010 - Present",
-        "banner_image": "shopify://shop_images/595b41029f618e1f25e3105ff210b494.jpg",
-        "url": "shopify://blogs/work/belief-nyc"
       }
     },
     "yws_hero_with_text_NVWYP8": {
@@ -137,8 +137,8 @@
     "yws_hero_with_text_pBUbwe",
     "yws_hero_with_text_TFdj9b",
     "yws_hero_with_text_ap6fNH",
-    "yws_hero_with_text_C6wAyp",
     "yws_hero_with_text_RXVP7e",
+    "yws_hero_with_text_C6wAyp",
     "yws_hero_with_text_NVWYP8",
     "yws_hero_with_text_yw4Y8y",
     "yws_hero_with_text_h9CaVp",
