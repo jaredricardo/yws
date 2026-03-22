@@ -13,7 +13,7 @@
       "type": "yws-hero-with-text",
       "name": "YWS Hero With Text",
       "settings": {
-        "text_color": "#F3ECDE",
+        "text_color": "#f3ecde",
         "title": "Y.W.S. Brand Identity",
         "subheader": "January - May, 2024",
         "banner_image": "shopify://shop_images/BRAND_BLOG25_401ebe76-4c63-4b5a-a482-9bb0859352c5.jpg",
@@ -120,6 +120,16 @@
         "banner_image": "shopify://shop_images/Case_Study_Square_Image_File_0010_7CB3E2AA-99F9-4031-88BC-E045D5F2B9DF.jpg",
         "url": "shopify://blogs/work/v-vaughan"
       }
+    },
+    "yws_hero_with_text_pBUbwe": {
+      "type": "yws-hero-with-text",
+      "name": "YWS Hero With Text",
+      "settings": {
+        "text_color": "#F3ECDE",
+        "title": "Collected: The Graphic Language of the Streets",
+        "subheader": "Spring/Summer, 2026",
+        "url": "shopify://blogs/work/collected-the-graphic-language-of-the-streets-exhibition"
+      }
     }
   },
   "order": [
@@ -133,6 +143,7 @@
     "yws_hero_with_text_4rCLRa",
     "yws_hero_with_text_cWgqCG",
     "yws_hero_with_text_gfeWW4",
-    "yws_hero_with_text_tdidXt"
+    "yws_hero_with_text_tdidXt",
+    "yws_hero_with_text_pBUbwe"
   ]
 }
